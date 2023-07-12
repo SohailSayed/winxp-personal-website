@@ -1,6 +1,6 @@
 // This is the root layout
 import type { Metadata } from "next";
-import NavbarLayout from "./components/navbar/layout";
+import TaskbarLayout from "./components/taskbar/layout";
 import BackgroundImage from "./BackgroundImage";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <BackgroundImage />
-        <NavbarLayout>{children}</NavbarLayout>
+        <TaskbarLayout>{children}</TaskbarLayout>
       </body>
     </html>
   );
