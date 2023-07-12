@@ -1,8 +1,7 @@
-import "./globals.css";
+// This is the root layout
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import NavbarLayout from "./components/navbar/layout";
+import BackgroundImage from "./BackgroundImage";
 
 export const metadata: Metadata = {
   title: "Personal Site",
@@ -16,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <BackgroundImage />
+        <NavbarLayout>{children}</NavbarLayout>
+      </body>
     </html>
   );
 }
