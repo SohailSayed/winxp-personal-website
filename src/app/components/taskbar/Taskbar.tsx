@@ -1,4 +1,5 @@
 import StartButton from "./StartButton";
+import SysTray from "./SysTray";
 import TaskbarLine from "./TaskbarLine";
 import styles from "./taskbar.module.css";
 
@@ -7,6 +8,7 @@ const Taskbar = () => {
     <section className={styles.taskbar}>
       <StartButton />
       <TaskbarLine />
+      <SysTray />
     </section>
   );
 };

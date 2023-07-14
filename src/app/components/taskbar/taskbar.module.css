@@ -1,5 +1,19 @@
+.taskbar {
+  display: grid;
+
+  grid-template:
+    [row1-start] "a b c d e" 5vh [row1-end]
+    / 2.5vh 0.075fr 2.5vh 1fr 1fr;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5vh;
+}
+
 .taskbarLine {
-  grid-area: taskbarLine;
+  grid-area: a / a / a / e;
   background: rgb(36, 93, 219);
   background: linear-gradient(
     180deg,
@@ -10,18 +24,12 @@
     rgba(38, 99, 224, 1) 91%,
     rgba(25, 64, 165, 1) 96%
   );
+  z-index: 1;
 }
 
-/* Not working for some reason, investigate later */
-/* .startButton {
-  grid-area: startButton;
-} */
-
-.taskbar {
-  display: grid;
-
-  grid-template:
-    [row1-start] "taskbarLine taskbarLine taskbarLine taskbarLine taskbarLine" 5vh [row1-end]
-    [row2-start] "startBack startMiddle startEnd . ." 5vh [row2-end]
-    / 2.5vh 0.075fr 2.5vh 1fr 1fr;
+.SysTray {
+  grid-area: a / e / a / e;
+  /* Temporary until this is designed */
+  background: yellow;
+  z-index: 2;
 }
