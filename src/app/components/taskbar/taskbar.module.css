@@ -3,7 +3,7 @@
 
   grid-template:
     [row1-start] "a b c d e" 5vh [row1-end]
-    / 2.5vh 0.075fr 2.5vh 1fr 1fr;
+    / 2.5vh 0.07fr 2.5vh 1fr 0.075fr;
 
   position: absolute;
   bottom: 0;
@@ -13,7 +13,7 @@
 }
 
 .taskbarLine {
-  grid-area: a / a / a / e;
+  grid-area: a / a / a / d;
   background: rgb(36, 93, 219);
   background: linear-gradient(
     180deg,
@@ -29,7 +29,16 @@
 
 .SysTray {
   grid-area: a / e / a / e;
-  /* Temporary until this is designed */
-  background: yellow;
+  background: rgb(18, 144, 233);
+  background: linear-gradient(
+    180deg,
+    rgba(18, 144, 233, 1) 0%,
+    rgba(24, 184, 243, 1) 4%,
+    rgba(18, 144, 233, 1) 16%,
+    rgba(12, 141, 234, 1) 49%,
+    rgba(13, 161, 242, 1) 91%,
+    rgba(17, 115, 212, 1) 96%
+  );
   z-index: 2;
+  box-shadow: inset 10px 0 2px -6.5px #18b8f3, -1px 0px 2px black;
 }
