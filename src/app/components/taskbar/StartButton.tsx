@@ -4,7 +4,7 @@ interface Props {
   startLabel: string;
 }
 
-const tahomaFont = localFont({ src: "../../fonts/tahoma/tahomabd.ttf" });
+const tahomaBold = localFont({ src: "../../fonts/tahoma/tahomabd.ttf" });
 
 const StartMiddleSection = ({ startLabel }: Props) => {
   return (
@@ -30,7 +30,7 @@ const StartMiddleSection = ({ startLabel }: Props) => {
         }}
       />
       <p
-        className={tahomaFont.className}
+        className={tahomaBold.className}
         style={{
           fontStyle: "italic",
           marginRight: "10px",
