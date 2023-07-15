@@ -20,7 +20,7 @@ const StartMiddleSection = ({ startLabel }: Props) => {
       }}
     >
       <img
-        src="/windowsXPIcon.png"
+        src="/icons/windowsXPIcon.png"
         height="60%"
         style={{
           filter: "drop-shadow(2px 2px 3px) blur(0.5px)",
@@ -56,7 +56,7 @@ const StartButton = () => {
           zIndex: "2",
         }}
       />
-      <StartMiddleSection startLabel="start" />
+      <StartMiddleSection startLabel="About Me" />
       <section
         style={{
           gridArea: "a / c / a / c",
