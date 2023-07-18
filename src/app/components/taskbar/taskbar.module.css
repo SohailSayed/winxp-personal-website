@@ -3,7 +3,7 @@
 
   grid-template:
     [row1-start] "a b c d e" 5vh [row1-end]
-    / 2.5vh 0.1fr 2.5vh 1fr 0.075fr;
+    / 2.5vh 150px 2.5vh 1fr 0.075fr;
 
   position: absolute;
   bottom: 0;
