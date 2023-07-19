@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import styles from "./taskbar.module.css";
 
 interface Props {
   startLabel: string;
@@ -8,18 +9,7 @@ const tahomaBold = localFont({ src: "../../fonts/tahoma/tahomabd.ttf" });
 
 const StartMiddleSection = ({ startLabel }: Props) => {
   return (
-    <section
-      style={{
-        gridArea: "a / b / a / b",
-        background: "url(/startMiddle.svg)",
-        backgroundSize: "auto 100%",
-        zIndex: "2",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        marginRight: "-1px",
-      }}
-    >
+    <section className={styles.startMiddleSection}>
       <img
         src="/icons/windowsXPIcon.png"
         height="60%"
@@ -27,7 +17,6 @@ const StartMiddleSection = ({ startLabel }: Props) => {
           filter: "drop-shadow(2px 2px 3px) blur(0.5px)",
           alignContent: "flex-start",
           marginRight: "10px",
-          imageRendering: "pixelated",
         }}
       />
       <p
@@ -49,25 +38,9 @@ const StartMiddleSection = ({ startLabel }: Props) => {
 const StartButton = () => {
   return (
     <>
-      <section
-        style={{
-          gridArea: "a / a / a / a",
-          background: "url(/startBack.svg)",
-          backgroundSize: "cover",
-          zIndex: "2",
-        }}
-      />
+      <section className={styles.startBackSection} />
       <StartMiddleSection startLabel="About Me" />
-      <section
-        style={{
-          gridArea: "a / c / a / c",
-          background: "url(/startEnd.svg)",
-          backgroundSize: "cover",
-          zIndex: "2",
-          filter: "drop-shadow(3px 0 1.5px #2C79DB)",
-          clipPath: "inset(0px -5px 0px 0px)",
-        }}
-      />
+      <section className={styles.startEndSection} />
     </>
   );
 };
