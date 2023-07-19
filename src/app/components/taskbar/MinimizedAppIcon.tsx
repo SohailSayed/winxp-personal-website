@@ -5,7 +5,7 @@ interface Props {
   alt: string;
 }
 
-const AppIcon = ({ src, alt }: Props) => {
+const MinimizedAppIcon = ({ src, alt }: Props) => {
   return (
     <section
       style={{
@@ -30,4 +30,4 @@ const AppIcon = ({ src, alt }: Props) => {
   );
 };
 
-export default AppIcon;
+export default MinimizedAppIcon;
