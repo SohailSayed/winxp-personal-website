@@ -17,6 +17,7 @@ const StartMiddleSection = ({ startLabel }: Props) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        marginRight: "-1px",
       }}
     >
       <img
