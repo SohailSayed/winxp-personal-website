@@ -17,7 +17,8 @@ const OpenAppIcon = ({ src, alt, appName }: Props) => {
       style={{
         position: "relative",
         width: "200px",
-        height: "70%",
+        height: "80%",
+        marginRight: "3px",
 
         display: "flex",
         alignItems: "center",
@@ -39,7 +40,7 @@ const OpenAppIcon = ({ src, alt, appName }: Props) => {
         className={tahoma.className}
         style={{
           color: "#F0F8FE",
-          fontSize: "90%",
+          fontSize: "85%",
           margin: "0 0 0 5%",
           textOverflow: "ellipsis",
           overflow: "hidden",
