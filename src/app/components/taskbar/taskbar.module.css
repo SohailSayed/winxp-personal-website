@@ -55,6 +55,14 @@
 }
 
 /* Only do styling of open icon here, sizing and positioning in tsx. Not working doing it here */
+.largeAppIconShared {
+  position: relative;
+  width: 200px;
+  height: 80%;
+  margin-right: 3px;
+  display: flex;
+  align-items: center;
+}
 .largeAppIconMinimized {
   background: rgb(19, 135, 247);
   background: linear-gradient(
@@ -98,4 +106,31 @@
   box-shadow: 0px 2px 2px rgba(2, 79, 181, 1), 0px -1px 2px rgba(2, 79, 181),
     inset 1px 1px 2px 1.5px #0f3788, inset -1px -1px 1px 0.5px #0f3788;
   border-radius: 3px;
+}
+
+.smallAppIcon {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  height: 80%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3px 0 3px;
+}
+
+.smallAppIcon:hover {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  height: 80%;
+
+  background-color: #2c80f5;
+  box-shadow: 1px 2px 2px 1.25px rgba(2, 79, 181, 1),
+    inset -1px -2px 0.65px 0.5px rgba(2, 79, 181, 1),
+    inset 2px 1px 2px 1px #4699f9;
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

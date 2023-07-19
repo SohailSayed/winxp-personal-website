@@ -22,16 +22,9 @@ const LargeAppIcon = ({ src, alt, appName }: Props) => {
 
   return (
     <section
-      className={open ? styles.largeAppIconOpen : styles.largeAppIconMinimized}
-      style={{
-        position: "relative",
-        width: "200px",
-        height: "80%",
-        marginRight: "3px",
-
-        display: "flex",
-        alignItems: "center",
-      }}
+      className={`${styles.largeAppIconShared} ${
+        open ? styles.largeAppIconOpen : styles.largeAppIconMinimized
+      }`}
       onClick={handleClick}
     >
       <Image

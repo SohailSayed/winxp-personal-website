@@ -1,20 +1,15 @@
 import Image from "next/image";
+import styles from "./taskbar.module.css";
 
 interface Props {
   src: string;
   alt: string;
+  url: string;
 }
 
-const SmallAppIcon = ({ src, alt }: Props) => {
+const SmallAppIcon = ({ src, alt, url }: Props) => {
   return (
-    <section
-      style={{
-        position: "relative",
-        width: "auto",
-        height: "60%",
-        margin: "10px",
-      }}
-    >
+    <a href={url} target="_blank" className={styles.smallAppIcon}>
       <Image
         src={src}
         alt={alt}
@@ -22,11 +17,11 @@ const SmallAppIcon = ({ src, alt }: Props) => {
         height={0}
         style={{
           width: "auto",
-          height: "100%",
+          height: "75%",
           filter: "drop-shadow(0px 1px 3px #1940A6)",
         }}
       />
-    </section>
+    </a>
   );
 };
 

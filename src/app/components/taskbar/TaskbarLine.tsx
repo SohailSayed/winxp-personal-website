@@ -11,13 +11,30 @@ const TaskbarLine = () => {
           display: "flex",
           height: "100%",
           width: "fit-content",
+          alignItems: "center",
           margin: "0 25px 0 10px",
         }}
       >
-        <SmallAppIcon src="/icons/githubIcon.svg" alt="Github Icon" />
-        <SmallAppIcon src="/icons/linkedinIcon.svg" alt="Linkedin Icon" />
-        <SmallAppIcon src="/icons/emailIcon.svg" alt="Email Icon" />
-        <SmallAppIcon src="/icons/twitterIcon.svg" alt="Twitter Icon" />
+        <SmallAppIcon
+          src="/icons/githubIcon.svg"
+          alt="Github Icon"
+          url="https://github.com/SohailSayed/"
+        />
+        <SmallAppIcon
+          src="/icons/linkedinIcon.svg"
+          alt="Linkedin Icon"
+          url="https://www.linkedin.com/in/sohailsayed/"
+        />
+        <SmallAppIcon
+          src="/icons/emailIcon.svg"
+          alt="Email Icon"
+          url="mailto: sohail.sayed@uwaterloo.ca"
+        />
+        <SmallAppIcon
+          src="/icons/twitterIcon.svg"
+          alt="Twitter Icon"
+          url="https://twitter.com/sohailmsayed"
+        />
       </div>
       <div
         className="OpenAppIcons"
