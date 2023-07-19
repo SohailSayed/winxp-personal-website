@@ -55,7 +55,7 @@
 }
 
 /* Only do styling of open icon here, sizing and positioning in tsx. Not working doing it here */
-.openAppIcon {
+.largeAppIconMinimized {
   background: rgb(19, 135, 247);
   background: linear-gradient(
     180deg,
@@ -68,5 +68,34 @@
   );
   box-shadow: 0px 2px 2px rgba(2, 79, 181, 1), 0px -1px 2px rgba(2, 79, 181, 1),
     inset 1px 0px 2px 1px #4699f9;
+  border-radius: 3px;
+}
+
+.largeAppIconMinimized:hover {
+  background: rgb(19, 135, 247);
+  background: linear-gradient(
+    180deg,
+    rgba(19, 135, 247, 1) 0%,
+    rgba(122, 184, 252, 1) 4%,
+    rgba(83, 160, 255, 1) 16%,
+    rgba(83, 160, 255, 1) 49%,
+    rgba(83, 160, 255, 1) 91%,
+    rgba(63, 132, 254, 1) 96%
+  );
+  box-shadow: 0px 2px 2px rgba(2, 79, 181, 1), 0px -1px 2px rgba(2, 79, 181, 1),
+    inset 1px 0px 2px 1px #4699f9;
+  border-radius: 3px;
+}
+
+.largeAppIconOpen {
+  background: #1a50b8;
+  box-shadow: 0px 2px 2px rgba(2, 79, 181, 1), 0px -1px 2px rgba(2, 79, 181),
+    inset 1px 1px 2px 1.5px #0f3788, inset -1px -1px 1px 0.5px #0f3788;
+  border-radius: 3px;
+}
+.largeAppIconOpen:hover {
+  background: #0558db;
+  box-shadow: 0px 2px 2px rgba(2, 79, 181, 1), 0px -1px 2px rgba(2, 79, 181),
+    inset 1px 1px 2px 1.5px #0f3788, inset -1px -1px 1px 0.5px #0f3788;
   border-radius: 3px;
 }

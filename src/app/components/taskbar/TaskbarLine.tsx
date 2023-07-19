@@ -1,5 +1,5 @@
-import MinimizedAppIcon from "./MinimizedAppIcon";
-import OpenAppIcon from "./OpenAppIcon";
+import SmallAppIcon from "./SmallAppIcon";
+import LargeAppIcon from "./LargeAppIcon";
 import styles from "./taskbar.module.css";
 
 const TaskbarLine = () => {
@@ -14,10 +14,10 @@ const TaskbarLine = () => {
           margin: "0 25px 0 10px",
         }}
       >
-        <MinimizedAppIcon src="/icons/githubIcon.svg" alt="Github Icon" />
-        <MinimizedAppIcon src="/icons/linkedinIcon.svg" alt="Linkedin Icon" />
-        <MinimizedAppIcon src="/icons/emailIcon.svg" alt="Email Icon" />
-        <MinimizedAppIcon src="/icons/twitterIcon.svg" alt="Twitter Icon" />
+        <SmallAppIcon src="/icons/githubIcon.svg" alt="Github Icon" />
+        <SmallAppIcon src="/icons/linkedinIcon.svg" alt="Linkedin Icon" />
+        <SmallAppIcon src="/icons/emailIcon.svg" alt="Email Icon" />
+        <SmallAppIcon src="/icons/twitterIcon.svg" alt="Twitter Icon" />
       </div>
       <div
         className="OpenAppIcons"
@@ -28,15 +28,25 @@ const TaskbarLine = () => {
           alignItems: "center",
         }}
       >
-        <OpenAppIcon
-          src="/icons/twitterIcon.svg"
-          alt="Twitter Icon"
-          appName="Twitter"
-        />
-        <OpenAppIcon
+        <LargeAppIcon
           src="/icons/linkedinIcon.svg"
           alt="Linkedin Icon"
           appName="Linkedin"
+        />
+        <LargeAppIcon
+          src="/icons/githubIcon.svg"
+          alt="Github Icon"
+          appName="Github"
+        />
+        <LargeAppIcon
+          src="/icons/emailIcon.svg"
+          alt="Email Icon"
+          appName="Email"
+        />
+        <LargeAppIcon
+          src="/icons/twitterIcon.svg"
+          alt="Twitter Icon"
+          appName="Twitter"
         />
       </div>
     </section>
