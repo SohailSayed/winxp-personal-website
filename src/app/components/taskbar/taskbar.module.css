@@ -141,7 +141,13 @@
   background-size: cover;
   z-index: 2;
 }
-
+.startBackSectionHover {
+  grid-area: a / a / a / a;
+  background: url(/startBack.svg);
+  background-size: cover;
+  z-index: 2;
+  filter: brightness(110%);
+}
 .startMiddleSection {
   grid-area: a / b / a / b;
   background: url(/startMiddle.svg);
@@ -152,12 +158,30 @@
   align-items: center;
   margin-right: -1px;
 }
-
+.startMiddleSectionHover {
+  grid-area: a / b / a / b;
+  background: url(/startMiddle.svg);
+  background-size: auto 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -1px;
+  filter: brightness(110%);
+}
 .startEndSection {
   grid-area: a / c / a / c;
   background: url(/startEnd.svg);
   background-size: cover;
   z-index: 2;
   filter: drop-shadow(3px 0 1.5px #2c79db);
+  clip-path: inset(0px -5px 0px 0px);
+}
+.startEndSectionHover {
+  grid-area: a / c / a / c;
+  background: url(/startEnd.svg);
+  background-size: cover;
+  z-index: 2;
+  filter: drop-shadow(3px 0 1.5px #2c79db) brightness(110%);
   clip-path: inset(0px -5px 0px 0px);
 }
