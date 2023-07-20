@@ -148,6 +148,20 @@
   z-index: 2;
   filter: brightness(110%);
 }
+.startBackSectionOpen {
+  grid-area: a / a / a / a;
+  background: url(/startBackOpen.svg);
+  background-size: cover;
+  z-index: 2;
+}
+.startBackSectionHoverOpen {
+  grid-area: a / a / a / a;
+  background: url(/startBackOpen.svg);
+  background-size: cover;
+  z-index: 2;
+  filter: brightness(110%);
+}
+
 .startMiddleSection {
   grid-area: a / b / a / b;
   background: url(/startMiddle.svg);
@@ -169,6 +183,28 @@
   margin-right: -1px;
   filter: brightness(110%);
 }
+.startMiddleSectionOpen {
+  grid-area: a / b / a / b;
+  background: url(/startMiddleOpen.svg);
+  background-size: auto 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -1px;
+}
+.startMiddleSectionHoverOpen {
+  grid-area: a / b / a / b;
+  background: url(/startMiddleOpen.svg);
+  background-size: auto 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -1px;
+  filter: brightness(110%);
+}
+
 .startEndSection {
   grid-area: a / c / a / c;
   background: url(/startEnd.svg);
@@ -180,6 +216,22 @@
 .startEndSectionHover {
   grid-area: a / c / a / c;
   background: url(/startEnd.svg);
+  background-size: cover;
+  z-index: 2;
+  filter: drop-shadow(3px 0 1.5px #2c79db) brightness(110%);
+  clip-path: inset(0px -5px 0px 0px);
+}
+.startEndSectionOpen {
+  grid-area: a / c / a / c;
+  background: url(/startEndOpen.svg);
+  background-size: cover;
+  z-index: 2;
+  filter: drop-shadow(3px 0 1.5px #2c79db);
+  clip-path: inset(0px -5px 0px 0px);
+}
+.startEndSectionHoverOpen {
+  grid-area: a / c / a / c;
+  background: url(/startEndOpen.svg);
   background-size: cover;
   z-index: 2;
   filter: drop-shadow(3px 0 1.5px #2c79db) brightness(110%);
