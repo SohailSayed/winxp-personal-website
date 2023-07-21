@@ -159,7 +159,7 @@
   background: url(/startBackOpen.svg);
   background-size: cover;
   z-index: 2;
-  filter: brightness(110%);
+  filter: brightness(130%);
 }
 
 .startMiddleSection {
@@ -202,7 +202,7 @@
   justify-content: center;
   align-items: center;
   margin-right: -1px;
-  filter: brightness(110%);
+  filter: brightness(130%);
 }
 
 .startEndSection {
@@ -234,6 +234,6 @@
   background: url(/startEndOpen.svg);
   background-size: cover;
   z-index: 2;
-  filter: drop-shadow(3px 0 1.5px #2c79db) brightness(110%);
+  filter: drop-shadow(3px 0 1.5px #2c79db) brightness(130%);
   clip-path: inset(0px -5px 0px 0px);
 }
