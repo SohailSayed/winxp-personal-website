@@ -8,3 +8,22 @@
   height: 76vh;
   width: 80vw;
 }
+
+.titleBar {
+  display: flex;
+  background: rgb(8, 88, 238);
+  background: linear-gradient(
+    180deg,
+    rgba(8, 88, 238, 1) 0%,
+    rgba(42, 144, 255, 1) 2%,
+    rgba(42, 144, 255, 1) 5%,
+    rgba(7, 85, 229, 1) 10%,
+    rgba(7, 85, 229, 1) 64%,
+    rgba(7, 106, 254, 1) 94%,
+    rgba(5, 68, 205, 1) 98%
+  );
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 100%;
+}
