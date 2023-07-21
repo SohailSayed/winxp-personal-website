@@ -1,0 +1,10 @@
+.window {
+  display: flex;
+  border-style: solid;
+  /* Roughly centering div for now, temporary just while building it out */
+  margin: auto;
+  transform: translate(0%, 10%);
+  /* work on sizing later */
+  height: 76vh;
+  width: 80vw;
+}

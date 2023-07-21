@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import TaskbarLayout from "./components/taskbar/layout";
 import BackgroundImage from "./BackgroundImage";
+import WindowLayout from "./components/window/layout";
 
 export const metadata: Metadata = {
   title: "Personal Site",
@@ -17,7 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <BackgroundImage />
-        <TaskbarLayout>{children}</TaskbarLayout>
+        <WindowLayout />
+        <TaskbarLayout />
       </body>
     </html>
   );

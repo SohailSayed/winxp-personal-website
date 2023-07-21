@@ -1,14 +1,5 @@
 import Taskbar from "./Taskbar";
 
-export default function TaskbarLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <section>
-      {children}
-      <Taskbar />
-    </section>
-  );
+export default function TaskbarLayout() {
+  return <Taskbar />;
 }
