@@ -1,16 +1,20 @@
 .window {
   display: flex;
-  border-style: solid;
   /* Roughly centering div for now, temporary just while building it out */
   margin: auto;
   transform: translate(0%, 10%);
   /* work on sizing later */
   height: 76vh;
   width: 80vw;
+  border-radius: 0.75%;
+  overflow: hidden;
 }
 
+.titleBarCombined {
+  height: 100%;
+  width: 100%;
+}
 .titleBar {
-  display: flex;
   background: rgb(8, 88, 238);
   background: linear-gradient(
     180deg,
@@ -26,4 +30,17 @@
   left: 0;
   height: 30px;
   width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+.titleBarBottom {
+  height: calc(100% - 30px);
+  width: 100%;
+  box-sizing: border-box;
+  border-right: solid #0763f6;
+  border-left: solid #0763f6;
+  border-bottom: solid #0763f6;
+  border-width: 4px;
+  box-shadow: inset 0px 0px 2px 1px black;
 }
