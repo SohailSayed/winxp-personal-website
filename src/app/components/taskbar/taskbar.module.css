@@ -180,26 +180,26 @@
 /* Start Button Start*/
 .startBackSection {
   grid-area: a / a / a / a;
-  background: url(/startBack.svg);
+  background: url(/start/startBack.svg);
   background-size: cover;
   z-index: 2;
 }
 .startBackSectionHover {
   grid-area: a / a / a / a;
-  background: url(/startBack.svg);
+  background: url(/start/startBack.svg);
   background-size: cover;
   z-index: 2;
   filter: brightness(110%);
 }
 .startBackSectionOpen {
   grid-area: a / a / a / a;
-  background: url(/startBackOpen.svg);
+  background: url(/start/startBackOpen.svg);
   background-size: cover;
   z-index: 2;
 }
 .startBackSectionHoverOpen {
   grid-area: a / a / a / a;
-  background: url(/startBackOpen.svg);
+  background: url(/start/startBackOpen.svg);
   background-size: cover;
   z-index: 2;
   filter: brightness(130%);
@@ -207,7 +207,7 @@
 
 .startMiddleSection {
   grid-area: a / b / a / b;
-  background: url(/startMiddle.svg);
+  background: url(/start/startMiddle.svg);
   background-size: auto 100%;
   z-index: 2;
   display: flex;
@@ -217,7 +217,7 @@
 }
 .startMiddleSectionHover {
   grid-area: a / b / a / b;
-  background: url(/startMiddle.svg);
+  background: url(/start/startMiddle.svg);
   background-size: auto 100%;
   z-index: 2;
   display: flex;
@@ -228,7 +228,7 @@
 }
 .startMiddleSectionOpen {
   grid-area: a / b / a / b;
-  background: url(/startMiddleOpen.svg);
+  background: url(/start/startMiddleOpen.svg);
   background-size: auto 100%;
   z-index: 2;
   display: flex;
@@ -238,7 +238,7 @@
 }
 .startMiddleSectionHoverOpen {
   grid-area: a / b / a / b;
-  background: url(/startMiddleOpen.svg);
+  background: url(/start/startMiddleOpen.svg);
   background-size: auto 100%;
   z-index: 2;
   display: flex;
@@ -250,7 +250,7 @@
 
 .startEndSection {
   grid-area: a / c / a / c;
-  background: url(/startEnd.svg);
+  background: url(/start/startEnd.svg);
   background-size: cover;
   z-index: 2;
   filter: drop-shadow(3px 0 1.5px #2c79db);
@@ -258,7 +258,7 @@
 }
 .startEndSectionHover {
   grid-area: a / c / a / c;
-  background: url(/startEnd.svg);
+  background: url(/start/startEnd.svg);
   background-size: cover;
   z-index: 2;
   filter: drop-shadow(3px 0 1.5px #2c79db) brightness(110%);
@@ -266,7 +266,7 @@
 }
 .startEndSectionOpen {
   grid-area: a / c / a / c;
-  background: url(/startEndOpen.svg);
+  background: url(/start/startEndOpen.svg);
   background-size: cover;
   z-index: 2;
   filter: drop-shadow(3px 0 1.5px #2c79db);
@@ -274,7 +274,7 @@
 }
 .startEndSectionHoverOpen {
   grid-area: a / c / a / c;
-  background: url(/startEndOpen.svg);
+  background: url(/start/startEndOpen.svg);
   background-size: cover;
   z-index: 2;
   filter: drop-shadow(3px 0 1.5px #2c79db) brightness(130%);
