@@ -12,11 +12,8 @@ const SysTray = () => {
   });
 
   return (
-    <section className={styles.SysTray}>
-      <p
-        className={tahoma.className}
-        style={{ color: "#F0F8FE", fontSize: "105%" }}
-      >
+    <section className={styles.sysTray}>
+      <p className={`${tahoma.className} ${styles.timeLabel}`}>
         {formattedTime}
       </p>
     </section>

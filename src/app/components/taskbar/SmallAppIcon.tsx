@@ -11,15 +11,11 @@ const SmallAppIcon = ({ src, alt, url }: Props) => {
   return (
     <a href={url} target="_blank" className={styles.smallAppIcon}>
       <Image
+        className={styles.smallAppIconImage}
         src={src}
         alt={alt}
         width={0}
         height={0}
-        style={{
-          width: "auto",
-          height: "75%",
-          filter: "drop-shadow(0px 1px 3px #1940A6)",
-        }}
       />
     </a>
   );

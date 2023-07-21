@@ -1,3 +1,4 @@
+/* Taskbar Start */
 .taskbar {
   display: grid;
 
@@ -11,7 +12,9 @@
   width: 100%;
   height: 5vh;
 }
+/* Taskbar End */
 
+/* Taskbar Line Start */
 .taskbarLine {
   grid-area: a / c / a / d;
   background: rgb(36, 93, 219);
@@ -32,8 +35,23 @@
   padding-left: 2.5vh;
   min-width: max-content;
 }
+.smallAppIconContainer {
+  display: flex;
+  height: 100%;
+  width: fit-content;
+  align-items: center;
+  margin: 0 25px 0 10px;
+}
+.largeAppIconContainer {
+  display: flex;
+  height: 100%;
+  width: fit-content;
+  align-items: center;
+}
+/* Taskbar Line End */
 
-.SysTray {
+/* SysTray Start */
+.sysTray {
   grid-area: a / e / a / e;
   background: rgb(18, 144, 233);
   background: linear-gradient(
@@ -53,7 +71,13 @@
   justify-content: center;
   min-width: max-content;
 }
+.timeLabel {
+  color: #f0f8fe;
+  font-size: 105%;
+}
+/* SysTray Start */
 
+/* Large App Icon Start */
 /* Only do styling of open icon here, sizing and positioning in tsx. Not working doing it here */
 .largeAppIconShared {
   position: relative;
@@ -78,7 +102,6 @@
     inset 1px 0px 2px 1px #4699f9;
   border-radius: 3px;
 }
-
 .largeAppIconMinimized:hover {
   background: rgb(19, 135, 247);
   background: linear-gradient(
@@ -94,7 +117,6 @@
     inset 1px 0px 2px 1px #4699f9;
   border-radius: 3px;
 }
-
 .largeAppIconOpen {
   background: #1a50b8;
   box-shadow: 0px 2px 2px rgba(2, 79, 181, 1), 0px -1px 2px rgba(2, 79, 181),
@@ -107,7 +129,22 @@
     inset 1px 1px 2px 1.5px #0f3788, inset -1px -1px 1px 0.5px #0f3788;
   border-radius: 3px;
 }
+.largeAppIconImage {
+  width: auto;
+  height: 80%;
+  filter: drop-shadow(0px 1px 2px #143384);
+  margin: 0 0 0 5%;
+}
+.largeAppIconLabel {
+  color: #f0f8fe;
+  font-size: 85%;
+  margin: 0 0 0 5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* Large App Icon End */
 
+/* Small App Icon Start */
 .smallAppIcon {
   position: relative;
   aspect-ratio: 1 / 1;
@@ -118,7 +155,6 @@
   justify-content: center;
   margin: 0 3px 0 3px;
 }
-
 .smallAppIcon:hover {
   position: relative;
   aspect-ratio: 1 / 1;
@@ -134,7 +170,14 @@
   align-items: center;
   justify-content: center;
 }
+.smallAppIconImage {
+  width: auto;
+  height: 75%;
+  filter: drop-shadow(0px 1px 3px #1940a6);
+}
+/* Small App Icon End */
 
+/* Start Button Start*/
 .startBackSection {
   grid-area: a / a / a / a;
   background: url(/startBack.svg);
@@ -237,3 +280,18 @@
   filter: drop-shadow(3px 0 1.5px #2c79db) brightness(130%);
   clip-path: inset(0px -5px 0px 0px);
 }
+
+.startLabel {
+  font-style: italic;
+  margin-right: 10px;
+  color: #fdfdfd;
+  text-shadow: 1px 1.5px 5px #000000;
+  font-size: 130%;
+}
+.windowsXPIcon {
+  height: 60%;
+  filter: drop-shadow(2px 2px 3px) blur(0.5px);
+  align-content: flex-start;
+  margin-right: 10px;
+}
+/* Start Button End*/

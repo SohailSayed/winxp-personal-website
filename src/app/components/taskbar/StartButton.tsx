@@ -17,7 +17,6 @@ const StartButton = () => {
   // Change boolean back and forth for now, temporary to test visual
   const handleClick = () => {
     setOpen(!open);
-    console.log(open);
   };
 
   const handleHover = (hover: boolean) => {
@@ -40,25 +39,8 @@ const StartButton = () => {
         onMouseLeave={() => handleHover(false)}
         onClick={handleClick}
       >
-        <img
-          src="/icons/windowsXPIcon.png"
-          height="60%"
-          style={{
-            filter: "drop-shadow(2px 2px 3px) blur(0.5px)",
-            alignContent: "flex-start",
-            marginRight: "10px",
-          }}
-        />
-        <p
-          className={tahomaBold.className}
-          style={{
-            fontStyle: "italic",
-            marginRight: "10px",
-            color: "#FDFDFD",
-            textShadow: "1px 1.5px 5px #000000",
-            fontSize: "130%",
-          }}
-        >
+        <img src="/icons/windowsXPIcon.png" className={styles.windowsXPIcon} />
+        <p className={`${tahomaBold.className} ${styles.startLabel}`}>
           {startLabel}
         </p>
       </section>

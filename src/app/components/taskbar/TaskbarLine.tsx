@@ -5,16 +5,7 @@ import styles from "./taskbar.module.css";
 const TaskbarLine = () => {
   return (
     <section className={styles.taskbarLine}>
-      <div
-        className="MinimizedAppIcons"
-        style={{
-          display: "flex",
-          height: "100%",
-          width: "fit-content",
-          alignItems: "center",
-          margin: "0 25px 0 10px",
-        }}
-      >
+      <div className={styles.smallAppIconContainer}>
         <SmallAppIcon
           src="/icons/githubIcon.svg"
           alt="Github Icon"
@@ -36,15 +27,7 @@ const TaskbarLine = () => {
           url="https://twitter.com/sohailmsayed"
         />
       </div>
-      <div
-        className="OpenAppIcons"
-        style={{
-          display: "flex",
-          height: "100%",
-          width: "fit-content",
-          alignItems: "center",
-        }}
-      >
+      <div className={styles.largeAppIconContainer}>
         <LargeAppIcon
           src="/icons/linkedinIcon.svg"
           alt="Linkedin Icon"
