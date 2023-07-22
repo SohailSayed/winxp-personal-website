@@ -23,16 +23,16 @@ const ControlButtons = ({ maximize, setMaximize }: Props) => {
     const buttonIndex = buttonList.indexOf(alt);
 
     const handleClickDown = (clicks: boolean[]) => {
+      setIsClicked(clicks);
+    };
+    const handleClickUp = (clicks: boolean[]) => {
+      setIsClicked(clicks);
       if (alt == "maximize") {
         setMaximize(true);
       }
       if (alt == "restore") {
         setMaximize(false);
       }
-      setIsClicked(clicks);
-    };
-    const handleClickUp = (clicks: boolean[]) => {
-      setIsClicked(clicks);
     };
     return (
       <Image
@@ -46,11 +46,13 @@ const ControlButtons = ({ maximize, setMaximize }: Props) => {
         width={0}
         height={0}
         onMouseDown={() => {
-          defaultClicks[buttonIndex] = true;
-          handleClickDown(defaultClicks);
+          const clickedIndex = [...defaultClicks];
+          clickedIndex[buttonIndex] = true;
+          handleClickDown(clickedIndex);
         }}
         onMouseUp={() => {
-          handleClickUp(defaultClicks);
+          const clickedIndex = [...defaultClicks];
+          handleClickUp(clickedIndex);
         }}
       />
     );
