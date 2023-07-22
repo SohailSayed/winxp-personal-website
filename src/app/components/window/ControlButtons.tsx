@@ -12,6 +12,7 @@ const ControlButtons = () => {
 
   const { isClicked, setIsClicked } = useWindowContext();
   const { isMaximized, setIsMaximized } = useWindowContext();
+  const { isMinimized, setIsMinimized } = useWindowContext();
 
   const buttonList = ["minimize", "restore", "maximize", "close"];
 
@@ -28,6 +29,9 @@ const ControlButtons = () => {
       }
       if (alt == "restore") {
         setIsMaximized(false);
+      }
+      if (alt == "minimize") {
+        setIsMinimized(true);
       }
     };
     return (
