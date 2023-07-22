@@ -79,3 +79,9 @@
   margin: 1px;
   filter: drop-shadow(0px 0px 1px #143384) brightness(130%);
 }
+.controlButtonClicked {
+  height: 70%;
+  width: auto;
+  margin: 1px;
+  filter: drop-shadow(0px 0px 1px #143384) brightness(70%);
+}

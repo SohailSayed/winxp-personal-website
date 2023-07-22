@@ -7,17 +7,42 @@ interface Props {
   src: string;
   alt: string;
 }
+interface Clicks {
+  click: boolean;
+}
+
 const ControlButtons = () => {
+  const defaultClicks = [false, false, false, false];
+
   const [maximize, setMaximize] = useState(false);
+  const [isClicked, setIsClicked] = useState<boolean[]>(defaultClicks);
+
+  const buttonList = ["minimize", "restore", "maximize", "close"];
 
   const ControlButton = ({ src, alt }: Props) => {
+    const buttonIndex = buttonList.indexOf(alt);
+
+    const handleClick = (clicks: boolean[]) => {
+      setIsClicked(clicks);
+    };
     return (
       <Image
-        className={styles.controlButton}
+        className={
+          isClicked[buttonIndex]
+            ? styles.controlButtonClicked
+            : styles.controlButton
+        }
         src={src}
         alt={alt}
         width={0}
         height={0}
+        onMouseDown={() => {
+          defaultClicks[buttonIndex] = true;
+          handleClick(defaultClicks);
+        }}
+        onMouseUp={() => {
+          handleClick(defaultClicks);
+        }}
       />
     );
   };
