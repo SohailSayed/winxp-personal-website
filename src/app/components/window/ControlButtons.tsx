@@ -1,22 +1,17 @@
-"use client";
 import Image from "next/image";
 import styles from "./window.module.css";
-import { Dispatch, SetStateAction, useState } from "react";
 import { useWindowContext } from "@/app/WindowContext";
 
-interface Props {
-  maximize: boolean;
-  setMaximize: Dispatch<SetStateAction<boolean>>;
-}
 interface ButtonProps {
   src: string;
   alt: string;
 }
 
-const ControlButtons = ({ maximize, setMaximize }: Props) => {
+const ControlButtons = () => {
   const defaultClicks = [false, false, false, false];
 
   const { isClicked, setIsClicked } = useWindowContext();
+  const { isMaximized, setIsMaximized } = useWindowContext();
 
   const buttonList = ["minimize", "restore", "maximize", "close"];
 
@@ -29,10 +24,10 @@ const ControlButtons = ({ maximize, setMaximize }: Props) => {
     const handleClickUp = (clicks: boolean[]) => {
       setIsClicked(clicks);
       if (alt == "maximize") {
-        setMaximize(true);
+        setIsMaximized(true);
       }
       if (alt == "restore") {
-        setMaximize(false);
+        setIsMaximized(false);
       }
     };
     return (
@@ -61,7 +56,7 @@ const ControlButtons = ({ maximize, setMaximize }: Props) => {
   return (
     <section className={styles.controlButtons}>
       <ControlButton src="/window/minimizeButton.svg" alt="minimize" />
-      {maximize ? (
+      {isMaximized ? (
         <ControlButton src="/window/restoreButton.svg" alt="restore" />
       ) : (
         <ControlButton src="/window/maximizeButton.svg" alt="maximize" />

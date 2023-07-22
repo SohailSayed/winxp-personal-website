@@ -10,6 +10,8 @@ import {
 interface WindowContextProps {
   isClicked: boolean[];
   setIsClicked: Dispatch<SetStateAction<boolean[]>>;
+  isMaximized: boolean;
+  setIsMaximized: Dispatch<SetStateAction<boolean>>;
 }
 
 interface WindowProviderProp {
@@ -21,6 +23,8 @@ const defaultClicks = [false, false, false, false];
 const WindowContext = createContext<WindowContextProps>({
   isClicked: defaultClicks,
   setIsClicked: () => {},
+  isMaximized: false,
+  setIsMaximized: () => {},
 });
 
 const useWindowContext = () => useContext(WindowContext);
@@ -29,8 +33,16 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
   children,
 }: WindowProviderProp) => {
   const [isClicked, setIsClicked] = useState<boolean[]>(defaultClicks);
+  const [isMaximized, setIsMaximized] = useState(false);
+
+  const contextValues = {
+    isClicked,
+    setIsClicked,
+    isMaximized,
+    setIsMaximized,
+  };
   return (
-    <WindowContext.Provider value={{ isClicked, setIsClicked }}>
+    <WindowContext.Provider value={contextValues}>
       {children}
     </WindowContext.Provider>
   );

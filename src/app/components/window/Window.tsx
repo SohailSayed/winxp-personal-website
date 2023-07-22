@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import TitleBar from "./TitleBar";
 import styles from "./window.module.css";
+import { useWindowContext } from "@/app/WindowContext";
 
 interface Props {
   src: string;
@@ -11,20 +11,13 @@ interface Props {
 }
 
 const Window = ({ src, alt, appName }: Props) => {
-  // Will probably need to turn this, and closed/minimized states into contexts when they're implemented
-  const [maximize, setMaximize] = useState(false);
+  const { isMaximized } = useWindowContext();
 
   return (
     <section
-      className={maximize ? styles.windowMaximized : styles.windowRestored}
+      className={isMaximized ? styles.windowMaximized : styles.windowRestored}
     >
-      <TitleBar
-        src={src}
-        alt={alt}
-        appName={appName}
-        maximize={maximize}
-        setMaximize={setMaximize}
-      />
+      <TitleBar src={src} alt={alt} appName={appName} />
     </section>
   );
 };
