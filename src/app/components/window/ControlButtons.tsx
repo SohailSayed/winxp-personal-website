@@ -1,28 +1,37 @@
 "use client";
 import Image from "next/image";
 import styles from "./window.module.css";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 interface Props {
+  maximize: boolean;
+  setMaximize: Dispatch<SetStateAction<boolean>>;
+}
+interface ButtonProps {
   src: string;
   alt: string;
 }
-interface Clicks {
-  click: boolean;
-}
 
-const ControlButtons = () => {
+const ControlButtons = ({ maximize, setMaximize }: Props) => {
   const defaultClicks = [false, false, false, false];
 
-  const [maximize, setMaximize] = useState(false);
   const [isClicked, setIsClicked] = useState<boolean[]>(defaultClicks);
 
   const buttonList = ["minimize", "restore", "maximize", "close"];
 
-  const ControlButton = ({ src, alt }: Props) => {
+  const ControlButton = ({ src, alt }: ButtonProps) => {
     const buttonIndex = buttonList.indexOf(alt);
 
-    const handleClick = (clicks: boolean[]) => {
+    const handleClickDown = (clicks: boolean[]) => {
+      if (alt == "maximize") {
+        setMaximize(true);
+      }
+      if (alt == "restore") {
+        setMaximize(false);
+      }
+      setIsClicked(clicks);
+    };
+    const handleClickUp = (clicks: boolean[]) => {
       setIsClicked(clicks);
     };
     return (
@@ -38,10 +47,10 @@ const ControlButtons = () => {
         height={0}
         onMouseDown={() => {
           defaultClicks[buttonIndex] = true;
-          handleClick(defaultClicks);
+          handleClickDown(defaultClicks);
         }}
         onMouseUp={() => {
-          handleClick(defaultClicks);
+          handleClickUp(defaultClicks);
         }}
       />
     );

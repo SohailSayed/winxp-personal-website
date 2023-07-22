@@ -1,4 +1,4 @@
-.window {
+.windowRestored {
   display: flex;
   /* Roughly centering div for now, temporary just while building it out */
   margin: auto;
@@ -7,6 +7,16 @@
   height: 76vh;
   width: 80vw;
   border-radius: 1.5% 1.5% 0 0;
+  overflow: hidden;
+}
+.windowMaximized {
+  display: flex;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 95%;
+  width: 100%;
   overflow: hidden;
 }
 
