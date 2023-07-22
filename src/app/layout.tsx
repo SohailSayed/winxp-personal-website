@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import TaskbarLayout from "./components/taskbar/layout";
 import BackgroundImage from "./BackgroundImage";
 import WindowLayout from "./components/window/layout";
+import { WindowContextProvider } from "./WindowContext";
 
 export const metadata: Metadata = {
   title: "Personal Site",
@@ -17,9 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <BackgroundImage />
-        <WindowLayout />
-        <TaskbarLayout />
+        {/* Put window provider over everything for now, will have to tweak this eventually for performance */}
+        <WindowContextProvider>
+          <BackgroundImage />
+          <WindowLayout />
+          <TaskbarLayout />
+        </WindowContextProvider>
       </body>
     </html>
   );

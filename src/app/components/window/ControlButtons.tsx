@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styles from "./window.module.css";
 import { Dispatch, SetStateAction, useState } from "react";
+import { useWindowContext } from "@/app/WindowContext";
 
 interface Props {
   maximize: boolean;
@@ -15,7 +16,7 @@ interface ButtonProps {
 const ControlButtons = ({ maximize, setMaximize }: Props) => {
   const defaultClicks = [false, false, false, false];
 
-  const [isClicked, setIsClicked] = useState<boolean[]>(defaultClicks);
+  const { isClicked, setIsClicked } = useWindowContext();
 
   const buttonList = ["minimize", "restore", "maximize", "close"];
 
