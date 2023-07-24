@@ -9,6 +9,7 @@ import {
 import {
   defaultClicks,
   defaultOpenStates,
+  defaultPosition,
 } from "./components/constants/defaultValues";
 
 interface WindowContextProps {
@@ -20,6 +21,8 @@ interface WindowContextProps {
   setMinimizedStates: Dispatch<SetStateAction<Record<string, boolean>>>;
   openStates: Record<string, boolean>;
   setOpenStates: Dispatch<SetStateAction<Record<string, boolean>>>;
+  windowPosition: number[];
+  setWindowPosition: Dispatch<SetStateAction<number[]>>;
 }
 
 interface WindowProviderProp {
@@ -35,6 +38,8 @@ const WindowContext = createContext<WindowContextProps>({
   setMinimizedStates: () => {},
   openStates: defaultOpenStates,
   setOpenStates: () => {},
+  windowPosition: defaultPosition,
+  setWindowPosition: () => {},
 });
 
 const useWindowContext = () => useContext(WindowContext);
@@ -48,6 +53,8 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     useState<Record<string, boolean>>(defaultOpenStates);
   const [openStates, setOpenStates] =
     useState<Record<string, boolean>>(defaultOpenStates);
+  const [windowPosition, setWindowPosition] =
+    useState<number[]>(defaultPosition);
 
   const contextValues = {
     isClicked,
@@ -58,6 +65,8 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     setMinimizedStates,
     openStates,
     setOpenStates,
+    windowPosition,
+    setWindowPosition,
   };
   return (
     <WindowContext.Provider value={contextValues}>

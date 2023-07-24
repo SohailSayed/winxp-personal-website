@@ -16,4 +16,6 @@ const trueOpenStates: Record<string, boolean> = appList.reduce(
   {}
 );
 
-export { defaultClicks, defaultOpenStates, trueOpenStates };
+const defaultPosition = [50, 52.5];
+
+export { defaultClicks, defaultOpenStates, trueOpenStates, defaultPosition };
