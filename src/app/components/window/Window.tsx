@@ -11,12 +11,13 @@ interface Props {
 }
 
 const Window = ({ src, alt, appName }: Props) => {
-  const { windowPosition, setWindowPosition } = useWindowContext();
+  const { windowPositionStates, setWindowPositionStates } = useWindowContext();
   const { isMaximized } = useWindowContext();
   const { minimizedStates } = useWindowContext();
   const { openStates } = useWindowContext();
   const isNotMinimized = minimizedStates[appName];
   const isOpen = openStates[appName];
+  const windowPosition = windowPositionStates[appName];
 
   const nonMinimized = isMaximized
     ? styles.windowMaximized
@@ -29,14 +30,10 @@ const Window = ({ src, alt, appName }: Props) => {
 
   let xTransform = windowPosition[0];
   let yTransform = windowPosition[1];
-  let leftPosition = "50%";
-  let topPosition = "50%";
+  console.log(windowPosition);
 
-  if (openCount != 1) {
-    console.log(openCount);
-    xTransform = xTransform - openCount / 2;
-    yTransform = yTransform - openCount / 2;
-  }
+  let leftPosition = "10%";
+  let topPosition = "10%";
 
   if (isMaximized) {
     xTransform = 0;
@@ -48,7 +45,7 @@ const Window = ({ src, alt, appName }: Props) => {
   const transformStyle = {
     left: leftPosition,
     top: topPosition,
-    transform: `translate(-${xTransform}%, -${yTransform}%)`,
+    transform: `translate(${xTransform}%, ${yTransform}%)`,
     zIndex: openCount,
   };
 
