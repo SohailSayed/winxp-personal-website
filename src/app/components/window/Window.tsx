@@ -21,13 +21,22 @@ const Window = ({ src, alt, appName }: Props) => {
   const nonMinimized = isMaximized
     ? styles.windowMaximized
     : styles.windowRestored;
-  // This is pretty hacky, bandaid
   const openStyles = isNotMinimized ? styles.windowMinimized : nonMinimized;
+
+  const openCount = Object.values(openStates).filter(
+    (openState) => openState === true
+  ).length;
 
   let xTransform = windowPosition[0];
   let yTransform = windowPosition[1];
   let leftPosition = "50%";
   let topPosition = "50%";
+
+  if (openCount != 1) {
+    console.log(openCount);
+    xTransform = xTransform - openCount / 2;
+    yTransform = yTransform - openCount / 2;
+  }
 
   if (isMaximized) {
     xTransform = 0;
@@ -35,10 +44,12 @@ const Window = ({ src, alt, appName }: Props) => {
     leftPosition = "0%";
     topPosition = "0%";
   }
+
   const transformStyle = {
     left: leftPosition,
     top: topPosition,
     transform: `translate(-${xTransform}%, -${yTransform}%)`,
+    zIndex: openCount,
   };
 
   return (

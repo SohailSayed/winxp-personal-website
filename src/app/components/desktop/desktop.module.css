@@ -6,6 +6,9 @@
   display: flex;
 }
 
+.AppIcon {
+  display: flex;
+}
 .AppIconImage {
   /* Temporary size and styling */
   height: 60px;
