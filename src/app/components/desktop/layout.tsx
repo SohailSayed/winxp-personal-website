@@ -1,5 +1,5 @@
-import DesktopAppIcons from "./DesktopAppIcons";
+import Desktop from "./Desktop";
 
 export default function DesktopLayout() {
-  return <DesktopAppIcons />;
+  return <Desktop />;
 }

@@ -1,3 +1,13 @@
 .backgroundImage {
   z-index: -1;
 }
+
+.desktop {
+  display: flex;
+}
+
+.AppIconImage {
+  /* Temporary size and styling */
+  height: 60px;
+  width: auto;
+}
