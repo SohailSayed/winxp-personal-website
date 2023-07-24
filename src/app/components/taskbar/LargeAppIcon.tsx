@@ -14,6 +14,7 @@ interface Props {
 const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
 
 const LargeAppIcon = ({ src, alt, appName }: Props) => {
+  const { setMinimizedStates } = useWindowContext();
   const { openStates, setOpenStates } = useWindowContext();
   const isOpen = openStates[appName];
 
@@ -21,6 +22,10 @@ const LargeAppIcon = ({ src, alt, appName }: Props) => {
     setOpenStates((prevState) => ({
       ...prevState,
       [appName]: true,
+    }));
+    setMinimizedStates((prevState) => ({
+      ...prevState,
+      [appName]: false,
     }));
   };
 

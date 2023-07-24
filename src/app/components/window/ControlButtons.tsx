@@ -15,9 +15,8 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
 
   const { isClicked, setIsClicked } = useWindowContext();
   const { isMaximized, setIsMaximized } = useWindowContext();
-  // Temporarily not working
-  const { isMinimized, setIsMinimized } = useWindowContext();
-  const { openStates, setOpenStates } = useWindowContext();
+  const { setMinimizedStates } = useWindowContext();
+  const { setOpenStates } = useWindowContext();
 
   const buttonList = ["minimize", "restore", "maximize", "close"];
 
@@ -36,7 +35,10 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
         setIsMaximized(false);
       }
       if (alt == "minimize") {
-        setIsMinimized(true);
+        setMinimizedStates((prevState) => ({
+          ...prevState,
+          [appName]: true,
+        }));
       }
       if (alt == "close") {
         setOpenStates((prevState) => ({

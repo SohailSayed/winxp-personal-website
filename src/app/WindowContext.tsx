@@ -13,8 +13,8 @@ interface WindowContextProps {
   setIsClicked: Dispatch<SetStateAction<boolean[]>>;
   isMaximized: boolean;
   setIsMaximized: Dispatch<SetStateAction<boolean>>;
-  isMinimized: boolean;
-  setIsMinimized: Dispatch<SetStateAction<boolean>>;
+  minimizedStates: Record<string, boolean>;
+  setMinimizedStates: Dispatch<SetStateAction<Record<string, boolean>>>;
   openStates: Record<string, boolean>;
   setOpenStates: Dispatch<SetStateAction<Record<string, boolean>>>;
 }
@@ -36,8 +36,8 @@ const WindowContext = createContext<WindowContextProps>({
   setIsClicked: () => {},
   isMaximized: false,
   setIsMaximized: () => {},
-  isMinimized: false,
-  setIsMinimized: () => {},
+  minimizedStates: defaultOpenStates,
+  setMinimizedStates: () => {},
   openStates: defaultOpenStates,
   setOpenStates: () => {},
 });
@@ -49,7 +49,8 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
 }: WindowProviderProp) => {
   const [isClicked, setIsClicked] = useState<boolean[]>(defaultClicks);
   const [isMaximized, setIsMaximized] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
+  const [minimizedStates, setMinimizedStates] =
+    useState<Record<string, boolean>>(defaultOpenStates);
   const [openStates, setOpenStates] =
     useState<Record<string, boolean>>(defaultOpenStates);
 
@@ -58,10 +59,10 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     setIsClicked,
     isMaximized,
     setIsMaximized,
-    isMinimized,
-    setIsMinimized,
-    openStates: openStates,
-    setOpenStates: setOpenStates,
+    minimizedStates,
+    setMinimizedStates,
+    openStates,
+    setOpenStates,
   };
   return (
     <WindowContext.Provider value={contextValues}>
