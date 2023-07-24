@@ -14,8 +14,9 @@ interface Props {
 const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
 
 const LargeAppIcon = ({ src, alt, appName }: Props) => {
-  const { setMinimizedStates } = useWindowContext();
+  const { minimizedStates, setMinimizedStates } = useWindowContext();
   const { openStates, setOpenStates } = useWindowContext();
+  const isNotMinimized = minimizedStates[appName];
   const isOpen = openStates[appName];
 
   const handleClick = (appName: string) => {
@@ -29,10 +30,14 @@ const LargeAppIcon = ({ src, alt, appName }: Props) => {
     }));
   };
 
+  const openStyle = isNotMinimized
+    ? styles.largeAppIconOpen
+    : styles.largeAppIconMinimized;
+
   return (
     <section
       className={`${styles.largeAppIconShared} ${
-        isOpen ? styles.largeAppIconOpen : styles.largeAppIconMinimized
+        isOpen ? openStyle : styles.largeAppIconClosed
       }`}
       onClick={() => handleClick(appName)}
     >

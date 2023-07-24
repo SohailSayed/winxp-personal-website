@@ -3,6 +3,8 @@
 import localFont from "next/font/local";
 import styles from "./taskbar.module.css";
 import { useState } from "react";
+import { useWindowContext } from "@/app/WindowContext";
+import { trueOpenStates } from "../constants/defaultValues";
 
 interface Props {
   startLabel: string;
@@ -13,10 +15,11 @@ const tahomaBold = localFont({ src: "../../fonts/tahoma/tahomabd.ttf" });
 const StartButton = () => {
   const [isHover, setIsHover] = useState(false);
   const [open, setOpen] = useState(false);
+  const { setOpenStates } = useWindowContext();
 
-  // Change boolean back and forth for now, temporary to test visual
+  // VERY temporarily use this to bring all the tabs back, until homepage icons implemented
   const handleClick = () => {
-    setOpen(!open);
+    setOpenStates(trueOpenStates);
   };
 
   const handleHover = (hover: boolean) => {

@@ -6,7 +6,10 @@ import {
   useContext,
   useState,
 } from "react";
-import appList from "./components/constants/appList";
+import {
+  defaultClicks,
+  defaultOpenStates,
+} from "./components/constants/defaultValues";
 
 interface WindowContextProps {
   isClicked: boolean[];
@@ -22,14 +25,6 @@ interface WindowContextProps {
 interface WindowProviderProp {
   children: React.ReactNode;
 }
-
-const defaultClicks = [false, false, false, false];
-const defaultOpenStates: Record<string, boolean> = appList.reduce(
-  (accumulator, value) => {
-    return { ...accumulator, [value]: false };
-  },
-  {}
-);
 
 const WindowContext = createContext<WindowContextProps>({
   isClicked: defaultClicks,
