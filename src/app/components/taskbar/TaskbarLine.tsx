@@ -1,6 +1,7 @@
 import SmallAppIcon from "./SmallAppIcon";
 import LargeAppIcon from "./LargeAppIcon";
 import styles from "./taskbar.module.css";
+import appList from "@/app/components/constants/appList";
 
 const TaskbarLine = () => {
   return (
@@ -28,26 +29,14 @@ const TaskbarLine = () => {
         />
       </div>
       <div className={styles.largeAppIconContainer}>
-        <LargeAppIcon
-          src="/icons/linkedinIcon.svg"
-          alt="Linkedin Icon"
-          appName="Linkedin"
-        />
-        <LargeAppIcon
-          src="/icons/githubIcon.svg"
-          alt="Github Icon"
-          appName="Github"
-        />
-        <LargeAppIcon
-          src="/icons/emailIcon.svg"
-          alt="Email Icon"
-          appName="Email"
-        />
-        <LargeAppIcon
-          src="/icons/twitterIcon.svg"
-          alt="Twitter Icon"
-          appName="Twitter"
-        />
+        {appList.map((appName) => (
+          <LargeAppIcon
+            key={appName}
+            src={`/icons/${appName}Icon.svg`}
+            alt={`${appName} Icon`}
+            appName={appName}
+          />
+        ))}
       </div>
     </section>
   );

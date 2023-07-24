@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import localFont from "next/font/local";
 import styles from "./taskbar.module.css";
+import { useWindowContext } from "@/app/WindowContext";
 
 interface Props {
   src: string;
@@ -13,19 +14,22 @@ interface Props {
 const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
 
 const LargeAppIcon = ({ src, alt, appName }: Props) => {
-  const [open, setOpen] = useState(false);
+  const { openStates, setOpenStates } = useWindowContext();
+  const isOpen = openStates[appName];
 
-  // Change boolean back and forth for now, temporary to test visual
-  const handleClick = () => {
-    setOpen(!open);
+  const handleClick = (appName: string) => {
+    setOpenStates((prevState) => ({
+      ...prevState,
+      [appName]: true,
+    }));
   };
 
   return (
     <section
       className={`${styles.largeAppIconShared} ${
-        open ? styles.largeAppIconOpen : styles.largeAppIconMinimized
+        isOpen ? styles.largeAppIconOpen : styles.largeAppIconMinimized
       }`}
-      onClick={handleClick}
+      onClick={() => handleClick(appName)}
     >
       <Image
         className={styles.largeAppIconImage}

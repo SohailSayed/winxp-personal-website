@@ -2,17 +2,22 @@ import Image from "next/image";
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 
+interface ControlButtonProps {
+  appName: string;
+}
 interface ButtonProps {
   src: string;
   alt: string;
 }
 
-const ControlButtons = () => {
+const ControlButtons = ({ appName }: ControlButtonProps) => {
   const defaultClicks = [false, false, false, false];
 
   const { isClicked, setIsClicked } = useWindowContext();
   const { isMaximized, setIsMaximized } = useWindowContext();
+  // Temporarily not working
   const { isMinimized, setIsMinimized } = useWindowContext();
+  const { openStates, setOpenStates } = useWindowContext();
 
   const buttonList = ["minimize", "restore", "maximize", "close"];
 
@@ -32,6 +37,12 @@ const ControlButtons = () => {
       }
       if (alt == "minimize") {
         setIsMinimized(true);
+      }
+      if (alt == "close") {
+        setOpenStates((prevState) => ({
+          ...prevState,
+          [appName]: false,
+        }));
       }
     };
     return (

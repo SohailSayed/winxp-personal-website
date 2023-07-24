@@ -1,12 +1,17 @@
+import appList from "../constants/appList";
 import Window from "./Window";
 
 export default function WindowLayout() {
   return (
-    // Temp use linkedin as src for window
-    <Window
-      src="/icons/linkedinIcon.svg"
-      alt="Linkedin Icon"
-      appName="Linkedin"
-    />
+    <>
+      {appList.map((appName) => (
+        <Window
+          key={appName}
+          src={`/icons/${appName}Icon.svg`}
+          alt={`${appName} Icon`}
+          appName={appName}
+        />
+      ))}
+    </>
   );
 }

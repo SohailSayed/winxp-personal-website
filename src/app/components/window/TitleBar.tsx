@@ -25,7 +25,7 @@ const TitleBar = ({ src, alt, appName }: Props) => {
         <p className={`${tahoma.className} ${styles.titleBarLabel}`}>
           {appName}
         </p>
-        <ControlButtons />
+        <ControlButtons appName={appName} />
       </section>
     );
   };

@@ -13,13 +13,16 @@ interface Props {
 const Window = ({ src, alt, appName }: Props) => {
   const { isMaximized } = useWindowContext();
   const { isMinimized } = useWindowContext();
+  const { openStates } = useWindowContext();
+  const isOpen = openStates[appName];
 
   const nonMinimized = isMaximized
     ? styles.windowMaximized
     : styles.windowRestored;
 
   return (
-    <section className={isMinimized ? styles.windowMinimized : nonMinimized}>
+    // Fix to deal with minimized soon
+    <section className={isOpen ? nonMinimized : styles.windowMinimized}>
       <TitleBar src={src} alt={alt} appName={appName} />
     </section>
   );
