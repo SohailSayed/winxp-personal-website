@@ -31,8 +31,8 @@ const LargeAppIcon = ({ src, alt, appName }: Props) => {
   };
 
   const openStyle = isNotMinimized
-    ? styles.largeAppIconOpen
-    : styles.largeAppIconMinimized;
+    ? styles.largeAppIconMinimized
+    : styles.largeAppIconOpen;
 
   return (
     <section
