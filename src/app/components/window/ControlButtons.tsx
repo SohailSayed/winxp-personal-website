@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
+import { useState } from "react";
 
 interface ControlButtonProps {
   appName: string;
@@ -13,7 +14,7 @@ interface ButtonProps {
 const ControlButtons = ({ appName }: ControlButtonProps) => {
   const defaultClicks = [false, false, false, false];
 
-  const { isClicked, setIsClicked } = useWindowContext();
+  const [isClicked, setIsClicked] = useState<boolean[]>(defaultClicks);
   const { isMaximized, setIsMaximized } = useWindowContext();
   const { setMinimizedStates } = useWindowContext();
   const { setOpenStates } = useWindowContext();

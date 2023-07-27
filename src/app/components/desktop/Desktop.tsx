@@ -1,7 +1,7 @@
 import styles from "./desktop.module.css";
 import BackgroundImage from "./BackgroundImage";
 import AppIcon from "./AppIcon";
-import appList from "../constants/appList";
+import appList from "../../constants/appList";
 
 const DesktopAppIcons = () => {
   return (

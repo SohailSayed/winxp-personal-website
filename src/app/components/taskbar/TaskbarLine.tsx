@@ -1,7 +1,7 @@
 import SmallAppIcon from "./SmallAppIcon";
 import LargeAppIcon from "./LargeAppIcon";
 import styles from "./taskbar.module.css";
-import appList from "@/app/components/constants/appList";
+import appList from "@/app/constants/appList";
 
 const TaskbarLine = () => {
   return (

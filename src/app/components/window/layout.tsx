@@ -1,4 +1,4 @@
-import appList from "../constants/appList";
+import appList from "../../constants/appList";
 import Window from "./Window";
 
 export default function WindowLayout() {
