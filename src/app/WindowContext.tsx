@@ -17,6 +17,8 @@ interface WindowContextProps {
   setOpenStates: Dispatch<SetStateAction<Record<string, boolean>>>;
   windowPositionStates: Record<string, number[]>;
   setWindowPositionStates: Dispatch<SetStateAction<Record<string, number[]>>>;
+  appStack: string[];
+  setAppStack: Dispatch<SetStateAction<string[]>>;
 }
 
 interface WindowProviderProp {
@@ -32,6 +34,8 @@ const WindowContext = createContext<WindowContextProps>({
   setOpenStates: () => {},
   windowPositionStates: defaultPositions,
   setWindowPositionStates: () => {},
+  appStack: [],
+  setAppStack: () => {},
 });
 
 const useWindowContext = () => useContext(WindowContext);
@@ -46,6 +50,7 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     useState<Record<string, boolean>>(defaultOpenStates);
   const [windowPositionStates, setWindowPositionStates] =
     useState<Record<string, number[]>>(defaultPositions);
+  const [appStack, setAppStack] = useState<string[]>([]);
 
   const contextValues = {
     isMaximized,
@@ -56,6 +61,8 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     setOpenStates,
     windowPositionStates,
     setWindowPositionStates,
+    appStack,
+    setAppStack,
   };
   return (
     <WindowContext.Provider value={contextValues}>

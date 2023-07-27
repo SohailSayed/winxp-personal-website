@@ -18,6 +18,7 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
   const { isMaximized, setIsMaximized } = useWindowContext();
   const { setMinimizedStates } = useWindowContext();
   const { setOpenStates } = useWindowContext();
+  const { appStack, setAppStack } = useWindowContext();
 
   const buttonList = ["minimize", "restore", "maximize", "close"];
 
@@ -46,6 +47,7 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
           ...prevState,
           [appName]: false,
         }));
+        setAppStack((prevState) => prevState.filter((app) => app !== appName));
       }
     };
     return (

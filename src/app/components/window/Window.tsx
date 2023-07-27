@@ -30,7 +30,6 @@ const Window = ({ src, alt, appName }: Props) => {
 
   let xTransform = windowPosition[0];
   let yTransform = windowPosition[1];
-  console.log(windowPosition);
 
   let leftPosition = "10%";
   let topPosition = "10%";

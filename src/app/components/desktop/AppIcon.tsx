@@ -12,27 +12,31 @@ interface Props {
 const AppIcon = ({ src, alt, appName }: Props) => {
   const { openStates, setOpenStates } = useWindowContext();
   const { windowPositionStates, setWindowPositionStates } = useWindowContext();
+  const { appStack, setAppStack } = useWindowContext();
 
   const handleDoubleClick = (appName: string) => {
-    const windowPosition = windowPositionStates[appName];
+    if (openStates[appName] != true) {
+      const windowPosition = windowPositionStates[appName];
 
-    const openCount = Object.values(openStates).filter(
-      (openState) => openState === true
-    ).length;
+      setAppStack((prevState) => [...prevState, appName]);
 
-    console.log(openCount);
-    const xTransform = openCount * 1.5;
-    const yTransform = openCount * 1.5;
+      const openCount = Object.values(openStates).filter(
+        (openState) => openState === true
+      ).length;
 
-    setWindowPositionStates((prevState) => ({
-      ...prevState,
-      [appName]: [xTransform, yTransform],
-    }));
+      const xTransform = openCount * 1.5;
+      const yTransform = openCount * 1.5;
 
-    setOpenStates((prevState) => ({
-      ...prevState,
-      [appName]: true,
-    }));
+      setWindowPositionStates((prevState) => ({
+        ...prevState,
+        [appName]: [xTransform, yTransform],
+      }));
+
+      setOpenStates((prevState) => ({
+        ...prevState,
+        [appName]: true,
+      }));
+    }
   };
 
   return (
