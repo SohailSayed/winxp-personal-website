@@ -14,4 +14,11 @@ const defaultPositions: Record<string, number[]> = appList.reduce(
   {}
 );
 
-export { defaultOpenStates, defaultPositions };
+const defaultZPositions: Record<string, number> = appList.reduce(
+  (accumulator, value) => {
+    return { ...accumulator, [value]: 0 };
+  },
+  {}
+);
+
+export { defaultOpenStates, defaultPositions, defaultZPositions };

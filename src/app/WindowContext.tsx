@@ -6,7 +6,11 @@ import {
   useContext,
   useState,
 } from "react";
-import { defaultOpenStates, defaultPositions } from "./constants/defaultValues";
+import {
+  defaultOpenStates,
+  defaultPositions,
+  defaultZPositions,
+} from "./constants/defaultValues";
 
 interface WindowContextProps {
   isMaximized: boolean;
@@ -19,6 +23,8 @@ interface WindowContextProps {
   setWindowPositionStates: Dispatch<SetStateAction<Record<string, number[]>>>;
   appStack: string[];
   setAppStack: Dispatch<SetStateAction<string[]>>;
+  zPosition: Record<string, number>;
+  setZPosition: Dispatch<SetStateAction<Record<string, number>>>;
 }
 
 interface WindowProviderProp {
@@ -36,6 +42,8 @@ const WindowContext = createContext<WindowContextProps>({
   setWindowPositionStates: () => {},
   appStack: [],
   setAppStack: () => {},
+  zPosition: defaultZPositions,
+  setZPosition: () => {},
 });
 
 const useWindowContext = () => useContext(WindowContext);
@@ -51,6 +59,8 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
   const [windowPositionStates, setWindowPositionStates] =
     useState<Record<string, number[]>>(defaultPositions);
   const [appStack, setAppStack] = useState<string[]>([]);
+  const [zPosition, setZPosition] =
+    useState<Record<string, number>>(defaultZPositions);
 
   const contextValues = {
     isMaximized,
@@ -63,6 +73,8 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     setWindowPositionStates,
     appStack,
     setAppStack,
+    zPosition,
+    setZPosition,
   };
   return (
     <WindowContext.Provider value={contextValues}>

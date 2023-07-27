@@ -12,6 +12,8 @@ interface Props {
 
 const Window = ({ src, alt, appName }: Props) => {
   const { windowPositionStates, setWindowPositionStates } = useWindowContext();
+  const { appStack, setAppStack } = useWindowContext();
+  const { zPosition, setZPosition } = useWindowContext();
   const { isMaximized } = useWindowContext();
   const { minimizedStates } = useWindowContext();
   const { openStates } = useWindowContext();
@@ -24,10 +26,9 @@ const Window = ({ src, alt, appName }: Props) => {
     : styles.windowRestored;
   const openStyles = isNotMinimized ? styles.windowMinimized : nonMinimized;
 
-  const openCount = Object.values(openStates).filter(
-    (openState) => openState === true
-  ).length;
-
+  if (zPosition[appName] > 3) {
+    setWindowPositionStates;
+  }
   let xTransform = windowPosition[0];
   let yTransform = windowPosition[1];
 
@@ -45,7 +46,7 @@ const Window = ({ src, alt, appName }: Props) => {
     left: leftPosition,
     top: topPosition,
     transform: `translate(${xTransform}%, ${yTransform}%)`,
-    zIndex: openCount,
+    zIndex: zPosition,
   };
 
   return (
