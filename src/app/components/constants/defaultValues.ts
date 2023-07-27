@@ -8,14 +8,6 @@ const defaultOpenStates: Record<string, boolean> = appList.reduce(
   {}
 );
 
-// Temporary until icons in homepage implemented
-const trueOpenStates: Record<string, boolean> = appList.reduce(
-  (accumulator, value) => {
-    return { ...accumulator, [value]: true };
-  },
-  {}
-);
-
 const defaultPositions: Record<string, number[]> = appList.reduce(
   (accumulator, value) => {
     return { ...accumulator, [value]: [0, 0] };
@@ -23,4 +15,4 @@ const defaultPositions: Record<string, number[]> = appList.reduce(
   {}
 );
 
-export { defaultClicks, defaultOpenStates, trueOpenStates, defaultPositions };
+export { defaultClicks, defaultOpenStates, defaultPositions };

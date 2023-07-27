@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import styles from "./taskbar.module.css";
 import { useState } from "react";
 import { useWindowContext } from "@/app/WindowContext";
-import { trueOpenStates } from "../constants/defaultValues";
 
 interface Props {
   startLabel: string;
@@ -16,11 +15,6 @@ const StartButton = () => {
   const [isHover, setIsHover] = useState(false);
   const [open, setOpen] = useState(false);
   const { setOpenStates } = useWindowContext();
-
-  // VERY temporarily use this to bring all the tabs back, until homepage icons implemented
-  const handleClick = () => {
-    setOpenStates(trueOpenStates);
-  };
 
   const handleHover = (hover: boolean) => {
     setIsHover(hover);
@@ -40,7 +34,6 @@ const StartButton = () => {
         className={open ? middleOpenHoverCheck : middleHoverCheck}
         onMouseEnter={() => handleHover(true)}
         onMouseLeave={() => handleHover(false)}
-        onClick={handleClick}
       >
         <img src="/icons/windowsXPIcon.png" className={styles.windowsXPIcon} />
         <p className={`${tahomaBold.className} ${styles.startLabel}`}>
