@@ -13,18 +13,14 @@ const AppIcon = ({ src, alt, appName }: Props) => {
   const { openStates, setOpenStates } = useWindowContext();
   const { windowPositionStates, setWindowPositionStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
-  const { zPosition, setZPosition } = useWindowContext();
 
   const handleDoubleClick = (appName: string) => {
     if (openStates[appName] != true) {
       const windowPosition = windowPositionStates[appName];
 
-      setAppStack((prevState) => [...prevState, appName]);
+      const zIndex = appStack.length;
 
-      setZPosition((prevState) => ({
-        ...prevState,
-        [appName]: appStack.indexOf(appName),
-      }));
+      setAppStack((prevState) => [...prevState, { appName, zIndex }]);
 
       const openCount = Object.values(openStates).filter(
         (openState) => openState === true

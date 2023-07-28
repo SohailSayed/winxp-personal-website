@@ -13,7 +13,6 @@ interface Props {
 
 const Window = ({ src, alt, appName }: Props) => {
   const { appStack, setAppStack } = useWindowContext();
-  const { zPosition, setZPosition } = useWindowContext();
   const { isMaximized } = useWindowContext();
   const { minimizedStates } = useWindowContext();
   const { openStates } = useWindowContext();
@@ -29,11 +28,16 @@ const Window = ({ src, alt, appName }: Props) => {
     ? { width: "100vw", height: "95vh" }
     : undefined;
 
-  const order = appStack.indexOf(appName) + 1;
+  let zIndexValue = 0;
+  const index = appStack.findIndex((item) => item.appName === appName);
+  if (appStack[index] != undefined) {
+    zIndexValue = appStack[index].zIndex;
+  }
 
   return (
     <Rnd
       className={isOpen ? openStyles : styles.windowMinimized}
+      style={{ zIndex: zIndexValue }}
       size={windowSize}
       default={{
         x: 200,
