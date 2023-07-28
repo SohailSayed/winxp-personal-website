@@ -1,5 +1,6 @@
 "use client";
 
+import { Rnd } from "react-rnd";
 import TitleBar from "./TitleBar";
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
@@ -11,7 +12,6 @@ interface Props {
 }
 
 const Window = ({ src, alt, appName }: Props) => {
-  const { windowPositionStates, setWindowPositionStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
   const { zPosition, setZPosition } = useWindowContext();
   const { isMaximized } = useWindowContext();
@@ -19,43 +19,37 @@ const Window = ({ src, alt, appName }: Props) => {
   const { openStates } = useWindowContext();
   const isNotMinimized = minimizedStates[appName];
   const isOpen = openStates[appName];
-  const windowPosition = windowPositionStates[appName];
 
   const nonMinimized = isMaximized
     ? styles.windowMaximized
     : styles.windowRestored;
   const openStyles = isNotMinimized ? styles.windowMinimized : nonMinimized;
 
-  if (zPosition[appName] > 3) {
-    setWindowPositionStates;
-  }
-  let xTransform = windowPosition[0];
-  let yTransform = windowPosition[1];
+  const windowSize = isMaximized
+    ? { width: "100vw", height: "95vh" }
+    : undefined;
 
-  let leftPosition = "10%";
-  let topPosition = "10%";
-
-  if (isMaximized) {
-    xTransform = 0;
-    yTransform = 0;
-    leftPosition = "0%";
-    topPosition = "0%";
-  }
-
-  const transformStyle = {
-    left: leftPosition,
-    top: topPosition,
-    transform: `translate(${xTransform}%, ${yTransform}%)`,
-    zIndex: zPosition,
-  };
+  const order = appStack.indexOf(appName) + 1;
 
   return (
-    <section
+    <Rnd
       className={isOpen ? openStyles : styles.windowMinimized}
-      style={transformStyle}
+      size={windowSize}
+      default={{
+        x: 200,
+        y: 50,
+        width: "76vw",
+        height: "80vh",
+      }}
+      position={isMaximized ? { x: -10, y: -10 } : undefined}
+      disableDragging={isMaximized}
+      enableResizing={!isMaximized}
+      minHeight={"20vh"}
+      minWidth={"30vw"}
+      dragHandleClassName={styles.titleBar}
     >
       <TitleBar src={src} alt={alt} appName={appName} />
-    </section>
+    </Rnd>
   );
 };
 

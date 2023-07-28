@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./window.module.css";
 import localFont from "next/font/local";
 import ControlButtons from "./ControlButtons";
+import { useWindowContext } from "@/app/WindowContext";
 
 interface Props {
   src: string;
@@ -12,6 +13,7 @@ interface Props {
 const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
 
 const TitleBar = ({ src, alt, appName }: Props) => {
+  const { isMaximized } = useWindowContext();
   const TitleBarTop = ({ src, alt, appName }: Props) => {
     return (
       <section className={styles.titleBar}>
@@ -33,7 +35,11 @@ const TitleBar = ({ src, alt, appName }: Props) => {
   return (
     <section className={styles.titleBarCombined}>
       <TitleBarTop src={src} alt={alt} appName={appName} />
-      <section className={styles.titleBarBottom} />
+      <section
+        className={
+          isMaximized ? styles.titleBarBottomMaximized : styles.titleBarBottom
+        }
+      />
     </section>
   );
 };

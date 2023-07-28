@@ -19,9 +19,7 @@
   overflow: hidden;
 }
 .windowMinimized {
-  height: 0;
-  width: 0;
-  overflow: hidden;
+  visibility: hidden;
 }
 
 .titleBarCombined {
@@ -57,6 +55,9 @@
   border-bottom: solid #0763f6;
   border-width: 4px;
   box-shadow: inset 0px 0px 2px 1px black;
+}
+.titleBarBottomMaximized {
+  visibility: hidden;
 }
 .titleBarIcon {
   height: 50%;
