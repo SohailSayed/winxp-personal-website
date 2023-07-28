@@ -22,6 +22,10 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
 
   const buttonList = ["minimize", "restore", "maximize", "close"];
 
+  const index = appStack.findIndex((item) => item.appName === appName);
+  const zIndexValue = appStack[index] ? appStack[index].zIndex : -1;
+  const isSelected = zIndexValue + 1 == appStack.length ? true : false;
+
   const ControlButton = ({ src, alt }: ButtonProps) => {
     const buttonIndex = buttonList.indexOf(alt);
 
@@ -76,7 +80,11 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
     );
   };
   return (
-    <section className={styles.controlButtons}>
+    <section
+      className={
+        isSelected ? styles.controlButtons : styles.controlButtonsInactive
+      }
+    >
       <ControlButton src="/window/minimizeButton.svg" alt="minimize" />
       {isMaximized ? (
         <ControlButton src="/window/restoreButton.svg" alt="restore" />

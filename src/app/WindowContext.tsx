@@ -25,7 +25,7 @@ interface WindowProviderProp {
   children: React.ReactNode;
 }
 
-interface appStack {
+export interface appStack {
   appName: string;
   zIndex: number;
 }

@@ -2,7 +2,8 @@
 import Image from "next/image";
 import localFont from "next/font/local";
 import styles from "./taskbar.module.css";
-import { useWindowContext } from "@/app/WindowContext";
+import { appStack, useWindowContext } from "@/app/WindowContext";
+import { pushToEnd } from "@/app/helper/stackHelper";
 
 interface Props {
   src: string;
@@ -15,8 +16,11 @@ const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
 const LargeAppIcon = ({ src, alt, appName }: Props) => {
   const { minimizedStates, setMinimizedStates } = useWindowContext();
   const { openStates, setOpenStates } = useWindowContext();
+  const { appStack, setAppStack } = useWindowContext();
   const isNotMinimized = minimizedStates[appName];
   const isOpen = openStates[appName];
+
+  const index = appStack.findIndex((item) => item.appName === appName);
 
   const handleClick = (appName: string) => {
     setOpenStates((prevState) => ({
@@ -27,12 +31,22 @@ const LargeAppIcon = ({ src, alt, appName }: Props) => {
       ...prevState,
       [appName]: false,
     }));
+    const modifiedStack = pushToEnd(appStack, index);
+    setAppStack(modifiedStack);
   };
 
-  const openStyle = isNotMinimized
-    ? styles.largeAppIconMinimized
-    : styles.largeAppIconOpen;
+  // Figure out how to include minimization and styling of this properly soon
+  // const openStyle = isNotMinimized
+  //   ? styles.largeAppIconMinimized
+  //   : styles.largeAppIconOpen;
 
+  const zIndexValue = appStack[index] ? appStack[index].zIndex : -1;
+  const isSelected = zIndexValue + 1 == appStack.length ? true : false;
+  console.log(appName, index, appStack);
+
+  const openStyle = isSelected
+    ? styles.largeAppIconOpen
+    : styles.largeAppIconMinimized;
   return (
     <section
       className={`${styles.largeAppIconShared} ${

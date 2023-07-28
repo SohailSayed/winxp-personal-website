@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styles from "./desktop.module.css";
 import { useWindowContext } from "@/app/WindowContext";
+import { pushToEnd } from "@/app/helper/stackHelper";
 
 interface Props {
   src: string;
@@ -16,8 +17,6 @@ const AppIcon = ({ src, alt, appName }: Props) => {
 
   const handleDoubleClick = (appName: string) => {
     if (openStates[appName] != true) {
-      const windowPosition = windowPositionStates[appName];
-
       const zIndex = appStack.length;
 
       setAppStack((prevState) => [...prevState, { appName, zIndex }]);
@@ -25,14 +24,6 @@ const AppIcon = ({ src, alt, appName }: Props) => {
       const openCount = Object.values(openStates).filter(
         (openState) => openState === true
       ).length;
-
-      const xTransform = openCount * 1.5;
-      const yTransform = openCount * 1.5;
-
-      setWindowPositionStates((prevState) => ({
-        ...prevState,
-        [appName]: [xTransform, yTransform],
-      }));
 
       setOpenStates((prevState) => ({
         ...prevState,

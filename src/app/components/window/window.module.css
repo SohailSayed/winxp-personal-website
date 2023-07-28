@@ -46,6 +46,26 @@
   display: flex;
   align-items: center;
 }
+.titleBarInactive {
+  background: rgb(99, 132, 196);
+  background: linear-gradient(
+    180deg,
+    rgba(99, 132, 196, 1) 0%,
+    rgba(153, 181, 238, 1) 2%,
+    rgba(153, 181, 238, 1) 5%,
+    rgba(112, 145, 212, 1) 10%,
+    rgba(130, 161, 231, 1) 70%,
+    rgba(148, 177, 228, 1) 84%,
+    rgba(131, 148, 218, 1) 97%
+  );
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
 .titleBarBottom {
   height: calc(100% - 30px);
   width: 100%;
@@ -56,6 +76,16 @@
   border-width: 4px;
   box-shadow: inset 0px 0px 2px 1px black;
 }
+.titleBarBottomInactive {
+  height: calc(100% - 30px);
+  width: 100%;
+  box-sizing: border-box;
+  border-right: solid #82a1e7;
+  border-left: solid #82a1e7;
+  border-bottom: solid #82a1e7;
+  border-width: 4px;
+  box-shadow: inset 0px 0px 2px 1px #425175;
+}
 .titleBarBottomMaximized {
   visibility: hidden;
 }
@@ -64,6 +94,14 @@
   width: auto;
   margin: 7px;
   filter: drop-shadow(1px 1px 2px #143384);
+}
+/* Need to figure out this one, might need to redesign with inactive bg color */
+.titleBarIconInactive {
+  height: 50%;
+  width: auto;
+  margin: 7px;
+  filter: drop-shadow(1px 1px 2px #425175);
+  opacity: 0.8;
 }
 .titleBarLabel {
   color: #f0f8fe;
@@ -81,6 +119,16 @@
   height: 100%;
   width: fit-content;
   align-items: center;
+}
+.controlButtonsInactive {
+  margin-left: auto;
+  margin-right: 7px;
+
+  display: flex;
+  height: 100%;
+  width: fit-content;
+  align-items: center;
+  opacity: 0.6;
 }
 .controlButton {
   height: 70%;
