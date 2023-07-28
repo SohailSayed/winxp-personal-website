@@ -67,27 +67,39 @@
   align-items: center;
 }
 .titleBarBottom {
+  display: flex;
   height: calc(100% - 30px);
   width: 100%;
   box-sizing: border-box;
+  background-color: white;
   border-right: solid #0763f6;
   border-left: solid #0763f6;
   border-bottom: solid #0763f6;
-  border-width: 4px;
+  border-width: 0px 4px 4px 4px;
+}
+.iframeShadow {
+  position: absolute;
+  margin-left: 4px;
+  height: calc(100% - 34px);
+  width: calc(100% - 8px);
   box-shadow: inset 0px 0px 2px 1px black;
 }
 .titleBarBottomInactive {
   height: calc(100% - 30px);
   width: 100%;
+  background-color: white;
   box-sizing: border-box;
   border-right: solid #82a1e7;
   border-left: solid #82a1e7;
   border-bottom: solid #82a1e7;
-  border-width: 4px;
+  border-width: 0px 4px 4px 4px;
   box-shadow: inset 0px 0px 2px 1px #425175;
 }
 .titleBarBottomMaximized {
-  visibility: hidden;
+  display: flex;
+  height: calc(100% - 30px);
+  width: 100%;
+  background-color: white;
 }
 .titleBarIcon {
   height: 50%;

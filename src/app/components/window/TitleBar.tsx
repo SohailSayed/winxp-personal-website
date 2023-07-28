@@ -52,6 +52,8 @@ const TitleBar = ({ src, alt, appName }: Props) => {
     );
   };
 
+  const iframeShadow = <div className={styles.iframeShadow}></div>;
+
   const titleBarBottomStyle = isSelected
     ? styles.titleBarBottom
     : styles.titleBarBottomInactive;
@@ -59,11 +61,18 @@ const TitleBar = ({ src, alt, appName }: Props) => {
   return (
     <section className={styles.titleBarCombined}>
       <TitleBarTop src={src} alt={alt} appName={appName} index={index} />
-      <section
+      {!isMaximized && iframeShadow}
+      <iframe
         className={
           isMaximized ? styles.titleBarBottomMaximized : titleBarBottomStyle
         }
-      />
+        style={{ zIndex: appStack.length + 1 }}
+        id="externalWebsite"
+        src="https://www.condensed.news/"
+        width="100%"
+        height="100%"
+        sandbox="allow-same-origin allow-popups"
+      ></iframe>
     </section>
   );
 };
