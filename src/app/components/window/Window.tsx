@@ -4,6 +4,7 @@ import { Rnd } from "react-rnd";
 import TitleBar from "./TitleBar";
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
+import { pushToEnd } from "@/app/helper/stackHelper";
 
 interface Props {
   src: string;
@@ -34,6 +35,11 @@ const Window = ({ src, alt, appName }: Props) => {
     zIndexValue = appStack[index].zIndex;
   }
 
+  const handleClick = () => {
+    const modifiedStack = pushToEnd(appStack, index);
+    setAppStack(modifiedStack);
+  };
+
   const window = (
     <Rnd
       className={isOpen ? openStyles : styles.windowMinimized}
@@ -52,6 +58,7 @@ const Window = ({ src, alt, appName }: Props) => {
       minWidth={"30vw"}
       dragHandleClassName={styles.titleBar}
       bounds={"window"}
+      onClick={handleClick}
     >
       <TitleBar src={src} alt={alt} appName={appName} />
     </Rnd>

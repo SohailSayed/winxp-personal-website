@@ -26,8 +26,6 @@ const TitleBar = ({ src, alt, appName }: Props) => {
       if (event.detail == 2) {
         setIsMaximized(!isMaximized);
       }
-      const modifiedStack = pushToEnd(appStack, index);
-      setAppStack(modifiedStack);
     };
 
     return (
