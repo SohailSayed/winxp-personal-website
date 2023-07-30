@@ -3,7 +3,6 @@ import styles from "./window.module.css";
 import localFont from "next/font/local";
 import ControlButtons from "./ControlButtons";
 import { appStack, useWindowContext } from "@/app/WindowContext";
-import { pushToEnd } from "@/app/helper/stackHelper";
 
 interface Props {
   src: string;

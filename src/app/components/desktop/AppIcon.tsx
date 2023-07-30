@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./desktop.module.css";
 import { useWindowContext } from "@/app/WindowContext";
-import { pushToEnd } from "@/app/helper/stackHelper";
+import { pushToTop } from "@/app/helper/stackHelper";
 
 interface Props {
   src: string;
@@ -29,6 +29,11 @@ const AppIcon = ({ src, alt, appName }: Props) => {
         ...prevState,
         [appName]: true,
       }));
+    } else {
+      const index = appStack.findIndex((item) => item.appName === appName);
+
+      const modifiedStack = pushToTop(appStack, index);
+      setAppStack(modifiedStack);
     }
   };
 

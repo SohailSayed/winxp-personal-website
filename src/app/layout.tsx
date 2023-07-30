@@ -17,8 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        {/* Put window provider over everything for now, will have to tweak this eventually for performance */}
+      <body style={{ overflow: "hidden" }}>
         <WindowContextProvider>
           <DesktopLayout />
           <WindowLayout />

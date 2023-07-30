@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 import { useState } from "react";
+import { pushToBottom } from "@/app/helper/stackHelper";
 
 interface ControlButtonProps {
   appName: string;
@@ -16,7 +17,7 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
 
   const [isClicked, setIsClicked] = useState<boolean[]>(defaultClicks);
   const { isMaximized, setIsMaximized } = useWindowContext();
-  const { setMinimizedStates } = useWindowContext();
+  const { minimizedStates, setMinimizedStates } = useWindowContext();
   const { setOpenStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
 
@@ -45,6 +46,13 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
           ...prevState,
           [appName]: true,
         }));
+        if (
+          appStack.length > 1 &&
+          !minimizedStates[appStack[appStack.length - 2].appName]
+        ) {
+          const modifiedStack = pushToBottom(appStack, index);
+          setAppStack(modifiedStack);
+        }
       }
       if (alt == "close") {
         setOpenStates((prevState) => ({

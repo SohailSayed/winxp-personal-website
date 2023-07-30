@@ -4,7 +4,7 @@ import { Rnd } from "react-rnd";
 import TitleBar from "./TitleBar";
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
-import { pushToEnd } from "@/app/helper/stackHelper";
+import { pushToTop } from "@/app/helper/stackHelper";
 
 interface Props {
   src: string;
@@ -34,9 +34,8 @@ const Window = ({ src, alt, appName }: Props) => {
   if (appStack[index] != undefined) {
     zIndexValue = appStack[index].zIndex;
   }
-
   const handleClick = () => {
-    const modifiedStack = pushToEnd(appStack, index);
+    const modifiedStack = pushToTop(appStack, index);
     setAppStack(modifiedStack);
   };
 
