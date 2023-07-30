@@ -34,7 +34,7 @@ const Window = ({ src, alt, appName }: Props) => {
     zIndexValue = appStack[index].zIndex;
   }
 
-  return (
+  const window = (
     <Rnd
       className={isOpen ? openStyles : styles.windowMinimized}
       style={{ zIndex: zIndexValue }}
@@ -51,9 +51,20 @@ const Window = ({ src, alt, appName }: Props) => {
       minHeight={"20vh"}
       minWidth={"30vw"}
       dragHandleClassName={styles.titleBar}
+      bounds={"window"}
     >
       <TitleBar src={src} alt={alt} appName={appName} />
     </Rnd>
+  );
+
+  return (
+    <>
+      {isMaximized ? (
+        window
+      ) : (
+        <section style={{ height: "100%", width: "100%" }}>{window}</section>
+      )}
+    </>
   );
 };
 
