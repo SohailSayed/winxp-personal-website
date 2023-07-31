@@ -49,7 +49,12 @@ const TitleBar = ({ src, alt, appName }: Props) => {
     );
   };
 
-  const iframeShadow = <div className={styles.iframeShadow}></div>;
+  const iframeShadow = (
+    <div
+      className={styles.iframeShadow}
+      style={isSelected ? { pointerEvents: "none" } : undefined}
+    ></div>
+  );
 
   const titleBarBottomStyle = isSelected
     ? styles.titleBarBottom
