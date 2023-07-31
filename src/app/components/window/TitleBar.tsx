@@ -68,7 +68,7 @@ const TitleBar = ({ src, alt, appName }: Props) => {
         src="https://www.condensed.news/"
         width="100%"
         height="100%"
-        sandbox="allow-same-origin allow-popups"
+        sandbox="allow-forms"
       ></iframe>
     </section>
   );
