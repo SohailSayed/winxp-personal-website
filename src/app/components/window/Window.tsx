@@ -48,8 +48,8 @@ const Window = ({ src, alt, appName, url }: Props) => {
       default={{
         x: 200,
         y: 50,
-        width: "76vw",
-        height: "80vh",
+        width: "60vw",
+        height: "90vh",
       }}
       position={isMaximized ? { x: -10, y: -10 } : undefined}
       disableDragging={isMaximized}

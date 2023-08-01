@@ -32,7 +32,7 @@ const TaskbarLine = () => {
         {appList.map((appData) => (
           <LargeAppIcon
             key={appData.appName}
-            src={`/icons/${appData.appName}Icon.svg`}
+            src={appData.src}
             alt={`${appData.appName} Icon`}
             appName={appData.appName}
           />
