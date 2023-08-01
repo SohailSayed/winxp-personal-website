@@ -29,12 +29,12 @@ const TaskbarLine = () => {
         />
       </div>
       <div className={styles.largeAppIconContainer}>
-        {appList.map((appName) => (
+        {appList.map((appData) => (
           <LargeAppIcon
-            key={appName}
-            src={`/icons/${appName}Icon.svg`}
-            alt={`${appName} Icon`}
-            appName={appName}
+            key={appData.appName}
+            src={`/icons/${appData.appName}Icon.svg`}
+            alt={`${appData.appName} Icon`}
+            appName={appData.appName}
           />
         ))}
       </div>

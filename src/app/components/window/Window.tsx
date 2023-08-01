@@ -10,9 +10,10 @@ interface Props {
   src: string;
   alt: string;
   appName: string;
+  url: string;
 }
 
-const Window = ({ src, alt, appName }: Props) => {
+const Window = ({ src, alt, appName, url }: Props) => {
   const { appStack, setAppStack } = useWindowContext();
   const { isMaximized } = useWindowContext();
   const { minimizedStates } = useWindowContext();
@@ -59,7 +60,7 @@ const Window = ({ src, alt, appName }: Props) => {
       bounds={"window"}
       onClick={handleClick}
     >
-      <TitleBar src={src} alt={alt} appName={appName} />
+      <TitleBar src={src} alt={alt} appName={appName} url={url} />
     </Rnd>
   );
 

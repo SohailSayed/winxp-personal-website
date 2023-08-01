@@ -1,13 +1,15 @@
 import appList from "./appList";
 
-const defaultOpenStates: Record<string, boolean> = appList.reduce(
+const appNames = appList.map((appData) => appData.appName);
+
+const defaultOpenStates: Record<string, boolean> = appNames.reduce(
   (accumulator, value) => {
     return { ...accumulator, [value]: false };
   },
   {}
 );
 
-const defaultPositions: Record<string, number[]> = appList.reduce(
+const defaultPositions: Record<string, number[]> = appNames.reduce(
   (accumulator, value) => {
     return { ...accumulator, [value]: [0, 0] };
   },

@@ -7,12 +7,12 @@ const DesktopAppIcons = () => {
   return (
     <section className={styles.desktop}>
       <BackgroundImage />
-      {appList.map((appName) => (
+      {appList.map((appData) => (
         <AppIcon
-          key={appName}
-          src={`/icons/${appName}Icon.svg`}
-          alt={`${appName} Icon`}
-          appName={appName}
+          key={appData.appName}
+          src={`/icons/${appData.appName}Icon.svg`}
+          alt={`${appData.appName} Icon`}
+          appName={appData.appName}
         />
       ))}
     </section>
