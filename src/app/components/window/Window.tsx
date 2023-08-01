@@ -1,10 +1,10 @@
 "use client";
 
 import { Rnd } from "react-rnd";
-import TitleBar from "./TitleBar";
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 import { pushToTop } from "@/app/helper/stackHelper";
+import WindowContent from "./WindowContent";
 
 interface Props {
   src: string;
@@ -21,10 +21,12 @@ const Window = ({ src, alt, appName, url }: Props) => {
   const isNotMinimized = minimizedStates[appName];
   const isOpen = openStates[appName];
 
-  const nonMinimized = isMaximized
+  const nonMinimizedStyle = isMaximized
     ? styles.windowMaximized
     : styles.windowRestored;
-  const openStyles = isNotMinimized ? styles.windowMinimized : nonMinimized;
+  const openStyles = isNotMinimized
+    ? styles.windowMinimized
+    : nonMinimizedStyle;
 
   const windowSize = isMaximized
     ? { width: "100vw", height: "95vh" }
@@ -60,7 +62,7 @@ const Window = ({ src, alt, appName, url }: Props) => {
       bounds={"window"}
       onClick={handleClick}
     >
-      <TitleBar src={src} alt={alt} appName={appName} url={url} />
+      <WindowContent src={src} alt={alt} appName={appName} url={url} />
     </Rnd>
   );
 
