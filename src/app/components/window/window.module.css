@@ -57,6 +57,8 @@
 }
 .titleBarBottom {
   display: flex;
+  flex-direction: column;
+  overflow: hidden;
   height: calc(100% - 30px);
   width: 100%;
   box-sizing: border-box;
@@ -74,6 +76,9 @@
   box-shadow: inset 0px 0px 2px 1px black;
 }
 .titleBarBottomInactive {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   height: calc(100% - 30px);
   width: 100%;
   background-color: white;
@@ -86,6 +91,8 @@
 }
 .titleBarBottomMaximized {
   display: flex;
+  flex-direction: column;
+  overflow: hidden;
   height: calc(100% - 30px);
   width: 100%;
   background-color: white;
@@ -148,4 +155,59 @@
   width: auto;
   margin: 1px;
   filter: drop-shadow(0px 0px 1px #143384) brightness(70%);
+}
+
+.addressBar {
+  display: flex;
+  align-items: center;
+  background-color: #eeebd9;
+  height: 40px;
+  box-shadow: inset 0px -5px 5px -5px black;
+}
+.addressLabel {
+  color: #837f77;
+  font-size: 14px;
+  margin: 10px;
+}
+.urlBar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  height: 75%;
+  width: 90%;
+  border: solid #7f9db9;
+  border-width: 1px;
+}
+.urlBarIcon {
+  height: 60%;
+  width: auto;
+  margin: 3px;
+  filter: drop-shadow(3px 2px 1px #6d6d79);
+}
+.urlBarLabel {
+  font-size: 14px;
+  margin: 5px;
+}
+.popOutButtonContainer {
+  display: flex;
+  height: 80%;
+  margin: 5px;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+.popOutButtonContainer:hover {
+  display: flex;
+  height: 80%;
+  margin: 5px;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+  box-shadow: inset 0px 0px 4px 1px #6d6d79;
+}
+.popOutButton {
+  height: 80%;
+  width: auto;
+  margin: 8px;
 }

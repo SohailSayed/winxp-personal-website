@@ -1,6 +1,7 @@
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 import TitleBar from "./TitleBar";
+import AddressBar from "./AddressBar";
 
 interface Props {
   src: string;
@@ -31,17 +32,21 @@ const WindowContent = ({ src, alt, appName, url }: Props) => {
     <section className={styles.titleBarCombined}>
       <TitleBar src={src} alt={alt} appName={appName} isSelected={isSelected} />
       {!isMaximized && iframeShadow}
-      <iframe
+      <section
         className={
           isMaximized ? styles.titleBarBottomMaximized : titleBarBottomStyle
         }
         style={{ zIndex: appStack.length + 1 }}
-        id="externalWebsite"
-        src={url}
-        width="100%"
-        height="100%"
-        allow="autoplay"
-      ></iframe>
+      >
+        <AddressBar url={url} />
+        <iframe
+          id="externalWebsite"
+          src={url}
+          width="100%"
+          height="100%"
+          allow="autoplay"
+        ></iframe>
+      </section>
     </section>
   );
 };
