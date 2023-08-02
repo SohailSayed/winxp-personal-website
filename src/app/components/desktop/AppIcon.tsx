@@ -12,7 +12,6 @@ interface Props {
 
 const AppIcon = ({ src, alt, appName }: Props) => {
   const { openStates, setOpenStates } = useWindowContext();
-  const { windowPositionStates, setWindowPositionStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
 
   const handleDoubleClick = (appName: string) => {

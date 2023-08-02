@@ -21,7 +21,7 @@ const AddressBar = ({ url }: string) => {
       <div
         className={styles.popOutButtonContainer}
         onClick={() => window.open(url, "_blank", "noreferrer")}
-        title="Open Window in a New Tab"
+        title="Open This Window in a New Tab"
       >
         <Image
           className={styles.popOutButton}

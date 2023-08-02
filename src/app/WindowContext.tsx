@@ -6,7 +6,7 @@ import {
   useContext,
   useState,
 } from "react";
-import { defaultOpenStates, defaultPositions } from "./constants/defaultValues";
+import { defaultOpenStates } from "./constants/defaultValues";
 
 interface WindowContextProps {
   isMaximized: boolean;
@@ -15,8 +15,6 @@ interface WindowContextProps {
   setMinimizedStates: Dispatch<SetStateAction<Record<string, boolean>>>;
   openStates: Record<string, boolean>;
   setOpenStates: Dispatch<SetStateAction<Record<string, boolean>>>;
-  windowPositionStates: Record<string, number[]>;
-  setWindowPositionStates: Dispatch<SetStateAction<Record<string, number[]>>>;
   appStack: appStack[];
   setAppStack: Dispatch<SetStateAction<appStack[]>>;
 }
@@ -37,8 +35,6 @@ const WindowContext = createContext<WindowContextProps>({
   setMinimizedStates: () => {},
   openStates: defaultOpenStates,
   setOpenStates: () => {},
-  windowPositionStates: defaultPositions,
-  setWindowPositionStates: () => {},
   appStack: [],
   setAppStack: () => {},
 });
@@ -53,8 +49,6 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     useState<Record<string, boolean>>(defaultOpenStates);
   const [openStates, setOpenStates] =
     useState<Record<string, boolean>>(defaultOpenStates);
-  const [windowPositionStates, setWindowPositionStates] =
-    useState<Record<string, number[]>>(defaultPositions);
   const [appStack, setAppStack] = useState<appStack[]>([]);
 
   const contextValues = {
@@ -64,8 +58,6 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     setMinimizedStates,
     openStates,
     setOpenStates,
-    windowPositionStates,
-    setWindowPositionStates,
     appStack,
     setAppStack,
   };

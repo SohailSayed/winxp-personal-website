@@ -9,10 +9,4 @@ const defaultOpenStates: Record<string, boolean> = appNames.reduce(
   {}
 );
 
-const defaultPositions: Record<string, number[]> = appNames.reduce(
-  (accumulator, value) => {
-    return { ...accumulator, [value]: [0, 0] };
-  },
-  {}
-);
-export { defaultOpenStates, defaultPositions };
+export { defaultOpenStates };
