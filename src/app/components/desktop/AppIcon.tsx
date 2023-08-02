@@ -23,6 +23,9 @@ const AppIcon = ({ src, alt, appName }: Props) => {
   const isHighlighted = highlightedStates[appName];
 
   const handleClick = (appName: string) => {
+    if (event.detail == 2) {
+      handleDoubleClick(appName);
+    }
     setHighlightedStates((prevState) => ({
       ...prevState,
       [appName]: !isHighlighted,
@@ -63,11 +66,7 @@ const AppIcon = ({ src, alt, appName }: Props) => {
 
   return (
     <>
-      <section
-        className={styles.appIcon}
-        onClick={() => handleClick(appName)}
-        onDoubleClick={() => handleDoubleClick(appName)}
-      >
+      <section className={styles.appIcon} onClick={() => handleClick(appName)}>
         {isHighlighted && iconMask}
         <Image
           className={styles.appIconImage}
