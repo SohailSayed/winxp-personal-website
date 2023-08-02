@@ -13,8 +13,11 @@ const tahomaBold = localFont({ src: "../../fonts/tahoma/tahomabd.ttf" });
 
 const StartButton = () => {
   const [isHover, setIsHover] = useState(false);
-  const [open, setOpen] = useState(false);
-  const { setOpenStates } = useWindowContext();
+  const { startOpen, setStartOpen } = useWindowContext();
+
+  const handleClick = () => {
+    setStartOpen(!startOpen);
+  };
 
   const handleHover = (hover: boolean) => {
     setIsHover(hover);
@@ -31,9 +34,10 @@ const StartButton = () => {
 
     return (
       <section
-        className={open ? middleOpenHoverCheck : middleHoverCheck}
+        className={startOpen ? middleOpenHoverCheck : middleHoverCheck}
         onMouseEnter={() => handleHover(true)}
         onMouseLeave={() => handleHover(false)}
+        onClick={handleClick}
       >
         <img src="/icons/windowsXPIcon.png" className={styles.windowsXPIcon} />
         <p className={`${tahomaBold.className} ${styles.startLabel}`}>
@@ -61,15 +65,17 @@ const StartButton = () => {
   return (
     <>
       <section
-        className={open ? backOpenHoverCheck : backHoverCheck}
+        className={startOpen ? backOpenHoverCheck : backHoverCheck}
         onMouseEnter={() => handleHover(true)}
         onMouseLeave={() => handleHover(false)}
+        onClick={handleClick}
       />
       <StartMiddleSection startLabel="About Me" />
       <section
-        className={open ? endOpenHoverCheck : endHoverCheck}
+        className={startOpen ? endOpenHoverCheck : endHoverCheck}
         onMouseEnter={() => handleHover(true)}
         onMouseLeave={() => handleHover(false)}
+        onClick={handleClick}
       />
     </>
   );

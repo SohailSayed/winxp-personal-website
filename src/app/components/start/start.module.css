@@ -1,0 +1,9 @@
+.startPage {
+  height: 90%;
+  width: 40%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+}

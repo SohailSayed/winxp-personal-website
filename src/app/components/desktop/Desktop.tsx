@@ -1,6 +1,7 @@
 import styles from "./desktop.module.css";
 import AppIcon from "./AppIcon";
 import appList from "../../constants/appList";
+import StartPage from "../start/StartPage";
 
 const DesktopAppIcons = () => {
   return (
@@ -13,6 +14,7 @@ const DesktopAppIcons = () => {
           appName={appData.appName}
         />
       ))}
+      <StartPage />
     </section>
   );
 };

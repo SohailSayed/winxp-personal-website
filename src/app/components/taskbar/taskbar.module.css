@@ -187,12 +187,14 @@
   grid-area: a / a / a / a;
   background: url(/start/startBack.svg);
   background-size: cover;
+  height: 102%;
   z-index: 2;
 }
 .startBackSectionHover {
   grid-area: a / a / a / a;
   background: url(/start/startBack.svg);
   background-size: cover;
+  height: 102%;
   z-index: 2;
   filter: brightness(110%);
 }
@@ -200,12 +202,14 @@
   grid-area: a / a / a / a;
   background: url(/start/startBackOpen.svg);
   background-size: cover;
+  height: 102%;
   z-index: 2;
 }
 .startBackSectionHoverOpen {
   grid-area: a / a / a / a;
   background: url(/start/startBackOpen.svg);
   background-size: cover;
+  height: 102%;
   z-index: 2;
   filter: brightness(130%);
 }
