@@ -3,8 +3,7 @@ import styles from "./desktop.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 import { pushToTop } from "@/app/helper/stackHelper";
 import localFont from "next/font/local";
-import OutsideClickHandler from "react-outside-click-handler";
-import { Dispatch, SetStateAction, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 
 interface Props {
   src: string;
@@ -27,6 +26,21 @@ const AppIcon = ({
   const { appStack, setAppStack } = useWindowContext();
 
   const isHighlighted = highlightedApp === appName;
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+  }, []);
+
+  const refOne = useRef(null);
+
+  const handleClickOutside = (e: Event) => {
+    const clickedElement = e.target as HTMLElement;
+    const elementClass = clickedElement.classList.value;
+    const insideIcon = elementClass.includes("desktop_appIcon");
+    if (!insideIcon) {
+      setHighlightedApp("");
+    }
+  };
 
   const handleClick = (appName: string) => {
     if (event.detail == 2) {
@@ -71,23 +85,21 @@ const AppIcon = ({
     : styles.appIconLabel;
 
   return (
-    <OutsideClickHandler
-      onOutsideClick={() => {
-        setHighlightedApp("");
-      }}
+    <section
+      className={styles.appIcon}
+      onClick={() => handleClick(appName)}
+      ref={refOne}
     >
-      <section className={styles.appIcon} onClick={() => handleClick(appName)}>
-        {isHighlighted && iconMask}
-        <Image
-          className={styles.appIconImage}
-          src={src}
-          alt={alt}
-          width={0}
-          height={0}
-        />
-        <div className={`${tahoma.className} ${labelStyle}`}>{appName}</div>
-      </section>
-    </OutsideClickHandler>
+      {isHighlighted && iconMask}
+      <Image
+        className={styles.appIconImage}
+        src={src}
+        alt={alt}
+        width={0}
+        height={0}
+      />
+      <div className={`${tahoma.className} ${labelStyle}`}>{appName}</div>
+    </section>
   );
 };
 
