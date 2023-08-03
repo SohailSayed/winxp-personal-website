@@ -27,8 +27,8 @@
 }
 .appIconMask {
   position: absolute;
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   background-color: rgba(11, 96, 255, 0.576);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;

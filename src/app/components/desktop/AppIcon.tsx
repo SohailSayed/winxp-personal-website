@@ -1,39 +1,45 @@
-"use client";
 import Image from "next/image";
 import styles from "./desktop.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 import { pushToTop } from "@/app/helper/stackHelper";
 import localFont from "next/font/local";
-import { defaultOpenStates } from "@/app/constants/defaultValues";
-import { useState } from "react";
+import OutsideClickHandler from "react-outside-click-handler";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
 
 interface Props {
   src: string;
   alt: string;
   appName: string;
+  highlightedApp: string;
+  setHighlightedApp: Dispatch<SetStateAction<string>>;
 }
 
 const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
 
-const AppIcon = ({ src, alt, appName }: Props) => {
+const AppIcon = ({
+  src,
+  alt,
+  appName,
+  highlightedApp,
+  setHighlightedApp,
+}: Props) => {
   const { openStates, setOpenStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
-  const [highlightedStates, setHighlightedStates] =
-    useState<Record<string, boolean>>(defaultOpenStates);
-  const isHighlighted = highlightedStates[appName];
+
+  const isHighlighted = highlightedApp === appName;
 
   const handleClick = (appName: string) => {
     if (event.detail == 2) {
       handleDoubleClick(appName);
+    } else {
+      setHighlightedApp(appName);
     }
-    setHighlightedStates((prevState) => ({
-      ...prevState,
-      [appName]: !isHighlighted,
-    }));
   };
 
   const handleDoubleClick = (appName: string) => {
     if (openStates[appName] != true) {
+      setHighlightedApp("");
+
       const zIndex = appStack.length;
 
       setAppStack((prevState) => [...prevState, { appName, zIndex }]);
@@ -65,7 +71,11 @@ const AppIcon = ({ src, alt, appName }: Props) => {
     : styles.appIconLabel;
 
   return (
-    <>
+    <OutsideClickHandler
+      onOutsideClick={() => {
+        setHighlightedApp("");
+      }}
+    >
       <section className={styles.appIcon} onClick={() => handleClick(appName)}>
         {isHighlighted && iconMask}
         <Image
@@ -77,7 +87,7 @@ const AppIcon = ({ src, alt, appName }: Props) => {
         />
         <div className={`${tahoma.className} ${labelStyle}`}>{appName}</div>
       </section>
-    </>
+    </OutsideClickHandler>
   );
 };
 
