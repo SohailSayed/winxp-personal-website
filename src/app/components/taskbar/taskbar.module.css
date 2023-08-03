@@ -11,6 +11,7 @@
   left: 0;
   width: 100%;
   height: 5vh;
+  z-index: 100;
 }
 /* Taskbar End */
 
@@ -145,6 +146,7 @@
   font-size: 85%;
   margin: 0 0 0 5%;
   text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
 }
 /* Large App Icon End */
