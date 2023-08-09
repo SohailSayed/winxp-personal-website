@@ -2,7 +2,7 @@
 import Image from "next/image";
 import localFont from "next/font/local";
 import styles from "./taskbar.module.css";
-import { appStack, useWindowContext } from "@/app/WindowContext";
+import { useWindowContext } from "@/app/WindowContext";
 import { pushToTop } from "@/app/helper/stackHelper";
 
 interface Props {
