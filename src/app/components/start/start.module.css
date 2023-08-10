@@ -104,9 +104,21 @@
 }
 
 .mainPanel {
+  display: flex;
   height: 100%;
   border-right: #4c93e3 solid 3px;
   border-left: #4c93e3 solid 3px;
   border-top: #2e64ab solid 2px;
   border-bottom: #2e64ab solid 2px;
+}
+.mainPanelLeft {
+  height: 100%;
+  width: 50%;
+  background-color: white;
+  border-right: #a7bcd9 solid 2px;
+}
+.mainPanelRight {
+  height: 100%;
+  width: 50%;
+  background-color: #d2e5fa;
 }
