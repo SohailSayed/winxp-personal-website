@@ -3,7 +3,6 @@
 import styles from "./desktop.module.css";
 import AppIcon from "./AppIcon";
 import appList from "../../constants/appList";
-import StartPage from "../start/StartPage";
 import { useState } from "react";
 
 const DesktopAppIcons = () => {
@@ -21,7 +20,6 @@ const DesktopAppIcons = () => {
           setHighlightedApp={setHighlightedApp}
         />
       ))}
-      <StartPage />
     </section>
   );
 };

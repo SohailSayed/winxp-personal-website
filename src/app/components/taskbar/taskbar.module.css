@@ -299,7 +299,7 @@
   text-shadow: 1px 1.5px 5px #000000;
   font-size: 130%;
 }
-.windowsXPIcon {
+.startWindowsXPIcon {
   height: 60%;
   filter: drop-shadow(2px 2px 3px) blur(0.5px);
   align-content: flex-start;

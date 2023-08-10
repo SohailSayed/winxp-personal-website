@@ -4,6 +4,7 @@ import TaskbarLayout from "./components/taskbar/layout";
 import WindowLayout from "./components/window/layout";
 import { WindowContextProvider } from "./WindowContext";
 import DesktopLayout from "./components/desktop/layout";
+import StartLayout from "./components/start/layout";
 
 export const metadata: Metadata = {
   title: "Personal Site",
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body style={{ overflow: "hidden" }}>
         <WindowContextProvider>
           <DesktopLayout />
+          <StartLayout />
           <WindowLayout />
           <TaskbarLayout />
         </WindowContextProvider>

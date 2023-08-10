@@ -2,7 +2,7 @@
 
 import localFont from "next/font/local";
 import styles from "./taskbar.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useWindowContext } from "@/app/WindowContext";
 
 interface Props {
@@ -14,9 +14,23 @@ const tahomaBold = localFont({ src: "../../fonts/tahoma/tahomabd.ttf" });
 const StartButton = () => {
   const [isHover, setIsHover] = useState(false);
   const { startOpen, setStartOpen } = useWindowContext();
+  const { appStack, setAppStack } = useWindowContext();
+
+  useEffect(() => {
+    const appName = "Start Page";
+    if (startOpen) {
+      const zIndex = appStack.length;
+
+      setAppStack((prevState) => [...prevState, { appName, zIndex }]);
+    } else {
+      setAppStack((prevState) =>
+        prevState.filter((item) => item.appName !== appName)
+      );
+    }
+  }, [startOpen]);
 
   const handleClick = () => {
-    setStartOpen(!startOpen);
+    setStartOpen(true);
   };
 
   const handleHover = (hover: boolean) => {
@@ -39,7 +53,10 @@ const StartButton = () => {
         onMouseLeave={() => handleHover(false)}
         onClick={handleClick}
       >
-        <img src="/icons/windowsXPIcon.png" className={styles.windowsXPIcon} />
+        <img
+          src="/icons/windowsXPIcon.png"
+          className={styles.startWindowsXPIcon}
+        />
         <p className={`${tahomaBold.className} ${styles.startLabel}`}>
           {startLabel}
         </p>

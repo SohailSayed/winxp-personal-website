@@ -3,13 +3,13 @@
   flex-direction: column;
   height: 90%;
   width: 800px;
-  bottom: 0;
+  bottom: 5vh;
   left: 0;
   position: absolute;
   background-color: white;
-  z-index: 1;
   border-radius: 2% 2% 0% 0%;
   overflow: hidden;
+  box-shadow: -3px 3px 10px 1px black;
 }
 
 .topPanel {
