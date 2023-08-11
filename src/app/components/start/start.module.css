@@ -112,8 +112,11 @@
   border-bottom: #2e64ab solid 2px;
 }
 .mainPanelLeft {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  width: 50%;
+  width: 48%;
+  padding-left: 2%;
   background-color: white;
   border-right: #a7bcd9 solid 2px;
 }
@@ -121,4 +124,21 @@
   height: 100%;
   width: 50%;
   background-color: #d2e5fa;
+}
+.boldLabel {
+}
+.iconLabelContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 2px;
+  margin-bottom: 15px;
+  height: 60px;
+}
+.panelIcon {
+  height: 100%;
+  width: 60px;
+}
+.panelLabel {
+  display: inline-block;
+  margin-left: 10px;
 }
