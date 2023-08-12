@@ -114,31 +114,88 @@
 .mainPanelLeft {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   height: 100%;
-  width: 48%;
+  width: 46%;
   padding-left: 2%;
+  padding-right: 2%;
   background-color: white;
   border-right: #a7bcd9 solid 2px;
 }
 .mainPanelRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   height: 100%;
-  width: 50%;
+  width: 46%;
+  padding-left: 2%;
+  padding-right: 2%;
   background-color: #d2e5fa;
 }
 .boldLabel {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .iconLabelContainer {
   display: flex;
   align-items: center;
   margin-right: 2px;
-  margin-bottom: 15px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
   height: 60px;
 }
+.iconLabelContainerClickable {
+  display: flex;
+  align-items: center;
+  margin-right: 2px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  height: 60px;
+}
+.iconLabelContainerClickable:hover {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  color: #0000ee;
+}
 .panelIcon {
+  margin-left: 5px;
   height: 100%;
   width: 60px;
+  border-radius: 10%;
 }
 .panelLabel {
   display: inline-block;
   margin-left: 10px;
+  margin-right: 5px;
+}
+.leftPanelAboutMe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.leftPanelLanguages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5px;
+}
+.rightPanelText {
+  padding-top: 9px;
+  margin-right: 2px;
+}
+.rightPanelLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+.rightPanelInterests {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+.rightPanelHR {
+  margin: 0;
 }
