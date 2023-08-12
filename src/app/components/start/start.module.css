@@ -1,7 +1,7 @@
 .startPage {
   display: flex;
   flex-direction: column;
-  height: 90%;
+  height: auto;
   width: 800px;
   bottom: 5vh;
   left: 0;
@@ -16,7 +16,7 @@
   display: flex;
   position: relative;
   width: 100%;
-  height: 15%;
+  height: 10vh;
   align-items: center;
   background: rgb(33, 95, 181);
   background: linear-gradient(
@@ -96,7 +96,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 11%;
+  height: 8vh;
   bottom: 0;
   background: rgb(73, 145, 228);
   background: linear-gradient(
@@ -118,22 +118,26 @@
 
 .mainPanel {
   display: flex;
-  height: 100%;
+  height: 71vh;
   border-right: #4c93e3 solid 3px;
   border-left: #4c93e3 solid 3px;
   border-top: #2e64ab solid 2px;
   border-bottom: #2e64ab solid 2px;
 }
 .mainPanelLeft {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   height: 100%;
   width: 46%;
   padding-left: 2%;
   padding-right: 2%;
   background-color: white;
   border-right: #a7bcd9 solid 2px;
+}
+.mainPanelLeftContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: auto;
 }
 .mainPanelRight {
   display: flex;
@@ -156,7 +160,7 @@
   margin-right: 2px;
   padding-top: 7.5px;
   padding-bottom: 7.5px;
-  height: 60px;
+  height: 6vh;
 }
 .iconLabelContainerClickable {
   display: flex;
@@ -164,7 +168,7 @@
   margin-right: 2px;
   padding-top: 7.5px;
   padding-bottom: 7.5px;
-  height: 60px;
+  height: 6vh;
 }
 .iconLabelContainerClickable:hover {
   border-radius: 10px;
@@ -174,8 +178,8 @@
 }
 .panelIcon {
   margin-left: 5px;
-  height: 100%;
-  width: 60px;
+  height: 80%;
+  width: auto;
   border-radius: 10%;
 }
 .panelLabel {
