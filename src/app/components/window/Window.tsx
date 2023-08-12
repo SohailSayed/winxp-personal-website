@@ -29,7 +29,7 @@ const Window = ({ src, alt, appName, url }: Props) => {
     : nonMinimizedStyle;
 
   const windowSize = isMaximized
-    ? { width: "100vw", height: "95vh" }
+    ? { width: "100.3vw", height: "95vh" }
     : undefined;
 
   let zIndexValue = 0;
@@ -42,7 +42,7 @@ const Window = ({ src, alt, appName, url }: Props) => {
     setAppStack(modifiedStack);
   };
 
-  const window = (
+  const appWindow = (
     <Rnd
       className={isOpen ? openStyles : styles.windowMinimized}
       style={{ zIndex: zIndexValue }}
@@ -69,9 +69,9 @@ const Window = ({ src, alt, appName, url }: Props) => {
   return (
     <>
       {isMaximized ? (
-        window
+        appWindow
       ) : (
-        <section style={{ height: "100%", width: "100%" }}>{window}</section>
+        <section style={{ height: "100%", width: "100%" }}>{appWindow}</section>
       )}
     </>
   );
