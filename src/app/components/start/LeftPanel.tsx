@@ -24,7 +24,7 @@ const LeftPanel = () => {
         <IconLabel
           src="/icons/blueprintLogo.png"
           alt="UW Blueprint Logo"
-          label="Volunteering as Developer for Algoma's Childrens Aid Society with UW Blueprint"
+          label="Volunteering as a Developer for the Childrens Aid Society with UW Blueprint"
           url="https://uwblueprint.org/about"
         />
         <IconLabel

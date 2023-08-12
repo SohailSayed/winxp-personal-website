@@ -10,6 +10,7 @@
   left: 0;
   height: 95vh;
   width: 100vw;
+  user-select: none;
 }
 
 .appIcon {

@@ -34,6 +34,7 @@
 
   display: flex;
   align-items: center;
+  user-select: none;
 }
 .titleBarInactive {
   background: rgb(99, 132, 196);
@@ -54,6 +55,7 @@
 
   display: flex;
   align-items: center;
+  user-select: none;
 }
 .titleBarBottom {
   display: flex;
@@ -74,6 +76,7 @@
   height: calc(100% - 34px);
   width: calc(100% - 8px);
   box-shadow: inset 0px 0px 2px 1px black;
+  user-select: none;
 }
 .titleBarBottomInactive {
   display: flex;
@@ -103,7 +106,6 @@
   margin: 7px;
   filter: drop-shadow(1px 1px 2px #143384);
 }
-/* Need to figure out this one, might need to redesign with inactive bg color */
 .titleBarIconInactive {
   height: 50%;
   width: auto;
@@ -117,6 +119,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   text-shadow: black 1px 1px 2px;
+  user-select: none;
 }
 
 .controlButtons {
@@ -168,6 +171,7 @@
   color: #837f77;
   font-size: 14px;
   margin: 10px;
+  user-select: none;
 }
 .urlBar {
   display: flex;
@@ -177,12 +181,14 @@
   width: 90%;
   border: solid #7f9db9;
   border-width: 1px;
+  user-select: auto;
 }
 .urlBarIcon {
   height: 60%;
   width: auto;
   margin: 3px;
   filter: drop-shadow(3px 2px 1px #6d6d79);
+  user-select: none;
 }
 .urlBarLabel {
   font-size: 14px;
@@ -195,6 +201,7 @@
   flex-grow: 1;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 .popOutButtonContainer:hover {
   display: flex;
@@ -210,4 +217,7 @@
   height: 80%;
   width: auto;
   margin: 8px;
+}
+.iframe {
+  user-select: none;
 }

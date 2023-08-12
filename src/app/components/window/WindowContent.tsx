@@ -40,6 +40,7 @@ const WindowContent = ({ src, alt, appName, url }: Props) => {
       >
         <AddressBar url={url} />
         <iframe
+          className={styles.iframe}
           id="externalWebsite"
           src={url}
           width="100%"

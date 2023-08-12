@@ -12,6 +12,7 @@
   width: 100%;
   height: 5vh;
   z-index: 100;
+  user-select: none;
 }
 /* Taskbar End */
 
