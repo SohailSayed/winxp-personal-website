@@ -28,12 +28,10 @@ const AddressBar = ({ url }: Props) => {
         onClick={() => window.open(url, "_blank", "noreferrer")}
         title="Open This Window in a New Tab"
       >
-        <Image
+        <img
           className={styles.popOutButton}
-          src="/window/popOutWindow.svg"
+          src="/window/popOutWindow.png"
           alt="Pop Out Button"
-          width={0}
-          height={0}
         />
       </div>
     </section>
