@@ -15,12 +15,13 @@ interface Props {
 
 const Window = ({ src, alt, appName, url }: Props) => {
   const { appStack, setAppStack } = useWindowContext();
-  const { isMaximized } = useWindowContext();
+  const { maximizedStates } = useWindowContext();
   const { minimizedStates } = useWindowContext();
   const { openStates } = useWindowContext();
   const { sizePosStates, setSizePosStates } = useWindowContext();
   const isNotMinimized = minimizedStates[appName];
   const isOpen = openStates[appName];
+  const isMaximized = maximizedStates[appName];
 
   const nonMinimizedStyle = isMaximized
     ? styles.windowMaximized

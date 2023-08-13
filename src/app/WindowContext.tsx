@@ -13,8 +13,8 @@ import {
 } from "./constants/defaultValues";
 
 interface WindowContextProps {
-  isMaximized: boolean;
-  setIsMaximized: Dispatch<SetStateAction<boolean>>;
+  maximizedStates: Record<string, boolean>;
+  setMaximizedStates: Dispatch<SetStateAction<Record<string, boolean>>>;
   minimizedStates: Record<string, boolean>;
   setMinimizedStates: Dispatch<SetStateAction<Record<string, boolean>>>;
   openStates: Record<string, boolean>;
@@ -37,8 +37,8 @@ export interface appStack {
 }
 
 const WindowContext = createContext<WindowContextProps>({
-  isMaximized: false,
-  setIsMaximized: () => {},
+  maximizedStates: defaultOpenStates,
+  setMaximizedStates: () => {},
   minimizedStates: defaultOpenStates,
   setMinimizedStates: () => {},
   openStates: defaultOpenStates,
@@ -56,7 +56,8 @@ const useWindowContext = () => useContext(WindowContext);
 const WindowContextProvider: React.FC<WindowProviderProp> = ({
   children,
 }: WindowProviderProp) => {
-  const [isMaximized, setIsMaximized] = useState(false);
+  const [maximizedStates, setMaximizedStates] =
+    useState<Record<string, boolean>>(defaultOpenStates);
   const [minimizedStates, setMinimizedStates] =
     useState<Record<string, boolean>>(defaultOpenStates);
   const [openStates, setOpenStates] =
@@ -67,8 +68,8 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     useState<Record<string, SizePosition>>(defaultSizePos);
 
   const contextValues = {
-    isMaximized,
-    setIsMaximized,
+    maximizedStates,
+    setMaximizedStates,
     minimizedStates,
     setMinimizedStates,
     openStates,

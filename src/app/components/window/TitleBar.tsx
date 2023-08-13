@@ -14,11 +14,14 @@ interface Props {
 const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
 
 const TitleBar = ({ src, alt, appName, isSelected }: Props) => {
-  const { isMaximized, setIsMaximized } = useWindowContext();
+  const { maximizedStates, setMaximizedStates } = useWindowContext();
 
   const handleClick = () => {
     if (event.detail == 2) {
-      setIsMaximized(!isMaximized);
+      setMaximizedStates((prevState) => ({
+        ...prevState,
+        [appName]: !maximizedStates[appName],
+      }));
     }
   };
 

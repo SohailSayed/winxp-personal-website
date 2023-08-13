@@ -12,7 +12,8 @@ interface Props {
 
 const WindowContent = ({ src, alt, appName, url }: Props) => {
   const { appStack } = useWindowContext();
-  const { isMaximized } = useWindowContext();
+  const { maximizedStates } = useWindowContext();
+  const isMaximized = maximizedStates[appName];
   const index = appStack.findIndex((item) => item.appName === appName);
   const zIndexValue = appStack[index] ? appStack[index].zIndex : -1;
   const isSelected = zIndexValue + 1 == appStack.length ? true : false;
