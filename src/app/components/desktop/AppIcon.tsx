@@ -44,7 +44,8 @@ const AppIcon = ({
   };
 
   const handleClick = (appName: string) => {
-    // eslint-disable-next-line no-use-before-define @ts-expect-error
+    // eslint-disable-next-line no-use-before-define
+    // @ts-expect-error
     if (event && event.detail == 2) {
       handleDoubleClick(appName);
     } else {
