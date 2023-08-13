@@ -27,16 +27,20 @@ const TitleBar = ({ src, alt, appName, isSelected }: Props) => {
       className={isSelected ? styles.titleBar : styles.titleBarInactive}
       onClick={handleClick}
     >
-      <Image
-        className={
-          isSelected ? styles.titleBarIcon : styles.titleBarIconInactive
-        }
-        src={src}
-        alt={alt}
-        width={0}
-        height={0}
-      />
-      <p className={`${tahoma.className} ${styles.titleBarLabel}`}>{appName}</p>
+      <section className={styles.titleBarDraggable}>
+        <Image
+          className={
+            isSelected ? styles.titleBarIcon : styles.titleBarIconInactive
+          }
+          src={src}
+          alt={alt}
+          width={0}
+          height={0}
+        />
+        <p className={`${tahoma.className} ${styles.titleBarLabel}`}>
+          {appName}
+        </p>
+      </section>
       <ControlButtons appName={appName} />
     </section>
   );

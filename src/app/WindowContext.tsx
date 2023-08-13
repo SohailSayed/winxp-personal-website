@@ -6,7 +6,11 @@ import {
   useContext,
   useState,
 } from "react";
-import { defaultOpenStates } from "./constants/defaultValues";
+import {
+  SizePosition,
+  defaultOpenStates,
+  defaultSizePos,
+} from "./constants/defaultValues";
 
 interface WindowContextProps {
   isMaximized: boolean;
@@ -19,6 +23,8 @@ interface WindowContextProps {
   setAppStack: Dispatch<SetStateAction<appStack[]>>;
   startOpen: boolean;
   setStartOpen: Dispatch<SetStateAction<boolean>>;
+  sizePosStates: Record<string, SizePosition>;
+  setSizePosStates: Dispatch<SetStateAction<Record<string, SizePosition>>>;
 }
 
 interface WindowProviderProp {
@@ -41,6 +47,8 @@ const WindowContext = createContext<WindowContextProps>({
   setAppStack: () => {},
   startOpen: false,
   setStartOpen: () => {},
+  sizePosStates: defaultSizePos,
+  setSizePosStates: () => {},
 });
 
 const useWindowContext = () => useContext(WindowContext);
@@ -54,8 +62,9 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
   const [openStates, setOpenStates] =
     useState<Record<string, boolean>>(defaultOpenStates);
   const [appStack, setAppStack] = useState<appStack[]>([]);
-  // Re-evaluate if this state should be in this file in the future
   const [startOpen, setStartOpen] = useState(false);
+  const [sizePosStates, setSizePosStates] =
+    useState<Record<string, SizePosition>>(defaultSizePos);
 
   const contextValues = {
     isMaximized,
@@ -68,6 +77,8 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     setAppStack,
     startOpen,
     setStartOpen,
+    sizePosStates,
+    setSizePosStates,
   };
   return (
     <WindowContext.Provider value={contextValues}>

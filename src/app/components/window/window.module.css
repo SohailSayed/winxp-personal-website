@@ -57,6 +57,12 @@
   align-items: center;
   user-select: none;
 }
+.titleBarDraggable {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
 .titleBarBottom {
   display: flex;
   flex-direction: column;

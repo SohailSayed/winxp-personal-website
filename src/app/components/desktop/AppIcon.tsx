@@ -23,6 +23,7 @@ const AppIcon = ({
   setHighlightedApp,
 }: Props) => {
   const { openStates, setOpenStates } = useWindowContext();
+  const { setSizePosStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
 
   const isHighlighted = highlightedApp === appName;
@@ -55,6 +56,15 @@ const AppIcon = ({
       setHighlightedApp("");
 
       const zIndex = appStack.length;
+      const shiftValue = zIndex % 3;
+      const slideValue = Math.floor(zIndex / 3) * 150;
+      console.log(slideValue);
+      const defaultX = 200 + slideValue + shiftValue * 30;
+      const defaultY = shiftValue * 18;
+      setSizePosStates((prevState) => ({
+        ...prevState,
+        [appName]: { width: "60vw", height: "90vh", x: defaultX, y: defaultY },
+      }));
 
       setAppStack((prevState) => [...prevState, { appName, zIndex }]);
 
