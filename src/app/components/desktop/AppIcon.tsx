@@ -45,7 +45,7 @@ const AppIcon = ({
 
   const handleClick = (appName: string) => {
     // eslint-disable-next-line no-use-before-define
-    // @ts-expect-error
+    // @ts-expect-error: Type not being considered for event, used to handle double click
     if (event && event.detail == 2) {
       handleDoubleClick(appName);
     } else {
