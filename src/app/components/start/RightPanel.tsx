@@ -20,6 +20,9 @@ const RightPanel = () => {
           <p className={tahoma.className}>• Transportation</p>
           <p className={tahoma.className}>• Food Systems</p>
           <p className={tahoma.className}>• Agriculture</p>
+          <p className={tahoma.className} style={{ margin: "0" }}>
+            I'm seeking Winter 2024 internship opportunities
+          </p>
         </div>
       </section>
       <hr className={styles.rightPanelHR} />
