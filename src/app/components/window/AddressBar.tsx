@@ -3,9 +3,13 @@ import Image from "next/image";
 import styles from "./window.module.css";
 import localFont from "next/font/local";
 
+interface Props {
+  url: string;
+}
+
 const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
 
-const AddressBar = ({ url }: string) => {
+const AddressBar = ({ url }: Props) => {
   return (
     <section className={styles.addressBar}>
       <p className={`${tahoma.className} ${styles.addressLabel}`}>
