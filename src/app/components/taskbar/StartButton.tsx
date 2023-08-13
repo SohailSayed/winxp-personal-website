@@ -56,6 +56,7 @@ const StartButton = () => {
         <img
           src="/icons/windowsXPIcon.png"
           className={styles.startWindowsXPIcon}
+          alt="Windows XP Icon"
         />
         <p className={`${tahomaBold.className} ${styles.startLabel}`}>
           {startLabel}
