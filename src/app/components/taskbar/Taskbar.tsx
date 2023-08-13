@@ -1,3 +1,4 @@
+import React from "react";
 import StartButton from "./StartButton";
 import SysTray from "./SysTray";
 import TaskbarLine from "./TaskbarLine";

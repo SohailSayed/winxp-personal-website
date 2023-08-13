@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./start.module.css";
 import localFont from "next/font/local";
 
@@ -11,6 +12,7 @@ const BottomPanel = () => {
         React.&nbsp;
         <a
           target="_blank"
+          rel="noreferrer"
           href="https://github.com/SohailSayed/personal-website"
           className={styles.bottomPanelLabelLink}
         >

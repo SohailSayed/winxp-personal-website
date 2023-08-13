@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Rnd } from "react-rnd";
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";

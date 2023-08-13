@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import styles from "./window.module.css";
 import localFont from "next/font/local";

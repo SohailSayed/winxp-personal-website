@@ -3,7 +3,7 @@ import styles from "./desktop.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 import { pushToTop } from "@/app/helper/stackHelper";
 import localFont from "next/font/local";
-import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useRef } from "react";
 
 interface Props {
   src: string;
@@ -44,7 +44,8 @@ const AppIcon = ({
   };
 
   const handleClick = (appName: string) => {
-    if (event && (event as any).detail == 2) {
+    // eslint-disable-next-line no-use-before-define
+    if (event && event.detail == 2) {
       handleDoubleClick(appName);
     } else {
       setHighlightedApp(appName);

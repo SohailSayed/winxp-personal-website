@@ -2,7 +2,7 @@
 
 import localFont from "next/font/local";
 import styles from "./taskbar.module.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useWindowContext } from "@/app/WindowContext";
 
 interface Props {

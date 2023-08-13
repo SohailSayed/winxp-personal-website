@@ -1,3 +1,4 @@
+import React from "react";
 import appList from "../../constants/appList";
 import Window from "./Window";
 

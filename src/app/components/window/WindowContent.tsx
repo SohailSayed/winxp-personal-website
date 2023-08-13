@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 import TitleBar from "./TitleBar";

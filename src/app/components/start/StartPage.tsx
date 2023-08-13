@@ -4,7 +4,7 @@ import styles from "./start.module.css";
 import TopPanel from "./TopPanel";
 import BottomPanel from "./BottomPanel";
 import MainPanel from "./MainPanel";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 const StartPage = () => {
   const { appStack, setAppStack } = useWindowContext();

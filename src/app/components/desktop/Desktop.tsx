@@ -3,7 +3,7 @@
 import styles from "./desktop.module.css";
 import AppIcon from "./AppIcon";
 import appList from "../../constants/appList";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const DesktopAppIcons = () => {
   const [highlightedApp, setHighlightedApp] = useState("");

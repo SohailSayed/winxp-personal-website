@@ -1,4 +1,4 @@
-// This is the root layout
+import React from "react";
 import type { Metadata } from "next";
 import TaskbarLayout from "./components/taskbar/layout";
 import WindowLayout from "./components/window/layout";
@@ -11,11 +11,7 @@ export const metadata: Metadata = {
   description: "Sohails Personal Site",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout() {
   return (
     <html lang="en">
       <body style={{ overflow: "hidden" }}>

@@ -1,3 +1,4 @@
+import React from "react";
 import LeftPanel from "./LeftPanel";
 import RightPanel from "./RightPanel";
 import styles from "./start.module.css";

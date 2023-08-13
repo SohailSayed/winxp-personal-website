@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import styles from "./taskbar.module.css";
 
@@ -9,7 +10,12 @@ interface Props {
 
 const SmallAppIcon = ({ src, alt, url }: Props) => {
   return (
-    <a href={url} target="_blank" className={styles.smallAppIcon}>
+    <a
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+      className={styles.smallAppIcon}
+    >
       <Image
         className={styles.smallAppIconImage}
         src={src}

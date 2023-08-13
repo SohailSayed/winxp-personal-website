@@ -1,3 +1,4 @@
+import React from "react";
 import IconLabel from "./IconLabel";
 import styles from "./start.module.css";
 import localFont from "next/font/local";

@@ -1,3 +1,4 @@
+import React from "react";
 import SmallAppIcon from "./SmallAppIcon";
 import LargeAppIcon from "./LargeAppIcon";
 import styles from "./taskbar.module.css";

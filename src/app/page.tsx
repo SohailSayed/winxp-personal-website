@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Page() {
-  return <h1>Hello, Home Page!</h1>;
+  return <h1>Sohail&apos;s Personal Website</h1>;
 }

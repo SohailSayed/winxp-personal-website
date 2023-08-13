@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
-import { useState } from "react";
+import React, { useState } from "react";
 import { pushToBottom, pushToTop } from "@/app/helper/stackHelper";
 
 interface ControlButtonProps {
