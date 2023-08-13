@@ -44,7 +44,7 @@ const AppIcon = ({
   };
 
   const handleClick = (appName: string) => {
-    if (event.detail == 2) {
+    if (event && event.detail == 2) {
       handleDoubleClick(appName);
     } else {
       setHighlightedApp(appName);
