@@ -30,8 +30,8 @@ const AddressBar = ({ url }: Props) => {
       >
         <Image
           className={styles.popOutButton}
-          src={"/window/popOutWindow.svg"}
-          alt={"Pop Out Button"}
+          src="/window/popOutWindow.svg"
+          alt="Pop Out Button"
           width={0}
           height={0}
         />
