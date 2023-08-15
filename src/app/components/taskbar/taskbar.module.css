@@ -157,6 +157,8 @@
   position: relative;
   aspect-ratio: 1 / 1;
   height: 80%;
+  max-width: 80%;
+  max-height: 80%;
 
   display: flex;
   align-items: center;
