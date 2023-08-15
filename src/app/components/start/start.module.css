@@ -184,8 +184,23 @@
 }
 .panelLabel {
   display: inline-block;
+  font-size: 100%;
   margin-left: 10px;
   margin-right: 5px;
+}
+@media screen and (max-height: 700px) {
+  .panelLabel {
+    font-size: 2.5vh;
+  }
+  .iconLabelContainer {
+    height: 4.5vh;
+  }
+  .iconLabelContainerClickable {
+    height: 4.5vh;
+  }
+  .iconLabelContainerClickable:hover {
+    height: 4.5vh;
+  }
 }
 .leftPanelAboutMe {
   display: flex;
