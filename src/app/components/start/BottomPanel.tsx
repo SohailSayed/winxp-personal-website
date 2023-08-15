@@ -8,8 +8,8 @@ const BottomPanel = () => {
   return (
     <section className={styles.bottomPanel}>
       <p className={`${tahoma.className} ${styles.bottomPanelLabel}`}>
-        Fan of Windows XP? Me too :) I made this site from scratch using
-        React.&nbsp;
+        This site works like Windows XP, click around :) I built it from scratch
+        using React.&nbsp;
         <a
           target="_blank"
           rel="noreferrer"
