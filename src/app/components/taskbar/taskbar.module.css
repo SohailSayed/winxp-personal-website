@@ -259,6 +259,24 @@
   margin-right: -1px;
   filter: brightness(130%);
 }
+@media screen and (min--moz-device-pixel-ratio: 0) {
+  .startMiddleSection {
+    border-bottom: green solid 1px;
+    box-sizing: border-box;
+  }
+  .startMiddleSectionHover {
+    border-bottom: green solid 1px;
+    box-sizing: border-box;
+  }
+  .startMiddleSectionOpen {
+    border-bottom: #16531a solid 1px;
+    box-sizing: border-box;
+  }
+  .startMiddleSectionHoverOpen {
+    border-bottom: #16531a solid 1px;
+    box-sizing: border-box;
+  }
+}
 
 .startEndSection {
   grid-area: a / c / a / c;
