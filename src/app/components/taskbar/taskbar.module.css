@@ -33,9 +33,7 @@
 
   display: flex;
   align-items: center;
-  justify-content: left;
   padding-left: 2.5vh;
-  min-width: max-content;
 }
 .smallAppIconContainer {
   display: flex;
@@ -182,7 +180,7 @@
 }
 .smallAppIconImage {
   width: auto;
-  height: 75%;
+  height: 3.5vh;
   filter: drop-shadow(0px 1px 3px #1940a6);
 }
 /* Small App Icon End */
