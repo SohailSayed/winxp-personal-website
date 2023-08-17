@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 import React, { useState } from "react";
@@ -75,7 +74,7 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
       }
     };
     return (
-      <Image
+      <img
         className={
           isClicked[buttonIndex]
             ? styles.controlButtonClicked
@@ -83,8 +82,6 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
         }
         src={src}
         alt={alt}
-        width={0}
-        height={0}
         onMouseDown={() => {
           const clickedIndex = [...defaultClicks];
           clickedIndex[buttonIndex] = true;
@@ -103,13 +100,13 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
         isSelected ? styles.controlButtons : styles.controlButtonsInactive
       }
     >
-      <ControlButton src="/window/minimizeButton.svg" alt="minimize" />
+      <ControlButton src="/window/minimizeButton.png" alt="minimize" />
       {isMaximized ? (
-        <ControlButton src="/window/restoreButton.svg" alt="restore" />
+        <ControlButton src="/window/restoreButton.png" alt="restore" />
       ) : (
-        <ControlButton src="/window/maximizeButton.svg" alt="maximize" />
+        <ControlButton src="/window/maximizeButton.png" alt="maximize" />
       )}
-      <ControlButton src="/window/closeButton.svg" alt="close" />
+      <ControlButton src="/window/closeButton.png" alt="close" />
     </section>
   );
 };
