@@ -259,7 +259,8 @@
   margin-right: -1px;
   filter: brightness(130%);
 }
-@media screen and (min--moz-device-pixel-ratio: 0) {
+@media screen and (min-width: 0px),
+  screen and (min--moz-device-pixel-ratio: 0) {
   .startMiddleSection {
     border-bottom: green solid 1px;
     box-sizing: border-box;
@@ -320,7 +321,7 @@
 }
 .startWindowsXPIcon {
   height: 60%;
-  filter: drop-shadow(2px 2px 3px) blur(0.5px);
+  filter: drop-shadow(2px 2px 3px);
   align-content: flex-start;
   margin-right: 10px;
 }

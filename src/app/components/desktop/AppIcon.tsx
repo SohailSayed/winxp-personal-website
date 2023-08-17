@@ -107,8 +107,8 @@ const AppIcon = ({
         className={styles.appIconImage}
         src={src}
         alt={alt}
-        width={0}
-        height={0}
+        width={1}
+        height={1}
       />
       <div className={`${tahoma.className} ${labelStyle}`}>{appName}</div>
     </section>

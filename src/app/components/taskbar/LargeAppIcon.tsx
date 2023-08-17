@@ -54,8 +54,8 @@ const LargeAppIcon = ({ src, alt, appName }: Props) => {
         className={styles.largeAppIconImage}
         src={src}
         alt={alt}
-        width={0}
-        height={0}
+        width={1}
+        height={1}
       />
       <p className={`${tahoma.className} ${styles.largeAppIconLabel}`}>
         {appName}

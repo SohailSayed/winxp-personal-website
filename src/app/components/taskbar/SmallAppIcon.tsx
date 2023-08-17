@@ -20,8 +20,8 @@ const SmallAppIcon = ({ src, alt, url }: Props) => {
         className={styles.smallAppIconImage}
         src={src}
         alt={alt}
-        width={0}
-        height={0}
+        width={1}
+        height={1}
       />
     </a>
   );
