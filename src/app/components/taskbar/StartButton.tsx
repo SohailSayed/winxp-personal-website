@@ -40,7 +40,6 @@ const StartButton = () => {
   };
 
   const StartMiddleSection = ({ startLabel }: Props) => {
-    // This part is overly verbose, but it works
     const middleHoverCheck = isHover
       ? styles.startMiddleSectionHover
       : styles.startMiddleSection;

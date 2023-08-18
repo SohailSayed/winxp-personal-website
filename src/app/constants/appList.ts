@@ -11,7 +11,7 @@ const appList = [
   },
   {
     appName: "How I Built Condensed News",
-    url: "https://sohailsayed.super.site/how-i-built-it-bite-sized-news",
+    url: "https://how-i-built-it-condensed-news.super.site/",
     src: "/icons/condensedNewsBlogIcon.ico",
   },
 ];

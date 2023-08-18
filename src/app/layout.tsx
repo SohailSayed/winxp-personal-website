@@ -7,7 +7,7 @@ import DesktopLayout from "./components/desktop/layout";
 import StartLayout from "./components/start/layout";
 
 export const metadata: Metadata = {
-  title: "Personal Site",
+  title: "Sohail Sayed",
   description: "Sohails Personal Site",
 };
 

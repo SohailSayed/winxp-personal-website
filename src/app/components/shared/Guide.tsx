@@ -17,9 +17,8 @@ const Guide = () => {
       />
       <section className={styles.guideBoxApp}>
         <p className={`${tahoma.className} ${styles.guideLabelApp}`}>
-          This is the side project I most recently worked on. Double click on
-          any of the icons on the left to open the apps in a Windows XP style
-          window, which can be resized and dragged around!
+          This is the side project I most recently worked on. Double click any
+          of the apps on the left to open them
         </p>
       </section>
     </div>
