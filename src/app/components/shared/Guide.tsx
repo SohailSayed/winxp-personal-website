@@ -1,3 +1,4 @@
+import React from "react";
 import { useWindowContext } from "@/app/WindowContext";
 import styles from "./shared.module.css";
 import localFont from "next/font/local";
@@ -42,8 +43,8 @@ const Guide = () => {
   const welcomeGuideLayout = (
     <section className={styles.guideBoxWelcome}>
       <p className={`${tahoma.className} ${styles.guideLabelWelcome}`}>
-        Welcome to Sohail's personal site. This site works just like Windows XP,
-        try it out!
+        Welcome to Sohail&apos;s personal site. This site works just like
+        Windows XP, try it out!
       </p>
     </section>
   );
