@@ -1,0 +1,74 @@
+.guideBoxApp {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  background-color: #ffffca;
+  border: black 1px solid;
+  border-radius: 5px;
+  z-index: 100;
+  position: absolute;
+  left: 120px;
+  top: 25px;
+}
+.guideBoxStart {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  background-color: #ffffca;
+  border: black 1px solid;
+  border-radius: 5px;
+  z-index: 100;
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+}
+.guideBoxWelcome {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  background-color: #ffffca;
+  border: black 1px solid;
+  border-radius: 5px;
+  z-index: 100;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.guideLabelApp {
+  margin: 20px;
+}
+.guideLabelStart {
+  margin: 50px;
+  font-size: larger;
+}
+.guideLabelWelcome {
+  margin: 40px;
+  font-size: large;
+}
+
+.triangleLeft {
+  position: absolute;
+  left: 101px;
+  top: 30px;
+  width: 20px;
+  height: auto;
+  z-index: 101;
+  filter: drop-shadow(0px 1px 0 black) drop-shadow(-1px -1px 0 black);
+}
+.triangleDown {
+  position: absolute;
+  bottom: 1px;
+  left: 115px;
+  height: 50px;
+  width: auto;
+  z-index: 101;
+  filter: drop-shadow(2px 2px 0 black);
+  border-left: black solid 2px;
+  box-sizing: border-box;
+}

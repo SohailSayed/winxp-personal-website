@@ -25,6 +25,7 @@ const AppIcon = ({
   const { openStates, setOpenStates } = useWindowContext();
   const { setSizePosStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
+  const { setAppGuide } = useWindowContext();
 
   const isHighlighted = highlightedApp === appName;
 
@@ -55,6 +56,7 @@ const AppIcon = ({
 
   const handleDoubleClick = (appName: string) => {
     if (openStates[appName] != true) {
+      setAppGuide(false);
       setHighlightedApp("");
 
       const zIndex = appStack.length;

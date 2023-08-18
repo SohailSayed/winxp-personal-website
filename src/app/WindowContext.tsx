@@ -25,6 +25,10 @@ interface WindowContextProps {
   setStartOpen: Dispatch<SetStateAction<boolean>>;
   sizePosStates: Record<string, SizePosition>;
   setSizePosStates: Dispatch<SetStateAction<Record<string, SizePosition>>>;
+  appGuide: boolean;
+  setAppGuide: React.Dispatch<React.SetStateAction<boolean>>;
+  startGuide: boolean;
+  setStartGuide: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface WindowProviderProp {
@@ -49,6 +53,10 @@ const WindowContext = createContext<WindowContextProps>({
   setStartOpen: () => {},
   sizePosStates: defaultSizePos,
   setSizePosStates: () => {},
+  appGuide: true,
+  setAppGuide: () => {},
+  startGuide: true,
+  setStartGuide: () => {},
 });
 
 const useWindowContext = () => useContext(WindowContext);
@@ -66,6 +74,8 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
   const [startOpen, setStartOpen] = useState(false);
   const [sizePosStates, setSizePosStates] =
     useState<Record<string, SizePosition>>(defaultSizePos);
+  const [appGuide, setAppGuide] = useState(true);
+  const [startGuide, setStartGuide] = useState(true);
 
   const contextValues = {
     maximizedStates,
@@ -80,6 +90,10 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     setStartOpen,
     sizePosStates,
     setSizePosStates,
+    appGuide,
+    setAppGuide,
+    startGuide,
+    setStartGuide,
   };
   return (
     <WindowContext.Provider value={contextValues}>

@@ -4,6 +4,7 @@ import styles from "./desktop.module.css";
 import AppIcon from "./AppIcon";
 import appList from "../../constants/appList";
 import React, { useState } from "react";
+import Guide from "../shared/Guide";
 
 const DesktopAppIcons = () => {
   const [highlightedApp, setHighlightedApp] = useState("");
@@ -20,6 +21,7 @@ const DesktopAppIcons = () => {
           setHighlightedApp={setHighlightedApp}
         />
       ))}
+      <Guide />
     </section>
   );
 };

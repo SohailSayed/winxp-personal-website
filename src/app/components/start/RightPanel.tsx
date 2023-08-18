@@ -19,8 +19,8 @@ const RightPanel = () => {
             relating to:
           </p>
           <p className={tahoma.className}>• Transportation</p>
+          <p className={tahoma.className}>• Machine Learning</p>
           <p className={tahoma.className}>• Food Systems</p>
-          <p className={tahoma.className}>• Agriculture</p>
           <p className={tahoma.className} style={{ margin: "0" }}>
             I&apos;m seeking Winter 2024 internship opportunities
           </p>
