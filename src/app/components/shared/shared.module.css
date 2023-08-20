@@ -72,3 +72,54 @@
   border-left: black solid 2px;
   box-sizing: border-box;
 }
+
+.welcomeGuideContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.guideMiddle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-image: url("/guide/guideBackground.png");
+  background-size: 100% 100%;
+}
+.guideOuter {
+  width: 100%;
+  height: 10%;
+  background-color: #03319c;
+}
+.welcomeHeader {
+  color: white;
+  font-style: italic;
+  font-size: 30px;
+}
+.welcomeSubHeader {
+  color: #d2e0f4;
+  font-size: 25px;
+}
+
+.arrowLabelContainer {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+.arrowLabelContainer:hover {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.arrowButton {
+  height: 30px;
+  margin: 5px;
+}
+.arrowLabel {
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+}
