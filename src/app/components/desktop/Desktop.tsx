@@ -4,7 +4,7 @@ import styles from "./desktop.module.css";
 import AppIcon from "./AppIcon";
 import appList from "../../constants/appList";
 import React, { useState } from "react";
-import Guide from "../shared/Guide";
+import Guide from "../guide/Guide";
 
 const DesktopAppIcons = () => {
   const [highlightedApp, setHighlightedApp] = useState("");

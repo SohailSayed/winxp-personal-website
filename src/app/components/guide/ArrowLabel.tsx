@@ -4,11 +4,12 @@ import localFont from "next/font/local";
 
 interface Props {
   label: string;
+  action: () => void;
 }
 
 const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
 
-const ArrowLabel = ({ label }: Props) => {
+const ArrowLabel = ({ label, action }: Props) => {
   const [selected, setSelected] = useState(false);
   const greenArrow = (
     <img src="/guide/arrowButtonGreen.ico" className={styles.arrowButton} />
@@ -29,6 +30,7 @@ const ArrowLabel = ({ label }: Props) => {
       className={styles.arrowLabelContainer}
       onMouseOver={handleHover}
       onMouseOut={handleOut}
+      onClick={action}
     >
       {selected ? greenArrow : blueArrow}
       <p className={`${tahoma.className} ${styles.arrowLabel}`}>{label}</p>
