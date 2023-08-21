@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { useWindowContext } from "@/app/WindowContext";
 import ArrowLabel from "./ArrowLabel";
 import {
@@ -26,7 +27,7 @@ const WelcomeGuide = () => {
       <div className={styles.guideMiddleBackground}>
         <div className={styles.guideMiddle}>
           <p className={`${tahomabd.className} ${styles.welcomeHeader}`}>
-            Welcome to Sohail's personal site!
+            Welcome to Sohail&apos;s personal site!
           </p>
           <p className={`${tahomabd.className} ${styles.welcomeSubHeader}`}>
             What would you like to do?

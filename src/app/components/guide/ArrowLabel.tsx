@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./shared.module.css";
 import localFont from "next/font/local";
 import { useWindowContext } from "@/app/WindowContext";
