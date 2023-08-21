@@ -1,3 +1,4 @@
+import { appStack } from "../WindowContext";
 import appList from "./appList";
 
 export interface SizePosition {
@@ -9,21 +10,31 @@ export interface SizePosition {
 
 const appNames = appList.map((appData) => appData.appName);
 
-const defaultOpenStates: Record<string, boolean> = appNames.reduce(
+const defaultAppStates: Record<string, boolean> = appNames.reduce(
   (accumulator, value) => {
     return { ...accumulator, [value]: false };
   },
   {}
 );
 
+const defaultOpenStates: Record<string, boolean> = appNames.reduce(
+  (accumulator, value) => {
+    return { ...accumulator, [value]: false };
+  },
+  {}
+);
+defaultOpenStates["Welcome Guide"] = true;
+
+const defaultAppStack: appStack[] = [{ appName: "Welcome Guide", zIndex: 0 }];
+
 const defaultSizePos: Record<string, SizePosition> = appNames.reduce(
   (accumulator, value) => {
     return {
       ...accumulator,
-      [value]: { width: "60vw", height: "90vh", x: 200, y: 50 },
+      [value]: { width: "60vw", height: "90vh", x: 200, y: 0 },
     };
   },
   {}
 );
 
-export { defaultOpenStates, defaultSizePos };
+export { defaultOpenStates, defaultAppStates, defaultAppStack, defaultSizePos };

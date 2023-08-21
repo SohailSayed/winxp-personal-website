@@ -18,6 +18,7 @@ const WelcomeGuide = () => {
   const { setStartOpen } = useWindowContext();
   const { setContact } = useWindowContext();
   const { setResumeGuide } = useWindowContext();
+  const { setMaximizedStates } = useWindowContext();
 
   return (
     <section className={styles.welcomeGuideContainer}>
@@ -38,6 +39,7 @@ const WelcomeGuide = () => {
                   setProjectGuide,
                   setResumeGuide,
                   setHighlightedApp,
+                  setMaximizedStates,
                 })
               }
             />
@@ -48,6 +50,7 @@ const WelcomeGuide = () => {
                   setProjectGuide,
                   setResumeGuide,
                   setHighlightedApp,
+                  setMaximizedStates,
                 })
               }
             />
@@ -60,6 +63,7 @@ const WelcomeGuide = () => {
                   setHighlightedApp,
                   setProjectGuide,
                   setResumeGuide,
+                  setMaximizedStates,
                 })
               }
             />
@@ -72,6 +76,7 @@ const WelcomeGuide = () => {
                   setHighlightedApp,
                   setProjectGuide,
                   setResumeGuide,
+                  setMaximizedStates,
                 })
               }
             />

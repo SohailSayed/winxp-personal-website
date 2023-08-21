@@ -8,6 +8,8 @@ import React, {
 } from "react";
 import {
   SizePosition,
+  defaultAppStack,
+  defaultAppStates,
   defaultOpenStates,
   defaultSizePos,
 } from "./constants/defaultValues";
@@ -51,7 +53,7 @@ const WindowContext = createContext<WindowContextProps>({
   setMinimizedStates: () => {},
   openStates: defaultOpenStates,
   setOpenStates: () => {},
-  appStack: [],
+  appStack: defaultAppStack,
   setAppStack: () => {},
   startOpen: false,
   setStartOpen: () => {},
@@ -73,12 +75,12 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
   children,
 }: WindowProviderProp) => {
   const [maximizedStates, setMaximizedStates] =
-    useState<Record<string, boolean>>(defaultOpenStates);
+    useState<Record<string, boolean>>(defaultAppStates);
   const [minimizedStates, setMinimizedStates] =
-    useState<Record<string, boolean>>(defaultOpenStates);
+    useState<Record<string, boolean>>(defaultAppStates);
   const [openStates, setOpenStates] =
     useState<Record<string, boolean>>(defaultOpenStates);
-  const [appStack, setAppStack] = useState<appStack[]>([]);
+  const [appStack, setAppStack] = useState<appStack[]>(defaultAppStack);
   const [startOpen, setStartOpen] = useState(false);
   const [sizePosStates, setSizePosStates] =
     useState<Record<string, SizePosition>>(defaultSizePos);
