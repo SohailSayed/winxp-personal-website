@@ -3,11 +3,11 @@
 import styles from "./desktop.module.css";
 import AppIcon from "./AppIcon";
 import appList from "../../constants/appList";
-import React, { useState } from "react";
-import Guide from "../guide/Guide";
+import React from "react";
+import { useWindowContext } from "@/app/WindowContext";
 
 const DesktopAppIcons = () => {
-  const [highlightedApp, setHighlightedApp] = useState("");
+  const { highlightedApp, setHighlightedApp } = useWindowContext();
 
   return (
     <section className={styles.desktop}>
@@ -21,7 +21,6 @@ const DesktopAppIcons = () => {
           setHighlightedApp={setHighlightedApp}
         />
       ))}
-      <Guide />
     </section>
   );
 };

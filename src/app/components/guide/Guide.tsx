@@ -6,52 +6,41 @@ import localFont from "next/font/local";
 const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
 
 const Guide = () => {
-  const { appGuide, startGuide } = useWindowContext();
+  const { projectGuide, resumeGuide } = useWindowContext();
 
-  const appGuideLayout = (
+  const projectGuideLayout = (
     <div>
       <img
-        className={styles.triangleLeft}
+        className={styles.triangleLeftProject}
         src="/guide/guideTriangleLeft.png"
         alt="guideTriangleLeft"
       />
-      <section className={styles.guideBoxApp}>
-        <p className={`${tahoma.className} ${styles.guideLabelApp}`}>
-          This is the side project I most recently worked on. Double click any
-          of the apps on the left to open them
+      <section className={styles.guideBoxProject}>
+        <p className={`${tahoma.className} ${styles.guideLabel}`}>
+          The project I most recently worked on. Double click to open and try!
         </p>
       </section>
     </div>
   );
 
-  const startGuideLayout = (
+  const resumeGuideLayout = (
     <div>
       <img
-        className={styles.triangleDown}
-        src="/guide/guideTriangleDown.png"
-        alt="guideTriangleDown"
+        className={styles.triangleLeftResume}
+        src="/guide/guideTriangleLeft.png"
+        alt="guideTriangleLeft"
       />
-      <section className={styles.guideBoxStart}>
-        <p className={`${tahoma.className} ${styles.guideLabelStart}`}>
-          Click here to read more about me
+      <section className={styles.guideBoxResume}>
+        <p className={`${tahoma.className} ${styles.guideLabel}`}>
+          Double click to view my Resume
         </p>
       </section>
     </div>
-  );
-
-  const welcomeGuideLayout = (
-    <section className={styles.guideBoxWelcome}>
-      <p className={`${tahoma.className} ${styles.guideLabelWelcome}`}>
-        Welcome to Sohail&apos;s personal site. This site works just like
-        Windows XP, try it out!
-      </p>
-    </section>
   );
 
   return (
     <>
-      {appGuide && appGuideLayout} {startGuide && startGuideLayout}
-      {welcomeGuideLayout}
+      {projectGuide && projectGuideLayout} {resumeGuide && resumeGuideLayout}
     </>
   );
 };

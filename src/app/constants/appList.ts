@@ -1,5 +1,10 @@
 const appList = [
   {
+    appName: "Welcome Guide",
+    url: "https://www.sohailsayed.com/",
+    src: "/icons/windowsXPIcon.ico",
+  },
+  {
     appName: "Project: Condensed News",
     url: "https://www.condensed.news/",
     src: "/icons/condensedNewsIcon.svg",

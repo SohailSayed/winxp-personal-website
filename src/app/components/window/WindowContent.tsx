@@ -3,6 +3,7 @@ import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 import TitleBar from "./TitleBar";
 import AddressBar from "./AddressBar";
+import WelcomeGuide from "../guide/WelcomeGuide";
 
 interface Props {
   src: string;
@@ -30,6 +31,20 @@ const WindowContent = ({ src, alt, appName, url }: Props) => {
     ? styles.titleBarBottom
     : styles.titleBarBottomInactive;
 
+  const welcomeGuide = <WelcomeGuide />;
+  const iFrame = (
+    <iframe
+      className={styles.iframe}
+      id="externalWebsite"
+      src={url}
+      width="100%"
+      height="100%"
+      allow="autoplay"
+    ></iframe>
+  );
+
+  const isGuide = appName == "Welcome Guide";
+
   return (
     <section className={styles.titleBarCombined}>
       <TitleBar src={src} alt={alt} appName={appName} isSelected={isSelected} />
@@ -41,14 +56,7 @@ const WindowContent = ({ src, alt, appName, url }: Props) => {
         style={{ zIndex: appStack.length + 1 }}
       >
         <AddressBar url={url} />
-        <iframe
-          className={styles.iframe}
-          id="externalWebsite"
-          src={url}
-          width="100%"
-          height="100%"
-          allow="autoplay"
-        ></iframe>
+        {isGuide ? welcomeGuide : iFrame}
       </section>
     </section>
   );

@@ -15,7 +15,7 @@ const StartButton = () => {
   const [isHover, setIsHover] = useState(false);
   const { startOpen, setStartOpen } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
-  const { setStartGuide } = useWindowContext();
+  const { setContact } = useWindowContext();
 
   useEffect(() => {
     const appName = "Start Page";
@@ -31,7 +31,7 @@ const StartButton = () => {
   }, [startOpen]);
 
   const handleClick = () => {
-    setStartGuide(false);
+    setContact(false);
     setStartOpen(true);
   };
 

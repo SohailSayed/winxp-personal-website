@@ -25,10 +25,14 @@ interface WindowContextProps {
   setStartOpen: Dispatch<SetStateAction<boolean>>;
   sizePosStates: Record<string, SizePosition>;
   setSizePosStates: Dispatch<SetStateAction<Record<string, SizePosition>>>;
-  appGuide: boolean;
-  setAppGuide: React.Dispatch<React.SetStateAction<boolean>>;
-  startGuide: boolean;
-  setStartGuide: React.Dispatch<React.SetStateAction<boolean>>;
+  projectGuide: boolean;
+  setProjectGuide: Dispatch<React.SetStateAction<boolean>>;
+  resumeGuide: boolean;
+  setResumeGuide: Dispatch<React.SetStateAction<boolean>>;
+  contact: boolean;
+  setContact: Dispatch<React.SetStateAction<boolean>>;
+  highlightedApp: string;
+  setHighlightedApp: Dispatch<React.SetStateAction<string>>;
 }
 
 interface WindowProviderProp {
@@ -53,10 +57,14 @@ const WindowContext = createContext<WindowContextProps>({
   setStartOpen: () => {},
   sizePosStates: defaultSizePos,
   setSizePosStates: () => {},
-  appGuide: true,
-  setAppGuide: () => {},
-  startGuide: true,
-  setStartGuide: () => {},
+  projectGuide: true,
+  setProjectGuide: () => {},
+  resumeGuide: true,
+  setResumeGuide: () => {},
+  contact: false,
+  setContact: () => {},
+  highlightedApp: "",
+  setHighlightedApp: () => {},
 });
 
 const useWindowContext = () => useContext(WindowContext);
@@ -74,8 +82,10 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
   const [startOpen, setStartOpen] = useState(false);
   const [sizePosStates, setSizePosStates] =
     useState<Record<string, SizePosition>>(defaultSizePos);
-  const [appGuide, setAppGuide] = useState(true);
-  const [startGuide, setStartGuide] = useState(true);
+  const [projectGuide, setProjectGuide] = useState(false);
+  const [resumeGuide, setResumeGuide] = useState(false);
+  const [contact, setContact] = useState(false);
+  const [highlightedApp, setHighlightedApp] = useState("");
 
   const contextValues = {
     maximizedStates,
@@ -90,10 +100,14 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     setStartOpen,
     sizePosStates,
     setSizePosStates,
-    appGuide,
-    setAppGuide,
-    startGuide,
-    setStartGuide,
+    projectGuide,
+    setProjectGuide,
+    resumeGuide,
+    setResumeGuide,
+    contact,
+    setContact,
+    highlightedApp,
+    setHighlightedApp,
   };
   return (
     <WindowContext.Provider value={contextValues}>

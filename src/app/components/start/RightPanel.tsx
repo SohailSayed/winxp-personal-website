@@ -30,12 +30,6 @@ const RightPanel = () => {
 
       <section className={styles.rightPanelLinks}>
         <IconLabel
-          src="/icons/emailIcon.png"
-          alt="Email Icon"
-          label="sohail.sayed@uwaterloo.ca"
-          url="mailto: sohail.sayed@uwaterloo.ca"
-        />
-        <IconLabel
           src="/icons/githubSquareIcon.png"
           alt="GitHub Logo"
           label="My GitHub"
@@ -46,6 +40,12 @@ const RightPanel = () => {
           alt="LinkedIn Logo"
           label="My LinkedIn"
           url="https://www.linkedin.com/in/sohailsayed/"
+        />
+        <IconLabel
+          src="/icons/emailIcon.png"
+          alt="Email Icon"
+          label="sohail.sayed@uwaterloo.ca"
+          url="mailto: sohail.sayed@uwaterloo.ca"
         />
         <IconLabel
           src="/icons/mediumIcon.png"

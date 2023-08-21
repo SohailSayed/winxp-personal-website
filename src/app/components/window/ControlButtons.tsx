@@ -19,6 +19,7 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
   const { minimizedStates, setMinimizedStates } = useWindowContext();
   const { setOpenStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
+  const { setProjectGuide, setResumeGuide } = useWindowContext();
 
   const buttonList = ["minimize", "restore", "maximize", "close"];
 
@@ -38,6 +39,9 @@ const ControlButtons = ({ appName }: ControlButtonProps) => {
       if (alt == "maximize") {
         const modifiedStack = pushToTop(appStack, index);
         setAppStack(modifiedStack);
+
+        setProjectGuide(false);
+        setResumeGuide(false);
 
         setMaximizedStates((prevState) => ({
           ...prevState,

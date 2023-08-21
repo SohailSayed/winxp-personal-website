@@ -6,6 +6,7 @@ import styles from "./window.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 import { pushToTop } from "@/app/helper/stackHelper";
 import WindowContent from "./WindowContent";
+import Guide from "../guide/Guide";
 
 interface Props {
   src: string;
@@ -52,38 +53,41 @@ const Window = ({ src, alt, appName, url }: Props) => {
   };
 
   const appWindow = (
-    <Rnd
-      className={isOpen ? openStyles : styles.windowMinimized}
-      style={{ zIndex: zIndexValue }}
-      size={isMaximized ? { width: "100.3vw", height: "95vh" } : appSize}
-      position={isMaximized ? { x: -10, y: -10 } : appPosition}
-      onDragStop={(e, d) => {
-        setSizePosStates((prevState) => ({
-          ...prevState,
-          [appName]: { ...prevState[appName], x: d.x, y: d.y },
-        }));
-      }}
-      onResizeStop={(e, d, ref, delta, position) => {
-        setSizePosStates((prevState) => ({
-          ...prevState,
-          [appName]: {
-            x: position.x,
-            y: position.y,
-            width: ref.style.width,
-            height: ref.style.height,
-          },
-        }));
-      }}
-      disableDragging={isMaximized}
-      enableResizing={!isMaximized}
-      minHeight={"20vh"}
-      minWidth={"30vw"}
-      dragHandleClassName={styles.titleBarDraggable}
-      bounds={"window"}
-      onClick={handleClick}
-    >
-      <WindowContent src={src} alt={alt} appName={appName} url={url} />
-    </Rnd>
+    <>
+      <Rnd
+        className={isOpen ? openStyles : styles.windowMinimized}
+        style={{ zIndex: zIndexValue }}
+        size={isMaximized ? { width: "100.3vw", height: "95vh" } : appSize}
+        position={isMaximized ? { x: -10, y: -10 } : appPosition}
+        onDragStop={(e, d) => {
+          setSizePosStates((prevState) => ({
+            ...prevState,
+            [appName]: { ...prevState[appName], x: d.x, y: d.y },
+          }));
+        }}
+        onResizeStop={(e, d, ref, delta, position) => {
+          setSizePosStates((prevState) => ({
+            ...prevState,
+            [appName]: {
+              x: position.x,
+              y: position.y,
+              width: ref.style.width,
+              height: ref.style.height,
+            },
+          }));
+        }}
+        disableDragging={isMaximized}
+        enableResizing={!isMaximized}
+        minHeight={"20vh"}
+        minWidth={"30vw"}
+        dragHandleClassName={styles.titleBarDraggable}
+        bounds={"window"}
+        onClick={handleClick}
+      >
+        <WindowContent src={src} alt={alt} appName={appName} url={url} />
+      </Rnd>
+      <Guide />
+    </>
   );
 
   return (

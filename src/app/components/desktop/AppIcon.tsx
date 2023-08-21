@@ -25,7 +25,7 @@ const AppIcon = ({
   const { openStates, setOpenStates } = useWindowContext();
   const { setSizePosStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
-  const { setAppGuide } = useWindowContext();
+  const { setProjectGuide, setResumeGuide } = useWindowContext();
 
   const isHighlighted = highlightedApp === appName;
 
@@ -56,13 +56,14 @@ const AppIcon = ({
 
   const handleDoubleClick = (appName: string) => {
     if (openStates[appName] != true) {
-      setAppGuide(false);
+      setProjectGuide(false);
+      setResumeGuide(false);
       setHighlightedApp("");
 
       const zIndex = appStack.length;
       const shiftValue = zIndex % 3;
       const slideValue = Math.floor(zIndex / 3) * 150;
-      console.log(slideValue);
+
       const defaultX = 200 + slideValue + shiftValue * 30;
       const defaultY = shiftValue * 18;
       setSizePosStates((prevState) => ({
