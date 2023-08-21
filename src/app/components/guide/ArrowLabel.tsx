@@ -14,10 +14,10 @@ const ArrowLabel = ({ label, action }: Props) => {
   const { setAppStack } = useWindowContext();
   const [selected, setSelected] = useState(false);
   const greenArrow = (
-    <img src="/guide/arrowButtonGreen.ico" className={styles.arrowButton} />
+    <img src="/guide/arrowButtonGreen.png" className={styles.arrowButton} />
   );
   const blueArrow = (
-    <img src="/guide/arrowButtonBlue.svg" className={styles.arrowButton} />
+    <img src="/guide/arrowButtonBlue.png" className={styles.arrowButton} />
   );
 
   const handleHover = () => {

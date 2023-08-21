@@ -1,9 +1,0 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-	<title>arrowButtonBlue</title>
-	<defs>
-		<image  width="16" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IB2cksfwAAAgFQTFRFpsj98Pb+/v7+/////f396PD80+P84+39t8beg57IeZO+b4u2Zoe7YYW6XYG3X4O5W4C4VXu2UXi0R3GvO2SklajE7/T8hJ7IprnYlqzNjZ21fZrEeJXCdpTDc5LCb4/AaYq+YoW7V3y3Rm2qL1SMeZXCmazKkaO/f5e8fJCvco64usjfYIO5V323UHizR26sM1eNb429jp+5fZrFcY++aYq7aoOnTHKuR3GwR3CvRW2pOFuN/Pz8b4OkgZa0d5TCbIu7ZIW4aX+jWHmzQW2wQ2+wRG2tOVuKaYKofY+qdI+3bIq3Z4OvYnyuV3e2TnazQW6zQ26wOFqQWn+3bIy9QG62NFqVVnu2Z4m9PG+8L1mZTHWyYIO6ZYe8Z4i9YYW8XIK6V3++UX7DOnTNNm3AKleaRm+wVnu1X4O4YoW6X4K6WX+6WIHCPHfTNHLPLmjCIlGXPGisTnayWH23W362WX65VXy6SHvLOHfVMXHUKWbEHUyWNGKpRW6vTnWzUXizUHezTne3rcLgQ3nOPXfRNHLTLG3PJGK/GUiQLFqeN2OkQmqpRWypRGypQ22uQW+zPm+5OW7ANG3CK2fBJWK/IFmwFkKF9Pj+j6a6JUuEK1GJL1OLLlKKLFONLVOPLVOXKFGbJVKZHk2TGUmTFkKGiKKt2+b44Oz+9/n+3uj5kbz8I4wY8gAAAKt0Uk5TSe3////zOPT//////////////////+3//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+n///////////////////825vxTF2tQXwAAAPtJREFUeJxjYGBkYmYCAhYWEMnKxsDOwcnFzcPLxy8gKCQsIirGwCIuISklLSMrJ6+gqKSswszApKqmrqGppc2kw6erp28AFDA0MjYxNQPqN7ewtLJmZrCxtbN3cHRytmFicnF1cweq8PD08vbx9fMHqgkIDGJiYAoOsWGCgdAwoEB4BBOTDRPQFUAUGQUUiI6JjYtPSEwCCienpAIF0tIzMrOyc4AacvPyC4AChUXFJaVlQH55RWVVtQ0DU01tXX1DYxNTc0trW3sHUEVnV3dPb1//hImTJk+ZOo2JYfqMmbNmz5k7b/6ChYsWL1m6jGH5CpDvWaAOWbkKAF4ZOq8AsaU+AAAAAElFTkSuQmCC"/>
-	</defs>
-	<style>
-	</style>
-	<use id="Background" href="#img1" x="0" y="0"/>
-</svg>
