@@ -84,7 +84,19 @@ const WelcomeGuide = () => {
           </section>
         </div>
       </div>
-      <div className={styles.guideOuter} />
+      <div className={styles.guideOuter}>
+        <p className={`${tahomabd.className} ${styles.welcomeBottomLabel}`}>
+          Built with React | Function and Design inspired by Windows XP |&nbsp;
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/SohailSayed/personal-website"
+            className={styles.welcomeBottomLink}
+          >
+            View the code
+          </a>
+        </p>
+      </div>
     </section>
   );
 };
