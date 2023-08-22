@@ -55,7 +55,7 @@ const StartButton = () => {
         onClick={handleClick}
       >
         <img
-          src="/icons/windowsXPIcon.png"
+          src="/icons/windowsXPIcon.ico"
           className={styles.startWindowsXPIcon}
           alt="Windows XP Icon"
         />
