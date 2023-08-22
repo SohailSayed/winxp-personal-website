@@ -105,7 +105,7 @@ const AppIcon = ({
     : styles.appIconLabel;
 
   return (
-    <a target="_blank" href={mobileHref}>
+    <a target="_blank" href={mobileHref} rel="noreferrer">
       <section
         className={styles.appIcon}
         onClick={() => handleClick(appName)}
