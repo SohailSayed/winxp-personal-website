@@ -11,7 +11,7 @@ const appList = [
   },
   {
     appName: "Resume",
-    url: "https://drive.google.com/file/d/1Ca8fOXZzwanNPvNUmOEigYg0-cDLemJX/preview",
+    url: "https://drive.google.com/file/d/1AoKJrnmibJ2c_SOlTnr1xVELhNS4EQoI/preview",
     src: "/icons/resumeIcon.ico",
   },
   {
