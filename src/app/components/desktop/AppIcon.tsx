@@ -9,6 +9,7 @@ interface Props {
   src: string;
   alt: string;
   appName: string;
+  url: string;
   highlightedApp: string;
   setHighlightedApp: Dispatch<SetStateAction<string>>;
 }
@@ -19,6 +20,7 @@ const AppIcon = ({
   src,
   alt,
   appName,
+  url,
   highlightedApp,
   setHighlightedApp,
 }: Props) => {
@@ -95,26 +97,31 @@ const AppIcon = ({
     />
   );
 
+  const isMobile = window.innerWidth <= 768;
+  const mobileHref = isMobile ? url : undefined;
+
   const labelStyle = isHighlighted
     ? styles.appIconLabelHighlighted
     : styles.appIconLabel;
 
   return (
-    <section
-      className={styles.appIcon}
-      onClick={() => handleClick(appName)}
-      ref={refOne}
-    >
-      {isHighlighted && iconMask}
-      <Image
-        className={styles.appIconImage}
-        src={src}
-        alt={alt}
-        width={1}
-        height={1}
-      />
-      <div className={`${tahoma.className} ${labelStyle}`}>{appName}</div>
-    </section>
+    <a target="_blank" href={mobileHref}>
+      <section
+        className={styles.appIcon}
+        onClick={() => handleClick(appName)}
+        ref={refOne}
+      >
+        {isHighlighted && iconMask}
+        <Image
+          className={styles.appIconImage}
+          src={src}
+          alt={alt}
+          width={1}
+          height={1}
+        />
+        <div className={`${tahoma.className} ${labelStyle}`}>{appName}</div>
+      </section>
+    </a>
   );
 };
 

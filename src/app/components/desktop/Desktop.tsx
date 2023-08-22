@@ -17,6 +17,7 @@ const DesktopAppIcons = () => {
           src={appData.src}
           alt={`${appData.appName} Icon`}
           appName={appData.appName}
+          url={appData.url}
           highlightedApp={highlightedApp}
           setHighlightedApp={setHighlightedApp}
         />
