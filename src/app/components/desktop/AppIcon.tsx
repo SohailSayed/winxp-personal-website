@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import styles from "./desktop.module.css";
 import { useWindowContext } from "@/app/WindowContext";
