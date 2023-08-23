@@ -1,10 +1,15 @@
-"use client";
 import Image from "next/image";
 import styles from "./desktop.module.css";
 import { useWindowContext } from "@/app/WindowContext";
 import { pushToTop } from "@/app/helper/stackHelper";
 import localFont from "next/font/local";
-import React, { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 interface Props {
   src: string;
@@ -25,6 +30,8 @@ const AppIcon = ({
   highlightedApp,
   setHighlightedApp,
 }: Props) => {
+  const [isMobile, setIsMobile] = useState(false);
+
   const { openStates, setOpenStates } = useWindowContext();
   const { setSizePosStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
@@ -34,6 +41,7 @@ const AppIcon = ({
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, true);
+    setIsMobile(window.innerWidth <= 768);
   }, []);
 
   const refOne = useRef(null);
@@ -98,7 +106,6 @@ const AppIcon = ({
     />
   );
 
-  const isMobile = window.innerWidth <= 768;
   const mobileHref = isMobile ? url : undefined;
 
   const labelStyle = isHighlighted
