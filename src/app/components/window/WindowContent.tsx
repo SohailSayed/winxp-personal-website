@@ -55,7 +55,7 @@ const WindowContent = ({ src, alt, appName, url }: Props) => {
         }
         style={{ zIndex: appStack.length + 1 }}
       >
-        <AddressBar url={url} />
+        <AddressBar url={url} appName={appName} />
         {isGuide ? welcomeGuide : iFrame}
       </section>
     </section>
