@@ -27,6 +27,8 @@ const DesktopAppIcons = () => {
     // eslint-disable-next-line no-use-before-define
     // @ts-expect-error: Type not being considered for event, used to find mouse location
     setXDown(event.clientX);
+    // eslint-disable-next-line no-use-before-define
+    // @ts-expect-error: Type not being considered for event, used to find mouse location
     setYDown(event.clientY);
     setSelectedBounds({
       top: 0,
@@ -45,6 +47,8 @@ const DesktopAppIcons = () => {
       // eslint-disable-next-line no-use-before-define
       // @ts-expect-error: Type not being considered for event, used to find mouse location
       setXUp(event.clientX);
+      // eslint-disable-next-line no-use-before-define
+      // @ts-expect-error: Type not being considered for event, used to find mouse location
       setYUp(event.clientY);
       const rightBound = Math.max(xDown, xUp);
       const leftBound = Math.min(xDown, xUp);
