@@ -33,7 +33,7 @@ const DesktopAppIcons = () => {
       right: 0,
     });
   };
-  const handleMouseUp = (event: React.MouseEvent) => {
+  const handleMouseUp = () => {
     setMouseHeld(false);
     setXUp(0);
     setYUp(0);
@@ -71,7 +71,6 @@ const DesktopAppIcons = () => {
           url={appData.url}
           highlightedApp={highlightedApp}
           setHighlightedApp={setHighlightedApp}
-          mouseHeld={mouseHeld}
           selectedBounds={selectedBounds}
         />
       ))}

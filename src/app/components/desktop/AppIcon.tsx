@@ -19,7 +19,6 @@ interface Props {
   url: string;
   highlightedApp: Record<string, boolean>;
   setHighlightedApp: Dispatch<SetStateAction<Record<string, boolean>>>;
-  mouseHeld: boolean;
   selectedBounds: Record<string, number>;
 }
 
@@ -32,7 +31,6 @@ const AppIcon = ({
   url,
   highlightedApp,
   setHighlightedApp,
-  mouseHeld,
   selectedBounds,
 }: Props) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -85,7 +83,6 @@ const AppIcon = ({
   const handleClickOutside = (e: Event) => {
     const clickedElement = e.target as HTMLElement;
     const elementClass = clickedElement.classList.value;
-    console.log(elementClass);
     const insideIcon = elementClass.includes("desktop_appIcon");
     const insideStart = elementClass.includes("taskbar_start");
 
