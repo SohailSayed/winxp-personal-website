@@ -16,6 +16,7 @@ const StartButton = () => {
   const { startOpen, setStartOpen } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
   const { setContact } = useWindowContext();
+  const { setProjectGuide, setResumeGuide } = useWindowContext();
 
   useEffect(() => {
     const appName = "Start Page";
@@ -31,6 +32,8 @@ const StartButton = () => {
   }, [startOpen]);
 
   const handleClick = () => {
+    setProjectGuide(false);
+    setResumeGuide(false);
     setContact(false);
     setStartOpen(true);
   };

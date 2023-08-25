@@ -51,3 +51,12 @@
   padding: 2px 10px 2px 10px;
   background-color: rgba(11, 96, 255, 0.762);
 }
+
+.selectableRectangle {
+  position: absolute;
+  border-style: dotted;
+  border-width: 2px;
+  border-color: rgba(0, 0, 0, 0.677);
+  z-index: 2;
+  pointer-events: none;
+}

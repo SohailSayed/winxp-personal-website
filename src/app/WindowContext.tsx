@@ -33,8 +33,8 @@ interface WindowContextProps {
   setResumeGuide: Dispatch<React.SetStateAction<boolean>>;
   contact: boolean;
   setContact: Dispatch<React.SetStateAction<boolean>>;
-  highlightedApp: string;
-  setHighlightedApp: Dispatch<React.SetStateAction<string>>;
+  highlightedApp: Record<string, boolean>;
+  setHighlightedApp: Dispatch<SetStateAction<Record<string, boolean>>>;
 }
 
 interface WindowProviderProp {
@@ -47,9 +47,9 @@ export interface appStack {
 }
 
 const WindowContext = createContext<WindowContextProps>({
-  maximizedStates: defaultOpenStates,
+  maximizedStates: defaultAppStates,
   setMaximizedStates: () => {},
-  minimizedStates: defaultOpenStates,
+  minimizedStates: defaultAppStates,
   setMinimizedStates: () => {},
   openStates: defaultOpenStates,
   setOpenStates: () => {},
@@ -65,7 +65,7 @@ const WindowContext = createContext<WindowContextProps>({
   setResumeGuide: () => {},
   contact: false,
   setContact: () => {},
-  highlightedApp: "",
+  highlightedApp: defaultAppStates,
   setHighlightedApp: () => {},
 });
 
@@ -87,7 +87,7 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
   const [projectGuide, setProjectGuide] = useState(false);
   const [resumeGuide, setResumeGuide] = useState(false);
   const [contact, setContact] = useState(false);
-  const [highlightedApp, setHighlightedApp] = useState("");
+  const [highlightedApp, setHighlightedApp] = useState(defaultAppStates);
 
   const contextValues = {
     maximizedStates,

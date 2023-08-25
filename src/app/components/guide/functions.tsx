@@ -1,15 +1,16 @@
+import { defaultAppStates } from "@/app/constants/defaultValues";
 import { Dispatch, SetStateAction } from "react";
 
 interface projectProps {
   setProjectGuide: Dispatch<SetStateAction<boolean>>;
   setResumeGuide: Dispatch<SetStateAction<boolean>>;
-  setHighlightedApp: Dispatch<React.SetStateAction<string>>;
+  setHighlightedApp: Dispatch<SetStateAction<Record<string, boolean>>>;
   setMaximizedStates: Dispatch<React.SetStateAction<Record<string, boolean>>>;
 }
 interface startProps {
   setStartOpen: Dispatch<SetStateAction<boolean>>;
   setContact: Dispatch<SetStateAction<boolean>>;
-  setHighlightedApp: Dispatch<React.SetStateAction<string>>;
+  setHighlightedApp: Dispatch<SetStateAction<Record<string, boolean>>>;
   setProjectGuide: Dispatch<SetStateAction<boolean>>;
   setResumeGuide: Dispatch<SetStateAction<boolean>>;
   setMaximizedStates: Dispatch<React.SetStateAction<Record<string, boolean>>>;
@@ -28,7 +29,12 @@ const projectPopUp = ({
 
   setResumeGuide(false);
   setProjectGuide(true);
-  setHighlightedApp("Project: Condensed News");
+
+  const appName = "Project: Condensed News";
+  setHighlightedApp((prevState) => ({
+    ...prevState,
+    [appName]: true,
+  }));
 };
 
 const resumePopUp = ({
@@ -44,7 +50,12 @@ const resumePopUp = ({
 
   setProjectGuide(false);
   setResumeGuide(true);
-  setHighlightedApp("Resume");
+
+  const appName = "Resume";
+  setHighlightedApp((prevState) => ({
+    ...prevState,
+    [appName]: true,
+  }));
 };
 
 const startPopUp = ({
@@ -60,7 +71,7 @@ const startPopUp = ({
     ["Welcome Guide"]: false,
   }));
 
-  setHighlightedApp("");
+  setHighlightedApp(defaultAppStates);
   setContact(false);
   setProjectGuide(false);
   setResumeGuide(false);
@@ -80,7 +91,7 @@ const contactPopUp = ({
     ["Welcome Guide"]: false,
   }));
 
-  setHighlightedApp("");
+  setHighlightedApp(defaultAppStates);
   setContact(true);
   setProjectGuide(false);
   setResumeGuide(false);

@@ -10,14 +10,17 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { defaultAppStates } from "@/app/constants/defaultValues";
 
 interface Props {
   src: string;
   alt: string;
   appName: string;
   url: string;
-  highlightedApp: string;
-  setHighlightedApp: Dispatch<SetStateAction<string>>;
+  highlightedApp: Record<string, boolean>;
+  setHighlightedApp: Dispatch<SetStateAction<Record<string, boolean>>>;
+  mouseHeld: boolean;
+  selectedBounds: Record<string, number>;
 }
 
 const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
@@ -29,29 +32,69 @@ const AppIcon = ({
   url,
   highlightedApp,
   setHighlightedApp,
+  mouseHeld,
+  selectedBounds,
 }: Props) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [bounds, setBounds] = useState<DOMRect | null>(null);
 
   const { openStates, setOpenStates } = useWindowContext();
   const { setSizePosStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
   const { setProjectGuide, setResumeGuide } = useWindowContext();
 
-  const isHighlighted = highlightedApp === appName;
+  const isHighlighted = highlightedApp[appName];
+  const refOne = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    if (refOne.current) {
+      setBounds(refOne.current.getBoundingClientRect());
+    }
     document.addEventListener("click", handleClickOutside, true);
     setIsMobile(window.innerWidth <= 768);
   }, []);
 
-  const refOne = useRef(null);
+  const validSelectedBox = selectedBounds.top != 0 && selectedBounds.left != 0;
+
+  const validSelectSize =
+    Math.abs(selectedBounds.top - selectedBounds.bottom) > 2;
+
+  if (bounds && validSelectedBox && validSelectSize) {
+    if (
+      selectedBounds.right > bounds.left &&
+      selectedBounds.left < bounds.right &&
+      selectedBounds.bottom > bounds.top &&
+      selectedBounds.top < bounds.bottom
+    ) {
+      if (highlightedApp[appName] != true) {
+        setHighlightedApp((prevState) => ({
+          ...prevState,
+          [appName]: true,
+        }));
+      }
+    } else {
+      if (highlightedApp[appName] != false) {
+        setHighlightedApp((prevState) => ({
+          ...prevState,
+          [appName]: false,
+        }));
+      }
+    }
+  }
 
   const handleClickOutside = (e: Event) => {
     const clickedElement = e.target as HTMLElement;
     const elementClass = clickedElement.classList.value;
+    console.log(elementClass);
     const insideIcon = elementClass.includes("desktop_appIcon");
-    if (!insideIcon) {
-      setHighlightedApp("");
+    const insideStart = elementClass.includes("taskbar_start");
+
+    if (!insideIcon && !insideStart) {
+      // Not working when clicking taskbar, to investigate in future
+      setHighlightedApp((prevState) => ({
+        ...prevState,
+        [appName]: false,
+      }));
     }
   };
 
@@ -61,7 +104,11 @@ const AppIcon = ({
     if (event && event.detail == 2) {
       handleDoubleClick(appName);
     } else {
-      setHighlightedApp(appName);
+      setHighlightedApp(defaultAppStates);
+      setHighlightedApp((prevState) => ({
+        ...prevState,
+        [appName]: !prevState[appName],
+      }));
     }
   };
 
@@ -69,7 +116,10 @@ const AppIcon = ({
     if (openStates[appName] != true) {
       setProjectGuide(false);
       setResumeGuide(false);
-      setHighlightedApp("");
+      setHighlightedApp((prevState) => ({
+        ...prevState,
+        [appName]: false,
+      }));
 
       const zIndex = appStack.length;
       const shiftValue = zIndex % 3;
