@@ -51,6 +51,9 @@
   padding: 2px 10px 2px 10px;
   background-color: rgba(11, 96, 255, 0.762);
 }
+.aMobileAppIcon {
+  width: fit-content;
+}
 
 .selectableRectangle {
   position: absolute;
