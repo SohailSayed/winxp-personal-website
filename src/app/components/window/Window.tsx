@@ -57,7 +57,7 @@ const Window = ({ src, alt, appName, url }: Props) => {
       <Rnd
         className={isOpen ? openStyles : styles.windowMinimized}
         style={{ zIndex: zIndexValue }}
-        size={isMaximized ? { width: "100.3vw", height: "95vh" } : appSize}
+        size={isMaximized ? { width: "100.3vw", height: "95.2vh" } : appSize}
         position={isMaximized ? { x: -10, y: -10 } : appPosition}
         onDragStop={(e, d) => {
           setSizePosStates((prevState) => ({
