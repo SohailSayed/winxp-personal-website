@@ -17,7 +17,7 @@ const AddressBar = ({ url, appName }: Props) => {
   const DownloadResumeButton = (
     <a
       className={styles.popOutButtonContainer}
-      href="/window/Sohail Sayed Public Resume September 2023.pdf"
+      href="/window/Sohail Sayed Public Application Resume September 2023.pdf"
       download
       title="Download Resume"
     >
