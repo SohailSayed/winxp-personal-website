@@ -22,13 +22,13 @@ const LeftPanel = () => {
           <IconLabel
             src="/icons/weatherNetworkIcon.png"
             alt="Weather Network Logo"
-            label="Interning this summer as a Software Developer at The Weather Network"
+            label="Interned this summer as a Software Developer at The Weather Network"
             url="https://www.theweathernetwork.com/info/about-us"
           />
           <IconLabel
             src="/icons/blueprintLogo.png"
             alt="UW Blueprint Logo"
-            label="Volunteering as a Developer for the Childrens Aid Society with UW Blueprint"
+            label="Volunteered as a Developer for the Childrens Aid Society with UW Blueprint"
             url="https://uwblueprint.org/about"
           />
           <IconLabel
