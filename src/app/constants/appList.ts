@@ -21,7 +21,7 @@ const appList = [
   },
   {
     appName: "Why I'm a Good Fit for Sizzle",
-    url: "https://why-im-a-good-fit-for-sizzle.bullet.site/",
+    url: "https://why-im-a-good-fit-for-sizzleai.super.site/",
     src: "/icons/sizzleAIIcon.webp",
   },
 ];
