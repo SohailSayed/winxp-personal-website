@@ -3,11 +3,12 @@
 import styles from "./desktop.module.css";
 import AppIcon from "./AppIcon";
 import appList from "../../constants/appList";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useWindowContext } from "@/app/WindowContext";
 import SelectableRectangle from "./SelectableRectangle";
 
 const DesktopAppIcons = () => {
+  const { setSizzleGuide } = useWindowContext();
   const { highlightedApp, setHighlightedApp } = useWindowContext();
   // Might be better to make these a single dictionary state for each, for future review
   const [mouseHeld, setMouseHeld] = useState(false);
@@ -21,6 +22,8 @@ const DesktopAppIcons = () => {
     left: 0,
     right: 0,
   });
+
+  const [isSizzle, setIsSizzle] = useState(false);
 
   const handleMouseDown = () => {
     setMouseHeld(true);
@@ -63,6 +66,33 @@ const DesktopAppIcons = () => {
     }
   };
 
+  const sizzleData = appList[appList.length - 1];
+  const sizzleApp = (
+    <AppIcon
+      key={sizzleData.appName}
+      src={sizzleData.src}
+      alt={`${sizzleData.appName} Icon`}
+      appName={sizzleData.appName}
+      url={sizzleData.url}
+      highlightedApp={highlightedApp}
+      setHighlightedApp={setHighlightedApp}
+      selectedBounds={selectedBounds}
+    />
+  );
+
+  useEffect(() => {
+    const pathname = window.location.pathname.split("/")[1];
+
+    if (pathname == "sizzle") {
+      setIsSizzle(true);
+      setSizzleGuide(true);
+      setHighlightedApp((prevState) => ({
+        ...prevState,
+        ["Why I'm a Good Fit for Sizzle"]: true,
+      }));
+    }
+  }, []);
+
   return (
     <section
       className={styles.desktop}
@@ -70,18 +100,21 @@ const DesktopAppIcons = () => {
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
     >
-      {appList.map((appData) => (
-        <AppIcon
-          key={appData.appName}
-          src={appData.src}
-          alt={`${appData.appName} Icon`}
-          appName={appData.appName}
-          url={appData.url}
-          highlightedApp={highlightedApp}
-          setHighlightedApp={setHighlightedApp}
-          selectedBounds={selectedBounds}
-        />
-      ))}
+      <section className={styles.appSection}>
+        {appList.slice(0, -1).map((appData) => (
+          <AppIcon
+            key={appData.appName}
+            src={appData.src}
+            alt={`${appData.appName} Icon`}
+            appName={appData.appName}
+            url={appData.url}
+            highlightedApp={highlightedApp}
+            setHighlightedApp={setHighlightedApp}
+            selectedBounds={selectedBounds}
+          />
+        ))}
+      </section>
+      {isSizzle ? sizzleApp : undefined}
       <SelectableRectangle xDown={xDown} yDown={yDown} xUp={xUp} yUp={yUp} />
     </section>
   );

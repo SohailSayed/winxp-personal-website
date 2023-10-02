@@ -19,6 +19,11 @@ const appList = [
     url: "https://how-i-built-it-condensed-news.super.site/",
     src: "/icons/condensedNewsBlogIcon.ico",
   },
+  {
+    appName: "Why I'm a Good Fit for Sizzle",
+    url: "https://why-im-a-good-fit-for-sizzle.bullet.site/",
+    src: "/icons/sizzleAIIcon.webp",
+  },
 ];
 
 export default appList;

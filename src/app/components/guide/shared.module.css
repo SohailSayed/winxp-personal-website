@@ -12,6 +12,20 @@
   top: 150px;
   user-select: none;
 }
+.guideBoxProjectSizzle {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  background-color: #ffffca;
+  border: black 1px solid;
+  border-radius: 5px;
+  z-index: 100;
+  position: absolute;
+  left: 249px;
+  top: 40px;
+  user-select: none;
+}
 .guideBoxResume {
   display: flex;
   align-items: center;
@@ -35,6 +49,16 @@
   position: absolute;
   left: 101px;
   top: 170px;
+  width: 20px;
+  height: auto;
+  z-index: 101;
+  filter: drop-shadow(0px 1px 0 black) drop-shadow(-1px -1px 0 black);
+  user-select: none;
+}
+.triangleLeftProjectSizzle {
+  position: absolute;
+  left: 230px;
+  top: 50px;
   width: 20px;
   height: auto;
   z-index: 101;

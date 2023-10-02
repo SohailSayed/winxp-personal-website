@@ -1,6 +1,6 @@
 .desktop {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: left;
   background: url(/background.jpeg);
   background-size: cover;
@@ -11,6 +11,10 @@
   height: 95vh;
   width: 100vw;
   user-select: none;
+}
+.appSection {
+  display: flex;
+  flex-direction: column;
 }
 
 .appIcon {
@@ -62,4 +66,32 @@
   border-color: rgba(0, 0, 0, 0.677);
   z-index: 2;
   pointer-events: none;
+}
+
+.triangleLeftProject {
+  position: absolute;
+  left: 101px;
+  top: 170px;
+  width: 20px;
+  height: auto;
+  z-index: 101;
+  filter: drop-shadow(0px 1px 0 black) drop-shadow(-1px -1px 0 black);
+  user-select: none;
+}
+.guideBoxProject {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  background-color: #ffffca;
+  border: black 1px solid;
+  border-radius: 5px;
+  z-index: 100;
+  position: absolute;
+  left: 120px;
+  top: 150px;
+  user-select: none;
+}
+.guideLabel {
+  margin: 20px;
 }

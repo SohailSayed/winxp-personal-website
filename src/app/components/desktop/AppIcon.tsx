@@ -39,7 +39,8 @@ const AppIcon = ({
   const { openStates, setOpenStates } = useWindowContext();
   const { setSizePosStates } = useWindowContext();
   const { appStack, setAppStack } = useWindowContext();
-  const { setProjectGuide, setResumeGuide } = useWindowContext();
+  const { setProjectGuide, setResumeGuide, setSizzleGuide } =
+    useWindowContext();
 
   const isHighlighted = highlightedApp[appName];
   const refOne = useRef<HTMLElement | null>(null);
@@ -113,6 +114,7 @@ const AppIcon = ({
     if (openStates[appName] != true) {
       setProjectGuide(false);
       setResumeGuide(false);
+      setSizzleGuide(false);
       setHighlightedApp((prevState) => ({
         ...prevState,
         [appName]: false,
@@ -172,13 +174,17 @@ const AppIcon = ({
         ref={refOne}
       >
         {isHighlighted && iconMask}
-        <Image
-          className={styles.appIconImage}
-          src={src}
-          alt={alt}
-          width={1}
-          height={1}
-        />
+        {appName == "Why I'm a Good Fit for Sizzle" ? (
+          <img className={styles.appIconImage} src={src} alt={alt} />
+        ) : (
+          <Image
+            className={styles.appIconImage}
+            src={src}
+            alt={alt}
+            width={1}
+            height={1}
+          />
+        )}
         <div className={`${tahoma.className} ${labelStyle}`}>{appName}</div>
       </section>
     </a>

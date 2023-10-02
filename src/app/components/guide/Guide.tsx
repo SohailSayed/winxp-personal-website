@@ -6,7 +6,7 @@ import localFont from "next/font/local";
 const tahoma = localFont({ src: "../../fonts/tahoma/tahoma.ttf" });
 
 const Guide = () => {
-  const { projectGuide, resumeGuide } = useWindowContext();
+  const { projectGuide, resumeGuide, sizzleGuide } = useWindowContext();
 
   const projectGuideLayout = (
     <div>
@@ -18,6 +18,22 @@ const Guide = () => {
       <section className={styles.guideBoxProject}>
         <p className={`${tahoma.className} ${styles.guideLabel}`}>
           The project I most recently worked on. Double click to open and try!
+        </p>
+      </section>
+    </div>
+  );
+
+  const sizzleGuideLayout = (
+    <div>
+      <img
+        className={styles.triangleLeftProjectSizzle}
+        src="/guide/guideTriangleLeft.png"
+        alt="guideTriangleLeft"
+      />
+      <section className={styles.guideBoxProjectSizzle}>
+        <p className={`${tahoma.className} ${styles.guideLabel}`}>
+          Double Click Here to See How I Believe I&apos;ll Be a Good Fit at
+          Sizzle!
         </p>
       </section>
     </div>
@@ -40,7 +56,8 @@ const Guide = () => {
 
   return (
     <>
-      {projectGuide && projectGuideLayout} {resumeGuide && resumeGuideLayout}
+      {projectGuide && projectGuideLayout} {resumeGuide && resumeGuideLayout}{" "}
+      {sizzleGuide && sizzleGuideLayout}
     </>
   );
 };
