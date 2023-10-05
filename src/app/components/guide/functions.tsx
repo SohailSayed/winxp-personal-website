@@ -4,7 +4,6 @@ import { Dispatch, SetStateAction } from "react";
 interface projectProps {
   setProjectGuide: Dispatch<SetStateAction<boolean>>;
   setResumeGuide: Dispatch<SetStateAction<boolean>>;
-  setSizzleGuide: Dispatch<SetStateAction<boolean>>;
   setHighlightedApp: Dispatch<SetStateAction<Record<string, boolean>>>;
   setMaximizedStates: Dispatch<React.SetStateAction<Record<string, boolean>>>;
 }
@@ -14,14 +13,12 @@ interface startProps {
   setHighlightedApp: Dispatch<SetStateAction<Record<string, boolean>>>;
   setProjectGuide: Dispatch<SetStateAction<boolean>>;
   setResumeGuide: Dispatch<SetStateAction<boolean>>;
-  setSizzleGuide: Dispatch<SetStateAction<boolean>>;
   setMaximizedStates: Dispatch<React.SetStateAction<Record<string, boolean>>>;
 }
 
 const projectPopUp = ({
   setProjectGuide,
   setResumeGuide,
-  setSizzleGuide,
   setHighlightedApp,
   setMaximizedStates,
 }: projectProps) => {
@@ -32,7 +29,6 @@ const projectPopUp = ({
 
   setResumeGuide(false);
   setProjectGuide(true);
-  setSizzleGuide(false);
 
   const appName = "Project: Condensed News";
   setHighlightedApp((prevState) => ({
@@ -44,7 +40,6 @@ const projectPopUp = ({
 const resumePopUp = ({
   setProjectGuide,
   setResumeGuide,
-  setSizzleGuide,
   setHighlightedApp,
   setMaximizedStates,
 }: projectProps) => {
@@ -55,7 +50,6 @@ const resumePopUp = ({
 
   setProjectGuide(false);
   setResumeGuide(true);
-  setSizzleGuide(false);
 
   const appName = "Resume";
   setHighlightedApp((prevState) => ({
@@ -70,7 +64,6 @@ const startPopUp = ({
   setHighlightedApp,
   setProjectGuide,
   setResumeGuide,
-  setSizzleGuide,
   setMaximizedStates,
 }: startProps) => {
   setMaximizedStates((prevState) => ({
@@ -82,7 +75,6 @@ const startPopUp = ({
   setContact(false);
   setProjectGuide(false);
   setResumeGuide(false);
-  setSizzleGuide(false);
   setStartOpen(true);
 };
 
@@ -92,7 +84,6 @@ const contactPopUp = ({
   setHighlightedApp,
   setProjectGuide,
   setResumeGuide,
-  setSizzleGuide,
   setMaximizedStates,
 }: startProps) => {
   setMaximizedStates((prevState) => ({
@@ -104,7 +95,6 @@ const contactPopUp = ({
   setContact(true);
   setProjectGuide(false);
   setResumeGuide(false);
-  setSizzleGuide(false);
   setStartOpen(true);
 };
 

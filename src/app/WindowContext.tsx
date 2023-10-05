@@ -31,8 +31,6 @@ interface WindowContextProps {
   setProjectGuide: Dispatch<React.SetStateAction<boolean>>;
   resumeGuide: boolean;
   setResumeGuide: Dispatch<React.SetStateAction<boolean>>;
-  sizzleGuide: boolean;
-  setSizzleGuide: Dispatch<React.SetStateAction<boolean>>;
   contact: boolean;
   setContact: Dispatch<React.SetStateAction<boolean>>;
   highlightedApp: Record<string, boolean>;
@@ -65,8 +63,6 @@ const WindowContext = createContext<WindowContextProps>({
   setProjectGuide: () => {},
   resumeGuide: true,
   setResumeGuide: () => {},
-  sizzleGuide: true,
-  setSizzleGuide: () => {},
   contact: false,
   setContact: () => {},
   highlightedApp: defaultAppStates,
@@ -90,7 +86,6 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     useState<Record<string, SizePosition>>(defaultSizePos);
   const [projectGuide, setProjectGuide] = useState(false);
   const [resumeGuide, setResumeGuide] = useState(false);
-  const [sizzleGuide, setSizzleGuide] = useState(false);
   const [contact, setContact] = useState(false);
   const [highlightedApp, setHighlightedApp] = useState(defaultAppStates);
 
@@ -111,8 +106,6 @@ const WindowContextProvider: React.FC<WindowProviderProp> = ({
     setProjectGuide,
     resumeGuide,
     setResumeGuide,
-    sizzleGuide,
-    setSizzleGuide,
     contact,
     setContact,
     highlightedApp,

@@ -31,7 +31,7 @@ const defaultSizePos: Record<string, SizePosition> = appNames.reduce(
   (accumulator, value) => {
     return {
       ...accumulator,
-      [value]: { width: "60vw", height: "90vh", x: 300, y: 0 },
+      [value]: { width: "60vw", height: "90vh", x: 200, y: 0 },
     };
   },
   {}

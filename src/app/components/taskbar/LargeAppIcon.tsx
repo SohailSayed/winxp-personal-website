@@ -50,17 +50,13 @@ const LargeAppIcon = ({ src, alt, appName }: Props) => {
       }`}
       onClick={() => handleClick(appName)}
     >
-      {appName == "Why I'm a Good Fit for Sizzle" ? (
-        <img className={styles.largeAppIconImage} src={src} alt={alt} />
-      ) : (
-        <Image
-          className={styles.largeAppIconImage}
-          src={src}
-          alt={alt}
-          width={1}
-          height={1}
-        />
-      )}
+      <Image
+        className={styles.largeAppIconImage}
+        src={src}
+        alt={alt}
+        width={1}
+        height={1}
+      />
       <p className={`${tahoma.className} ${styles.largeAppIconLabel}`}>
         {appName}
       </p>

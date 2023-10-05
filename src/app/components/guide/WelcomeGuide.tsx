@@ -18,7 +18,7 @@ const WelcomeGuide = () => {
   const { setHighlightedApp } = useWindowContext();
   const { setStartOpen } = useWindowContext();
   const { setContact } = useWindowContext();
-  const { setResumeGuide, setSizzleGuide } = useWindowContext();
+  const { setResumeGuide } = useWindowContext();
   const { setMaximizedStates } = useWindowContext();
 
   return (
@@ -39,7 +39,6 @@ const WelcomeGuide = () => {
                 projectPopUp({
                   setProjectGuide,
                   setResumeGuide,
-                  setSizzleGuide,
                   setHighlightedApp,
                   setMaximizedStates,
                 })
@@ -51,7 +50,6 @@ const WelcomeGuide = () => {
                 resumePopUp({
                   setProjectGuide,
                   setResumeGuide,
-                  setSizzleGuide,
                   setHighlightedApp,
                   setMaximizedStates,
                 })
@@ -66,7 +64,6 @@ const WelcomeGuide = () => {
                   setHighlightedApp,
                   setProjectGuide,
                   setResumeGuide,
-                  setSizzleGuide,
                   setMaximizedStates,
                 })
               }
@@ -80,7 +77,6 @@ const WelcomeGuide = () => {
                   setHighlightedApp,
                   setProjectGuide,
                   setResumeGuide,
-                  setSizzleGuide,
                   setMaximizedStates,
                 })
               }
